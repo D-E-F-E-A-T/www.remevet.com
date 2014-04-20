@@ -11,12 +11,24 @@ html.no-js(lang="es",class=is_desktop?'is_desktop':'')
 		meta(name='viewport', content='width=device-width')
 		block ﬁ.meta
 
-		title Fi
+		title= (TITLE? TITLE + ' | ' : '') + (NAME || '')
 
+		link(rel="shortcut icon", href="/static/images/favicon.ico")
+		link(rel='stylesheet',    href='/static/foundation/css/foundation.css')
 		block ﬁ.link
+
+		script(src='/static/foundation/js/vendor/modernizr.js')
 
 	body
 
-		block ﬁ.content
+		header
+			include views/header
+
+		#content 
+			block ﬁ.content
+
+		script(src='/static/foundation/js/vendor/jquery.js')
+		script(src='/static/foundation/js/vendor/fastclick.js')
+		script(src='/static/foundation/js/foundation.min.js')
 
 		block ﬁ.script
