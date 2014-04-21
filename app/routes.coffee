@@ -1,1 +1,5 @@
-ﬁ.routes.get '/', 'home'
+ﬁ.routes.get  '/'                    , 'home'
+ﬁ.routes.get  '/eventos'             , 'events'
+ﬁ.routes.get  '/noticias'            , 'news'
+ﬁ.routes.get  '/soporte/contactanos' , 'support/contact'
+ﬁ.routes.post '/soporte/contactanos' , 'support/contact'
