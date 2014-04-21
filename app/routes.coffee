@@ -1,5 +1,5 @@
 ﬁ.routes.get  '/'                    , 'home'
+ﬁ.routes.get  '/nosotros'            , 'aboutus'
 ﬁ.routes.get  '/eventos'             , 'events'
-ﬁ.routes.get  '/noticias'            , 'news'
 ﬁ.routes.get  '/contacto'            , 'contact'
 ﬁ.routes.post '/contacto'            , 'contact'

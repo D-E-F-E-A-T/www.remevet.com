@@ -1,4 +1,11 @@
-section(id="home", data-type="background", data-speed="10")
-	article Texto 1
-section(id="about", data-type="background", data-speed="10")
-	article Texto 2
+form.custom
+	.row
+		.large-6.columns
+			div.form_container
+				p Nueva noticia
+				.large-9.columns
+					label Noticia
+					textarea
+				.large-3.columns
+					input(type="file", accept="image/*", name="file", multiple, value="Subir fotos")
+					input(type="submit", value="Crear noticia")

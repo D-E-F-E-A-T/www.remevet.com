@@ -1,8 +1,8 @@
-nav.top-bar(data-topbar='data-topbar')
+.fixed: nav.top-bar(data-topbar='data-topbar')
 
 	ul.title-area
 		li.name
-			h1: a(href='#') REMEVET
+			h1: a(href=ﬁ.bundles['home']) REMEVET
 
 		li.toggle-topbar.menu-icon
 			a(href='#') &nbsp;
@@ -11,13 +11,13 @@ nav.top-bar(data-topbar='data-topbar')
 
 		ul.right
 			li.has-dropdown
-				a(href='#') Nosotros
+				a(href=ﬁ.bundles['aboutus']) Nosotros
 				ul.dropdown
-					li: a(href="#") ¿Qué es REMEVET?
-					li: a(href="#") Historia
-					li: a(href="#") Misión
-					li: a(href="#") Visión
-					li: a(href="#") Objetivos
+					li: a(href=ﬁ.bundles['aboutus'] + "#remevet") ¿Qué es REMEVET?
+					li: a(href=ﬁ.bundles['aboutus'] + "#historia") Historia
+					li: a(href=ﬁ.bundles['aboutus'] + "#mision") Misión
+					li: a(href=ﬁ.bundles['aboutus'] + "#vision") Visión
+					li: a(href=ﬁ.bundles['aboutus'] + "#objetivos") Objetivos
 
 			li: a(href='#') Revistas
 			li: a(href='#') Eventos
