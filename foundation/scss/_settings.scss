@@ -1168,21 +1168,26 @@ $large-up: "#{$screen} and (min-width:#{lower-bound($large-range)})";
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #553212;
+
+$topbar-color-1st: #553212;
+$topbar-color-2nd: #f39f3f;
+
+
+$topbar-bg-color: $topbar-color-1st;
 $topbar-bg: linear-gradient(to bottom, lighten($topbar-bg-color, 7) 0%,  $topbar-bg-color 100%);
 
 // topbar-bg-color;
 
 // Height and margin
 $topbar-height: 100px;
-// $topbar-margin-bottom: 0;
+$topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: normal;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: #333;
+//$topbar-dropdown-bg: yellow;
 // $topbar-dropdown-link-color: #fff;
 // $topbar-dropdown-link-bg: #333;
 // $topbar-dropdown-link-weight: normal;
@@ -1196,10 +1201,10 @@ $topbar-height: 100px;
 // $topbar-link-color-active: #fff;
 // $topbar-link-color-active-hover: #fff;
 // $topbar-link-weight: normal;
-// $topbar-link-font-size: rem-calc(13);
+$topbar-link-font-size: rem-calc(18);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-// $topbar-link-bg-hover: #272727;
+$topbar-link-bg-hover: linear-gradient(to bottom, $topbar-color-2nd 0%,  darken($topbar-color-2nd, 10));
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
