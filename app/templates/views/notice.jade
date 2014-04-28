@@ -1,0 +1,15 @@
+mixin notice(messages, type)
+	#content-notice.large-4.large-centered.small-12.columns
+		each message in messages
+			.alert-box.radius.text-center(class=(type || ''))= message
+
+if locals.NOTICE && locals.NOTICE.error && locals.NOTICE.error.length
+	+notice(NOTICE.error, 'warning')
+
+if locals.NOTICE && locals.NOTICE.info && locals.NOTICE.info.length
+	+notice(NOTICE.info, 'info')
+
+if locals.NOTICE && locals.NOTICE.success && locals.NOTICE.success.length
+	+notice(NOTICE.success, 'success')
+
+- NOTICE = undefined

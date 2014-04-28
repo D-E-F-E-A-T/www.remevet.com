@@ -15,16 +15,20 @@ html.no-js(lang="es",class=is_desktop?'is_desktop':'')
 
 		link(rel='shortcut icon', href='/static/images/favicon.ico')
 		link(rel='stylesheet',    href='/static/foundation/css/foundation.css')
+		link(rel='stylesheet',    href='/static/foundation/ico/foundation-icons.css')
 		block ﬁ.link
 
 		script(src='/static/foundation/js/vendor/modernizr.js')
 
 	body
+		#data
+			user(data-id=USER.id, data-type=USER.type)
 
 		header
 			include views/header
 
 		#content
+			include views/notice
 			block ﬁ.content
 
 		script(src='/static/foundation/js/vendor/jquery.js')

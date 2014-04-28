@@ -1,11 +1,18 @@
-form.custom
-	.row
-		.large-6.columns
-			div.form_container
-				p Nueva noticia
-				.large-9.columns
-					label Noticia
-					textarea
-				.large-3.columns
-					input(type="file", accept="image/*", name="file", multiple, value="Subir fotos")
-					input(type="submit", value="Crear noticia")
+if USER.type == 'admin' && is_desktop
+
+	#home-news-admin.row: .large-12.columns
+		h5.subheader
+			span.fi-lock &nbsp;
+			span Publicar Noticia
+		form: .row.collapse
+			.large-10.small-12.columns
+				textarea(rows="7")
+			.large-2.small-12.columns
+				input(type="file", accept="image/*", name="file", multiple, value="Subir fotos")
+
+				a(href="#").button.expand.secondary
+					span.fi.fi-photo
+					span Imágenes …
+				a(href="#").button.expand
+					span.fi.fi-arrow-up
+					span Publicar

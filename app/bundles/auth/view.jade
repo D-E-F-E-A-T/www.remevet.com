@@ -1,0 +1,12 @@
+.row: .large-4.small-12.columns.large-centered
+	h2: a(href=URL) Entrar
+
+	form(method="post")
+
+		label Correo electrónico
+			input(type="email", name="mail", placeholder="usuario@proveedor.com", required)
+
+		label Contraseña
+			input(type="password", name="pass", required)
+
+		input.button.radius.small.right(type="submit", value="Entrar")

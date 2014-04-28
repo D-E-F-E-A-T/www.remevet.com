@@ -8,4 +8,5 @@ $document.foundation().ready ->
 	# Execute all onReady functions
 	(fn.call(this) if typeof fn is 'function') for fn in $document.readyStack
 
-	
+
+	window.USER = $('#data user').data()
