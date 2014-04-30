@@ -8,3 +8,5 @@
 ﬁ.routes.get  '/eventos'             , 'events'
 ﬁ.routes.get  '/contacto'            , 'contact'
 ﬁ.routes.post '/contacto'            , 'contact'
+ﬁ.routes.get  '/orientacion'         , 'orientation'
+
