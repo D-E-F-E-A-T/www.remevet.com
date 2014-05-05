@@ -32,10 +32,36 @@ blockquote
 	margin:0.75em 2em 1.5em 0
 	float:left
 	display:block
-	
+
 @media screen and (max-width:1024px)
 	blockquote
 		width: 50%
+
+@media screen and (orientation:portrait)
+	.app-photo
+		width:738px
+		height:1024px
+		background-image:url("http://placehold.it/736x1024")
+	.app-text
+		z-index:100
+		position:absolute
+		color:red
+		font-size:24px
+		left:150px
+		top:20px
+@media screen and (orientation:landscape)
+	.app-photo
+		width:1024px
+		height:738px
+		background-image:url("http://placehold.it/1024x738")
+	.app-text
+		z-index:100
+		position:absolute
+		color:blue
+		font-size:24px
+		right:150px
+		bottom:20px
+
 
 // Hide orbit's controls
 // .orbit-slide-number
