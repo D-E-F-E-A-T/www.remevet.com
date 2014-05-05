@@ -5,7 +5,7 @@ block body
 
 		header.body-header
 			include ../common/body-header
-		
+
 		section.body-content
 
 			header.article-header
@@ -18,21 +18,21 @@ block body
 
 			//- Medium devices and up take orientation into account.
 			//- Portrait
-			.medium-12.columns.show-for-medium-up.hide-for-landscape
+			.medium-12.columns.show-for-medium-up: .hide-for-landscape
 				section.article-content
 					block content
-			
+
 			//- Landscape
-			.medium-6.columns.show-for-medium-up.hide-for-portrait
+			.medium-6.columns.show-for-medium-up: .hide-for-portrait
 				section.article-content-left
 					block content-left
-			.medium-6.columns.show-for-medium-up.hide-for-portrait
+			.medium-6.columns.show-for-medium-up: .hide-for-portrait
 				section.article-content-right
 					block content-right
-			
+
 			footer.article-footer
 				include ../common/article-footer
-			
+
 		footer.body-footer
 			include ../common/body-footer
-		
+
