@@ -9,7 +9,12 @@
 ﬁ.routes.get  '/contacto'            , 'contact'
 ﬁ.routes.post '/contacto'            , 'contact'
 ﬁ.routes.get  '/orientacion'         , 'orientation'
+
 ﬁ.routes.get  '/revista'             , 'magazine'
+ﬁ.routes.get  '/revista/assets/:file', 'magazine'
+
 ﬁ.routes.get  '/widget'              , 'widgets'
 ﬁ.routes.post '/widget'              , 'widgets'
 
+
+ﬁ.routes.error '/error', 'error'

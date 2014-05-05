@@ -1,0 +1,13 @@
+//- TODO: Style is not loading, What the hell??
+style.
+	#content { margin-top: 1em }
+	#content h1{margin:0; padding:0; line-height:1em; }
+	#content h1 .label {font-size: inherit; margin-right:0.5em;}
+	#content h1 small {margin-left:3em}
+.row: .large-6.large-centered.columns
+	h1
+		span.label.alert.round.fi-skull
+		span Error 
+		span.subheader #{locals.status || ""}
+	h1: small #{locals.message || "Desconocido"}
+

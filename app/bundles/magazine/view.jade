@@ -1,8 +1,11 @@
-.reveal
-	.slides
-		section
-			img(src="/static/cover.png")
-		section
-			h1 content
-		section
-			video(src="/static/movie.mp4", controls)
+extends views/master
+
+block content
+	.reveal
+		.slides
+			section
+				img(src="/static/cover.png")
+			section
+				h1 content
+			section
+				video(src="/static/movie.mp4", controls)

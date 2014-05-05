@@ -1,4 +1,4 @@
-$document.readyStack.push ->
+$(document).ready ->
 
 	Reveal.initialize
 		controls   : true
@@ -6,7 +6,7 @@ $document.readyStack.push ->
 		history    : true
 		center     : true
 		theme      : Reveal.getQueryHash().theme
-		transition : "default"
+		transition : "background"
 
 	Reveal.addEventListener "slidechanged", (e) ->
 		console.dir e.previousSlide
