@@ -1,28 +1,52 @@
 extends master
 
 block body
-
-	header: include ../common/body-header
-	
-	#content
-		header: include ../common/article-header
-
-		.large-12.small-12.medium-12.columns(data-equalizer)
-
-			.large-4.small-3.medium-3.columns(data-equalizer-watch)
-				block author-name
-			.large-3.medium-3.small-3.large-offset-9(data-equalizer-watch)
-				block author-photo
-
-		.large-12.small-12.medium-12.columns
-			hr.app-line
-		.large-10.small-10.medium-10.columns.large-centered.small-centered.medium-centered
-			block content-photo
-
-		.large-12.small-12.columns.medium-12
-			block content
+	section.row.template-article-init
+		header.body-header
+			include ../common/body-header
 		
-		footer: include ../common/article-footer
-		
-	footer: include ../common/body-footer
-		
+		section.body-content
+			
+			header.article-header
+				include ../common/article-header
+
+			section.article-author.large-12.columns
+				section.article-author-name.left
+					block author-name
+
+				section.article-author-photo.right.text-right
+					block author-photo
+				hr
+
+			//- Small devices get full-width no matter the orientation.
+
+			.small-12.columns.hide-for-medium-up
+				section.article-content-photo
+					block content-photo
+				section.article-content
+					block content
+
+			//- Medium devices and up take orientation into account.
+
+			//- Portrait
+			.medium-12.columns.show-for-medium-up.hide-for-landscape
+				section.article-content-photo
+					block content-photo
+				section.article-content
+					block content
+
+			//- Landscape
+			.medium-6.columns.show-for-medium-up.hide-for-portrait
+				section.article-content-photo
+					block content-photo
+				section.article-content-left
+					block content-left
+			.medium-6.columns.show-for-medium-up.hide-for-portrait
+				section.article-content-right
+					block content-right
+
+			footer.article-footer
+				include ../common/article-footer
+			
+		footer.body-footer
+			include ../common/body-footer
