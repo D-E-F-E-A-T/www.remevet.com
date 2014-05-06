@@ -1,3 +1,5 @@
 module.exports = (request, response, next)->
 
-	response.render request.errors or {}
+	return response.end JSON.stringify request.errors or {}
+
+	#response.render request.errors or {}

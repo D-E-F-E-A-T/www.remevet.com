@@ -10,8 +10,9 @@
 ﬁ.routes.post '/contacto'            , 'contact'
 ﬁ.routes.get  '/orientacion'         , 'orientation'
 
+ﬁ.routes.get  '/revistas'              , 'magazine'
 ﬁ.routes.get  '/revista/n/*'           , 'magazine'
-ﬁ.routes.get  '/revista/assets/:file', 'magazine'
+ﬁ.routes.get  '/revista/assets/*'      , 'magazine'
 
 ﬁ.routes.get  '/widget'              , 'widgets'
 ﬁ.routes.post '/widget'              , 'widgets'

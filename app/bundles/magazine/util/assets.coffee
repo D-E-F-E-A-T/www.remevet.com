@@ -15,8 +15,8 @@ paths = [route, ﬁ.path.bundles, ﬁ.path.templates]
 module.exports 	= (request, response, next)->
 
 	# only serve valid file extensions.
-	file    = String(request.params.file).split('.')
-	file[1] = 
+	file    = String(request.params[0]).split('.')
+	file[1] =
 		if file[1] is 'css' then 'styl'
 		else (if file[1] is 'js' then 'coffee' else false)
 
@@ -44,6 +44,6 @@ module.exports 	= (request, response, next)->
 		return next(status:404, message: "File not found.") if not exists
 
 		FS.readFile filename, onFileRead
-		
+
 
 	FS.exists filename, onFileCheck
