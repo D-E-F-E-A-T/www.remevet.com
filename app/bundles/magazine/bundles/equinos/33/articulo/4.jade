@@ -1,0 +1,7 @@
+extends ../../../../views/templates/article-video
+
+block content
+	video.show-for-landscape#land(controls)
+		source(preload, src="/static/remevet.m4v", type="video/mp4; codecs=avc1.42E01E,mp4a.40.2", autoplay)
+	video.show-for-portrait#port(controls)
+		source(src="/static/port.mp4")

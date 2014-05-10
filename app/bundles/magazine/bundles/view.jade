@@ -27,20 +27,31 @@ block body
 			.swiper-slide
 				include equinos/33/articulo/2
 
-
-
 		.swiper-slide
 			include equinos/33/articulo/1
+
+		.swiper-slide
+			include equinos/33/articulo/4
 
 block script
 	script(src="/static/swiper/swiper.js")
 	script.
-
 		$(document).ready(function(){
 
 			$('.swiper-parent').swiper({
 				mode:'horizontal',
 				loop: false,
+				onSlideChangeEnd: function(e){
+					console.dir(e.activeSlide().index())
+					if (e.activeSlide().index() == 3) {
+						var v = document.getElementsByTagName("video")[0];
+						v.play();
+						}
+					if (e.activeSlide().index() != 3) {
+						var v = document.getElementsByTagName("video")[0];
+						v.pause();
+						}
+				}
 			});
 
 

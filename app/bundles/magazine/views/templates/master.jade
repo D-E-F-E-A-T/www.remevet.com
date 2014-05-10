@@ -35,4 +35,6 @@ html.no-js(lang="es",class=is_desktop?'is_desktop':'')
 		script(src='/static/foundation/js/foundation.min.js')
 		if locals.SCRIPT && SCRIPT.length
 			+auto('script', SCRIPT)
+		script.
+			$(document).foundation()
 		block script

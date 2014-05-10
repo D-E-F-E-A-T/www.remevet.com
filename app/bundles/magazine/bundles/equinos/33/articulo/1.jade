@@ -9,11 +9,30 @@ block author-photo
 
 //- Photos in one-column mode.
 block content-photo
-	img(src="http://placehold.it/320x200&text=Slide+(1col)", width="100%")
+	//- img(src="http://placehold.it/320x200&text=Slide+(1col)", width="100%")
+	ul(data-orbit)
+		li
+			img(src="http://placehold.it/320x200&text=Slide+(1col)", width="100%")
+			.orbit-caption Hola mundo
+		li
+			img(src="http://placehold.it/320x200&text=Slide+(1col)", width="100%")
+			.orbit-caption adios mundo
+		li
+			img(src="http://placehold.it/320x200&text=Slide+(1col)", width="100%")
+			.orbit-caption wtf
 
 //- Photos in two-column mode.
 block content-photo-left
-	img(src="http://placehold.it/320x270&text=Slide+(2col)", width="100%")
+	ul(data-orbit)
+		li
+			img(src="http://placehold.it/320x200&text=Slide+(1col)", width="100%")
+			.orbit-caption Hola mundo
+		li
+			img(src="http://placehold.it/320x200&text=Slide+(1col)", width="100%")
+			.orbit-caption adios mundo
+		li
+			img(src="http://placehold.it/320x200&text=Slide+(1col)", width="100%")
+			.orbit-caption wtf
 
 //- Content in one-column mode.
 block content
