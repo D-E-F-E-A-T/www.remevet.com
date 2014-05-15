@@ -24,7 +24,7 @@ block body
 			.swiper-slide
 				include equinos/33/articulo/2
 
-			.swiper-slide
+			.swiper-slide.swiper-no-swiping
 				include equinos/33/articulo/2
 
 		.swiper-slide
@@ -38,9 +38,11 @@ block script
 	script.
 		$(document).ready(function(){
 
-			$('.swiper-parent').swiper({
+			var mySwiper = $('.swiper-parent').swiper({
 				mode:'horizontal',
 				loop: false,
+				keyboardControl:true,
+				noSwiping:true,
 				onSlideChangeEnd: function(e){
 					console.dir(e.activeSlide().index())
 					if (e.activeSlide().index() == 3) {
@@ -54,10 +56,13 @@ block script
 				}
 			});
 
-
-			$('.swiper-nested').swiper({
+			var mySwiperNested = $('.swiper-nested').swiper({
 				mode:'vertical',
 				loop: false,
+			});
+
+			$( ".next" ).click(function() {
+				mySwiper.swipeNext();
 			});
 
 
