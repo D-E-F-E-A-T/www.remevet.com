@@ -1,0 +1,42 @@
+extends ../../../../views/templates/article-two-columns
+
+//- Content in one-column mode.
+block content
+	h3 Instrucciones para los autores
+	p El artículo debe escribirse y enviarse en español, utilizando una redacción clara e inequívoca, conforme a los estándares profesionales de cortesía y expresión.
+	p: strong Tipos de manuscritos y límite de palabras
+	p: i Caso Clínico (en orden cronológico)
+	h4 I. Introducción
+	ol
+		li(type="A") Introducción
+		li(type="A") Historia clínica
+		li(type="A") Hallazgos clínicos
+		li(type="A") Métodos diagnósticos y diagnóstico
+		li(type="A") Tratamiento
+		li(type="A") Resultados
+		ol
+			li En su caso Hallazgo post mortem
+		li(type="A") Discusión
+		li(type="A") Referencias
+
+
+//- Content in two-column mode.
+block content-left
+	h1 Instrucciones para los autores
+
+block content-right
+	p El artículo debe escribirse y enviarse en español, utilizando una redacción clara e inequívoca, conforme a los estándares profesionales de cortesía y expresión.
+	p: strong Tipos de manuscritos y límite de palabras
+	p: i Caso Clínico (en orden cronológico)
+	h4 I. Introducción
+	ol
+		li(type="A") Introducción
+		li(type="A") Historia clínica
+		li(type="A") Hallazgos clínicos
+		li(type="A") Métodos diagnósticos y diagnóstico
+		li(type="A") Tratamiento
+		li(type="A") Resultados
+		ol
+			li En su caso Hallazgo post mortem
+		li(type="A") Discusión
+		li(type="A") Referencias
