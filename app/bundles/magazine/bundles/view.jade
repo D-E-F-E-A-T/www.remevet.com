@@ -16,22 +16,36 @@ block body
 	.swiper-container.swiper-parent: .swiper-wrapper
 
 		.swiper-slide
-			include equinos/33/articulo/1
 
+			include equinos/33/articulo/1
 
 		.swiper-slide: .swiper-container.swiper-nested: .swiper-wrapper
 
 			.swiper-slide
+
 				include equinos/33/articulo/2
 
 			.swiper-slide.swiper-no-swiping
+
 				include equinos/33/articulo/2
 
 		.swiper-slide
+
 			include equinos/33/articulo/1
 
 		.swiper-slide
+
 			include equinos/33/articulo/4
+
+
+		.swiper-slide
+
+			include equinos/33/articulo/5
+
+		.swiper-slide.swiper-no-swiping
+
+			include equinos/33/articulo/6
+
 
 block script
 	script(src="/static/swiper/swiper.js")

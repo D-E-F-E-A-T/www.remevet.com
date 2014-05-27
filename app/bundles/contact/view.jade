@@ -1,30 +1,35 @@
-form(method="POST"): .row: .small-12.large-8.large-centered.columns
-
-	if locals.errors
-		each error in locals.errors
-			.alert-box.secondary.radius= error
-
-	if locals.infos
-		each info in locals.infos
-			.alert-box.radius= info
-	else
-		.row
-			.large-6.small-12.columns
-				h2: a(href=ﬁ.bundles['support/contact']) Contáctanos
-			.large-6.small-12.columns
-		.row
-			.large-6.small-12.columns
+.row.collapse(data-equalizer)
+	.large-3.small-12.columns.show-for-large-up(data-equalizer-watch)
+		img.myMargin(src='/static/bann1.jpeg', height="auto", width="250")
+		img.myMargin(src='/static/bann2.jpeg', height="auto", width="250")
+		img.myMargin(src='/static/bann3.jpeg', height="auto", width="250")
+	.large-3.small-12.columns.hide-for-large-up(data-equalizer-watch)
+		img.myMargin(src='/static/bann1.jpeg', height="auto", width="33%")
+		img.myMargin(src='/static/bann2.jpeg', height="auto", width="33%")
+		img.myMargin(src='/static/bann3.jpeg', height="auto", width="33%")
+	.large-8.small-12.large-offset-1.columns.large-centered(data-equalizer-watch)
+		form(method="POST")
+			.row: .large-12.small-12.columns
+				h2: a Contáctanos
+			.row: .large-12.small-12.columns
 				label.required: span Nombre
 				input(type='text', name="name", placeholder='', required)
-			.large-6.small-12.columns
+			.row: .large-12.small-12.columns
 				label.required Tu correo
 				input(type='email', name="email", placeholder='', required)
-		.row: .large-12.small-12.columns
-			label.required Asunto
-			input(type='text', name="subject", placeholder='', required)
-		.row: .large-12.small-12.columns
-			label.required ¿En qué te pondemos ayudar?
-			textarea(rows='6', name="body", required)
-		.row
-			.large-12.small-12.columns
-				button.button.small.radius(type='submit').right Enviar
+			.row: .large-12.small-12.columns
+				label.required Teléfono
+				input(type='email', name="phone", placeholder='')
+			.row: .large-12.small-12.columns
+				label.required Ciudad
+				input(type='email', name="city", placeholder='')
+			.row: .large-12.small-12.columns
+				label.required Asunto
+				input(type='text', name="subject", placeholder='', required)
+			.row: .large-12.small-12.columns
+				label.required ¿En qué te pondemos ayudar?
+				textarea(rows='6', name="body", required)
+			.row
+				.large-12.small-12.columns
+					button.button.small.radius(type='submit').right Enviar
+

@@ -30,9 +30,12 @@
 			li: a(href='#')
 				span.fi.fi-address-book
 				span Directorio
-			li: a(href='#')
+			li: a(href='/contacto')
 				span.fi.fi-mail
 				span Contacto
+			li: a(href='/tienda')
+				span.fi.fi-shopping-cart
+				span Tienda
 
 			//- Do not show the "user menu" when inside the login view.
 			if URL != ﬁ.bundles['auth'] && USER.type == 'anon'

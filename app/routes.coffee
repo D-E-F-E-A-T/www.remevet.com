@@ -17,5 +17,7 @@
 ﬁ.routes.get  '/widget'              , 'widgets'
 ﬁ.routes.post '/widget'              , 'widgets'
 
+ﬁ.routes.get  '/tienda'              , 'store'
+
 
 ﬁ.routes.error '/error', 'error'
