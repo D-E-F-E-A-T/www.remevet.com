@@ -1,5 +1,4 @@
 @import 'nib'
-@import url('http://fonts.googleapis.com/css?family=Cabin:700,700italic')
 
 $skew       = 25.62deg
 $height     = 105px
@@ -9,6 +8,9 @@ $color-line = rgb(255,153,51)
 &
 	height     : $height
 	background : $color-bg
+	overflow   : hidden
+	position   : relative
+
 
 
 & > span.line
@@ -118,21 +120,33 @@ nav
 
 			&.color1
 				background: #943A6C
+				a:hover
+					background: #990066
 
 			&.color2
 				background: #D9B24A
+				a:hover
+					background: #FFBB00
 
 			&.color3
 				background: #48B8B0
+				a:hover
+					background: #008C8C
 
 			&.color4
 				background: #3E8FC5
+				a:hover
+					background:#0077DD
 
 			&.color5
 				background: #DD5988
+				a:hover
+					background: #DE004E
 
 			&.color6
 				background: #8DB23B
+				a:hover
+					background:#99CC00
 
 			&:first-child
 				margin-left: 1em

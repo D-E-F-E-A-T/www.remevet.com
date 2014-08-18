@@ -1,62 +1,25 @@
-mixin news(isSmall)
-	if isSmall
-		div: img(src="//placehold.it/300x150&text=Noticia", width="100%", style="margin-bottom:1em")
-	else
-		img(src="//placehold.it/300x200&text=Noticia").left
-	h4: a.secondary(href="#") Título de la Noticia
-	h6.subheader
-		a(href="#") @HectorMenendez
-		span •
-		a(href="#") 2h
-	p Lorem ipsum Anim Duis aliqua fugiat dolore consectetur nostrud in laborum sed labore eiusmod in nisi enim commodo qui ullamco sed aliqua laborum esse officia ex pariatur labore aliqua ea tempor minim tempor id enim ea consectetur exercitation consectetur quis enim elit laborum velit et reprehenderit commodo pariatur voluptate Excepteur nisi ut ea Duis qui sed consequat deserunt esse officia cupidatat commodo tempor pariatur pariatur Duis anim et non et labore fugiat elit sit ut reprehenderit cillum laboris est Ut dolore non dolor exercitation velit sed magna mollit anim et eu consequat reprehenderit exercitation qui qui dolor aliquip elit pariatur dolore anim sunt commodo id tempor cillum qui mollit quis est culpa in veniam exercitation ad mollit ad qui cupidatat Ut proident et in ut amet aliquip exercitation magna irure veniam sed aliquip reprehenderit ut sunt ad ad quis nostrud nostrud velit labore aliquip voluptate non magna magna quis consectetur ea anim ea.
+#cover.row.collapse
 
-if USER.type == 'admin' && is_desktop
+	#cover-welcome.large-4.medium-5.columns
+		h2.color1 ¡Bienvenido!
+		p
+			strong REVISIÓN MÉDICA VETERINARIA&nbsp;
+			| es una publicación electrónica en español que está dirigida a los médicos veterinarios, estudiantes de veterinaria, académicos y personas interesadas en la medicina tanto de equinos, pequeñas especies y animales exóticos o de zoológico.
 
-	#home-news-admin.row: .large-12.columns
-		h5.subheader
-			span.fi-lock &nbsp;
-			span Publicar Noticia
-		form: .row.collapse
-			.large-10.small-12.columns
-				textarea(rows="7")
-			.large-2.small-12.columns
-				input(type="file", accept="image/*", name="file", multiple, value="Subir fotos")
+		p En sus páginas se analizan temas actuales de la medicina veterinaria, casos clínicos y procedimientos de vanguardia, con aportaciones de los especialistas más reconocidos de nuestro país y del extranjero.
 
-				a(href="#").button.expand.secondary
-					span.fi.fi-photo
-					span Imágenes …
-				a(href="#").button.expand
-					span.fi.fi-arrow-up
-					span Publicar
+		p
+			strong REVISIÓN MÉDICA VETERINARIA&nbsp;
+			| es el mejor medio en español para estar actualizado y aprender sobre los avances médicos, procedimientos actuales y casos clínicos.
 
+		a.button.color1.right(href=ﬁ.bundles['aboutus']) Conócenos
 
-.row#home-news(style="margin-top:1em")
-
-	//- Small devices get full-width no matter the orientation.
-	.small-12.columns.hide-for-medium-up: +news(true)
-	.small-12.columns.hide-for-medium-up: +news(true)
-	.small-12.columns.hide-for-medium-up: +news(true)
-
-	//- Medium devices and up take orientation into account.
-	//- Portrait
-	.medium-12.columns.show-for-medium-up: .hide-for-landscape
-		+news()
-	.medium-12.columns.show-for-medium-up: .hide-for-landscape
-		+news()
-	.medium-12.columns.show-for-medium-up: .hide-for-landscape
-		+news()
-
-	//- Landscape
-	.medium-6.columns.show-for-medium-up: .hide-for-portrait
-		+news(true)
-	.medium-6.columns.show-for-medium-up: .hide-for-portrait
-		+news(true)
-	.medium-6.columns.show-for-medium-up: .hide-for-portrait
-		+news(true)
-	.medium-6.columns.show-for-medium-up: .hide-for-portrait
-		+news(true)
-	.medium-6.columns.show-for-medium-up: .hide-for-portrait
-		+news(true)
-	.medium-6.columns.show-for-medium-up: .hide-for-portrait
-		+news(true)
-
+	#cover-article.large-8.medium-7.columns(style="background-image:url('/static/images/01.jpg')")
+		
+		article
+			div.uno
+				h3: a(href="#") Bases del Bienestar Animal en Fauna Silvestre
+				h4: a(href="#") MVZ. M en C. Adriana Cossío Bayúgar
+			div.dos
+				a.uno(href="#") Fauna Silvestre
+				a.dos(href="#") Leer Artículo
