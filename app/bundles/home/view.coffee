@@ -1,27 +1,28 @@
 $(document).ready ->
 
-	slickUpdate = (e)->
+	timer = null
+
+	screenUpdate = (e)->
 		$slides = $('#clients-slider .slide');
 		$slides.height $slides.first().width()
-
-	$('#cover-article').height $('#cover-welcome').outerHeight()
+		$('#cover-article').height $('#cover-welcome').outerHeight()
+		timer = null
 
 	$(window).resize ->
-		$('#cover-article').height $('#cover-welcome').outerHeight()
-		slickUpdate()
-
+		clearTimeout(timer) if timer isnt null
+		timer = setTimeout(screenUpdate, 500)
 
 	$('#clients-slider').slick
 		dots           : false
 		infinite       : true
 		speed          : 500
 		slidesToShow   : 8
-		slidesToScroll : 8
+		slidesToScroll : 2
 		autoplay       : true
 		autoplaySpeed  : 10000
 		arrows         : false
 		draggable      : true
-		onInit         : slickUpdate
+		onInit         : screenUpdate
 		responsive     : [{
 			breakpoint         : 1080
 			settings           : 
