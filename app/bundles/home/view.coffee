@@ -13,7 +13,7 @@ $(document).ready ->
 
 	$('#clients-slider').slick
 		dots           : false
-		infinite       : false
+		infinite       : true
 		speed          : 500
 		slidesToShow   : 8
 		slidesToScroll : 8
@@ -21,7 +21,6 @@ $(document).ready ->
 		autoplaySpeed  : 10000
 		arrows         : false
 		draggable      : true
-		lazyLoad       : 'progressive'
 		onInit         : slickUpdate
 		responsive     : [{
 			breakpoint         : 1080
