@@ -144,9 +144,53 @@ body > #content  > .row.collapse
 	background: #FEF9E5
 
 	#magazines-issues
-		
-		.magazine
-			margin-top:1.5em
+		padding: 1.5em 0
+
+		figure.magazine
+			margin:0
+
+			& > a
+				z-index:0
+				position:relative
+				display:block
+				top:0
+				left:0
+				height:100%
+
+			& > figcaption
+				z-index:1
+				position:relative
+				display:block
+				background: #fff
+				overflow:hidden
+
+				& > *
+					position:relative
+					line-height: 30px
+					font-family: 'Cabin', sans-serif
+					font-weight: 700
+
+				aside
+					float:right
+					background: #D9B24A
+					a
+						font-size: 16pt
+						padding: 0 0.5em
+						line-height: inherit
+						color: white
+						text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8);
+
+
+				h4
+					float:left
+					margin:0
+					padding:0
+					a
+						font-size: 12pt
+						color: rgb(84,53,25)
+						padding: 0 0.5em
+
+
 
 	#magazines-header
 		line-height:3em
