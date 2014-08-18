@@ -10,7 +10,7 @@ $(document).ready ->
 
 	$(window).resize ->
 		clearTimeout(timer) if timer isnt null
-		timer = setTimeout(screenUpdate, 500)
+		timer = setTimeout(screenUpdate, 666)
 
 	$('#clients-slider').slick
 		dots           : false
