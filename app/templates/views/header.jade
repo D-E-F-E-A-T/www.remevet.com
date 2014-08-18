@@ -1,54 +1,15 @@
-.fixed: nav.top-bar(data-topbar='data-topbar')
+h1: a(href="/") REMEVET
+span.line
+span.patch
 
-	ul.title-area
-		li.name
-			h1: a(href=ﬁ.bundles['home']) REMEVET
+nav
+	span.line
+	ul.inline-list
+		li.color1: a(href="#"): span Nosotros
+		li.color2: a(href="#"): span Revistas
+		li.color3: a(href="#"): span Eventos
+		li.color4: a(href="#"): span Tienda
+		li.color5: a(href="#"): span Biblioteca
+		li.color6: a(href="#"): span Comunidad
 
-		li.toggle-topbar.menu-icon
-			a(href='#') &nbsp;
-
-	section.top-bar-section
-
-		ul.right
-			li.has-dropdown
-				a(href=ﬁ.bundles['aboutus'])
-					span.fi.fi-torsos-all
-					span Nosotros
-				ul.dropdown
-					li: a(href=ﬁ.bundles['aboutus'] + "#remevet") ¿Qué es REMEVET?
-					li: a(href=ﬁ.bundles['aboutus'] + "#historia") Historia
-					li: a(href=ﬁ.bundles['aboutus'] + "#mision") Misión
-					li: a(href=ﬁ.bundles['aboutus'] + "#vision") Visión
-					li: a(href=ﬁ.bundles['aboutus'] + "#objetivos") Objetivos
-
-			li: a(href='/revistas')
-				span.fi.fi-book
-				span Revistas
-			li: a(href='#')
-				span.fi.fi-calendar
-				span Eventos
-			li: a(href='#')
-				span.fi.fi-address-book
-				span Directorio
-			li: a(href='/contacto')
-				span.fi.fi-mail
-				span Contacto
-			li: a(href='/tienda')
-				span.fi.fi-shopping-cart
-				span Tienda
-
-			//- Do not show the "user menu" when inside the login view.
-			if URL != ﬁ.bundles['auth'] && USER.type == 'anon'
-
-				li.active: a(href=ﬁ.bundles['auth'])
-					span.fi.fi-arrow-right
-					span Entrar
-
-			if URL != ﬁ.bundles['auth'] && USER.type != 'anon'
-
-				li.active.has-dropdown
-					a(href="#"): span.fi.fi-torso
-					ul.dropdown
-						li: a(href=ﬁ.bundles['auth/logout']) Salir
-
-
+	span.patch

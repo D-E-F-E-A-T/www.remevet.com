@@ -1,15 +1,14 @@
-!!!5
-//if IE 8
-	html.no-js.lt-ie9(lang='es', class=is_desktop?'is_desktop':'')
-
-// [if gt IE 8] <!
+doctype html
+<!--[if lt IE 9]><html class="ie8" lang="es"><![endif]-->
+<!--[if !IE]><!-->
 html.no-js(lang="es",class=is_desktop?'is_desktop':'')
-	// <![endif]
+		<!--<![endif]-->
 
 	head
 		meta(charset='utf-8')
-		meta(name='viewport', content='width=1024, user-scalable=no')
 		meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+		meta(property="og:site_name", content=NAME)
 		block ﬁ.meta
 
 		title= (TITLE? TITLE + ' | ' : '') + (NAME || '')
@@ -31,6 +30,9 @@ html.no-js(lang="es",class=is_desktop?'is_desktop':'')
 		#content
 			include views/notice
 			block ﬁ.content
+
+		footer
+			include views/footer
 
 		script(src='/static/foundation/js/vendor/jquery.js')
 		script(src='/static/foundation/js/vendor/fastclick.js')
