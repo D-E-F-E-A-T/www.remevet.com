@@ -9,5 +9,9 @@
 ﬁ.routes.get  '/contacto'            , 'contact'
 ﬁ.routes.post '/contacto'            , 'contact'
 
+ﬁ.routes.get  '/eventos'             , 'calendar'
+
+ﬁ.routes.get  '/revistas'             , 'magazines'
+
 
 ﬁ.routes.error '/error', 'error'
