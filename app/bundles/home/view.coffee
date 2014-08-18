@@ -20,8 +20,8 @@ $(document).ready ->
 		speed          : 500
 		slidesToShow   : 8
 		slidesToScroll : 8
-		#autoplay       : true
-		#autoplaySpeed  : 10000
+		autoplay       : true
+		autoplaySpeed  : 10000
 		arrows         : false
 		draggable      : true
 		lazyLoad       : 'progressive'
