@@ -18,6 +18,9 @@ users.push
 		first : 'Alejandra'
 		last  : 'Piña'
 
+Users = require '../../../templates/json/users'
+console.log JSON.stringify Users
+
 module.exports = (request, response, next)->
 
 	ﬁ.log.debug 'request.body', JSON.stringify request.body
@@ -26,7 +29,7 @@ module.exports = (request, response, next)->
 		response.flash 'notice-error', ['Todos los campos son requeridos']
 		return response.redirect ﬁ.bundles['auth']
 
-	for user in users
+	for user in Users
 		ﬁ.log.trace 'user', JSON.stringify user
 		continue if request.body.mail isnt user.mail or request.body.pass isnt user.pass
 		# User found successfully

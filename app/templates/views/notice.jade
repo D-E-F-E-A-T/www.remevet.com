@@ -1,5 +1,5 @@
 mixin notice(messages, type)
-	#content-notice.large-4.large-centered.small-12.columns
+	.large-4.large-centered.small-12.columns
 		each message in messages
 			.alert-box.radius.text-center(class=(type || ''))= message
 

@@ -1,0 +1,89 @@
+#magazines.row.collapse
+	#magazines-header
+		a.uno(href="#") Registro
+form(method='post').signup
+
+	.row: .large-12.small-12.columns
+
+		.large-6.small-12.columns
+			label Nombre(s)
+			input(type='text', name='nameF', required)
+
+		.large-6.small-12.columns
+			label Apellidos
+			input(type='text', name='nameL', required)
+
+		.large-6.small-12.columns
+			label Sexo
+			input(type='text', name='sex')
+
+		.large-6.small-12.columns
+			label Calle
+			input(type='text', name='street')
+
+		.large-6.small-12.columns
+			label Número
+			input(type='text', name='number')
+
+		.large-6.small-12.columns
+			label Colonia
+			input(type='text', name='col', required)
+
+		.large-6.small-12.columns
+			label C.P.
+			input(type='text', name='zp')
+
+		.large-6.small-12.columns
+			label Municipio
+			input(type='text', name='mun')
+
+		.large-6.small-12.columns
+			label Estado
+			input(type='text', name='state')
+
+		.large-6.small-12.columns
+			label País
+			input(type='text', name='country')
+
+		.large-6.small-12.columns
+			label Teléfono
+			input(type='text', name='phone', required)
+
+		.large-6.small-12.columns
+			label Fax
+			input(type='text', name='fax', required)
+
+		.large-6.small-12.columns
+			label Apellidos
+			input(type='text', name='nameL', required)
+
+
+		.large-6.small-12.columns
+			input(type="checkbox", name="receive")
+			small
+				span
+					| Deseo recibir newsletter de REMEVET y sus patrocinadores
+
+
+	.row: .large-12.small-12.columns
+
+		.large-6.small-12.columns
+			label Correo electrónico
+			input(type='email',name='mail1', required)
+
+		.large-6.small-12.columns
+			label Confirmar correo
+			input(type='email',name='mail2', required)
+
+	.row: .large-12.small-12.columns
+
+		.large-6.small-12.columns
+			label Contraseña
+			input(type='password',name='pass1', required)
+
+		.large-6.small-12.columns
+			label Confirma tu contraseña
+			input(type='password',name='pass2', required)
+
+		.large-4.small-4.columns
+			button.button.right(type='submit', name='confirmar') Enviar
