@@ -213,3 +213,92 @@
 				background: rgb(210, 160, 53)
 				font-style  : italic
 				font-size   : 15pt
+
+#events
+	background: #DBF4F2
+
+	#events-event
+		padding: 1.5em 0
+
+		figure.event
+			margin:0
+
+			& > a
+				z-index:0
+				position:relative
+				display:block
+				top:0
+				left:0
+				height:100%
+
+			& > figcaption
+				z-index:1
+				position:relative
+				display:block
+				background: #fff
+				overflow:hidden
+
+				& > *
+					position    :relative
+					font-family : 'Cabin', sans-serif
+					font-weight : 700
+					line-height : 40px
+					margin      : 0
+					padding     : 0
+
+					a
+						display:block
+						position:relative
+						padding: 0 0.5em
+						font-size:14pt
+
+				aside
+					float:right
+					background: #3DB7AD
+					padding: 0 1em
+					a
+						color: white
+						text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8);
+
+
+				h4
+					float:left
+					a
+						color: rgb(84,53,25)
+
+						span
+							line-height: 1em
+							display:block
+
+							&:first-child
+								margin-top:0.5em
+							&:last-child
+								margin-bottom:0.5em
+
+
+
+	#events-header
+		line-height:3em
+		background: #4DC6BD
+		overflow: hidden
+		font-family : 'Cabin', sans-serif;
+		text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8);
+
+		a
+			color: white
+			display:block
+			padding: 0 2em
+
+			&.uno
+				float:left
+				font-size: 18pt
+				text-transform: uppercase
+				padding-left: 1em
+				color: rgb(238, 255, 255)
+				text-shadow: 0 -1px 0 #888;
+					
+			&.dos
+				float:right
+				background: #3DB7AD
+				font-style  : italic
+				font-size   : 15pt
