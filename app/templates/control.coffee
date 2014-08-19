@@ -23,6 +23,7 @@ module.exports = (request, response, next)->
 	# a user is logged, populate global variable.
 	else
 		response.locals.USER[k] = v for k,v of request.session.user
+		response.locals.USER.type = 'user'
 
 	# there's no need of doing anything else, if the requested bundle is logout.
 	return next() if request.url is ﬁ.bundles['auth/logout']

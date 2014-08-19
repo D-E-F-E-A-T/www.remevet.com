@@ -19,5 +19,7 @@ Secure = ﬁ.require 'app', 'secure'
 
 ﬁ.routes.get  '/patrocinadores/articulos', Secure, 'sponsorship'
 
+ﬁ.routes.get  '/directorio'      ,                   'clinics'
+
 
 ﬁ.routes.error '/error', 'error'
