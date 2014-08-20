@@ -21,5 +21,7 @@ Secure = ﬁ.require 'app', 'secure'
 
 ﬁ.routes.get  '/directorio'      ,                   'clinics'
 
+ﬁ.routes.get  '/comunidad'      ,                   'community'
+
 
 ﬁ.routes.error '/error', 'error'
