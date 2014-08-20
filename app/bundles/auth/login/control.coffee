@@ -1,5 +1,4 @@
 Users = require '../../../templates/json/users'
-console.log JSON.stringify Users
 
 module.exports = (request, response, next)->
 
