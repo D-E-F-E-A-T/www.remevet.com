@@ -6,4 +6,6 @@ require './fi'
 	ﬁ.db    = instance
 	ﬁ.mongo = mongo
 
+	ﬁ.pdf = require './pdf'
+
 	ﬁ.listen()

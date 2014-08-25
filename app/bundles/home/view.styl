@@ -1,33 +1,33 @@
+.rainbow
+	z-index  :0
+	overflow :hidden
+	position :relative
+	height   :5px
+	width: 100%
+	.color
+		position :relative
+		display  :block
+		float    :left
+		height   :inherit
+		width    :16.666%
+
+		&.color1
+			background: #943A6C
+		&.color2
+			background: #D9B24A
+		&.color3
+			background: #48B8B0
+		&.color4
+			background: #3E8FC5
+		&.color5
+			background: #DD5988
+		&.color6
+			background: #8DB23B
+		&.color7
+			background: #EC8A8A
+
 #cover
 	background: linear-gradient(to bottom,  #FFFCF3 0%, #DFDCD3 100%);
-
-	#cover-rainbow
-		z-index  :0
-		overflow :hidden
-		position :relative
-		height   :5px
-		width: 100%
-		.color
-			position :relative
-			display  :block
-			float    :left
-			height   :inherit
-			width    :16.666%
-	
-			&.color1
-				background: #943A6C
-			&.color2
-				background: #D9B24A
-			&.color3
-				background: #48B8B0
-			&.color4
-				background: #3E8FC5
-			&.color5
-				background: #DD5988
-			&.color6
-				background: #8DB23B
-			&.color7
-				background: #EC8A8A
 
 	#cover-welcome
 		z-index:1
@@ -173,7 +173,7 @@
 
 					a
 						padding: 0 0.5em
-						font-size:1.1vw
+						font-size:14pt
 
 				aside
 					float:right
@@ -222,7 +222,7 @@
 	#events-event
 
 		figure.event
-			margin: 1.5em 0 0 0
+			margin: 1.5em 0 1.5em 0
 
 			img
 				width: 100%
@@ -256,9 +256,8 @@
 						font-size: 14pt
 
 				aside
-					float:right
 					background: #3DB7AD
-					padding: 0 1em
+					text-align:center
 					line-height : 40px
 					a
 						color: white
