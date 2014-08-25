@@ -1,0 +1,20 @@
+form(method="post"): .row: .large-6.small-12.columns.large-centered
+	
+	.row.collapse
+		h2: a(href=URL) Entrar
+
+		label Correo electrónico
+			input(type="email", name="mail", placeholder="usuario@email.com", required)
+
+		label Contraseña
+			input(type="password", name="pass", required)
+
+	.row.collapse
+
+		.small-5.columns
+			a.button.expand.secondary.small(href=ﬁ.bundles['auth/signup']) ¿Aun no tienes cuenta?
+
+		.small-3.columns: span &nbsp;
+
+		.small-4.columns
+			input.button.expand.small(type="submit", value="Entrar")

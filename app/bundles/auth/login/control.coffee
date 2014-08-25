@@ -1,18 +1,20 @@
-Users = require '../../../templates/json/users'
+Model = require './model'
 
 module.exports = (request, response, next)->
 
-	if not request.body.mail or not request.body.pass
-		response.flash 'notice-error', ['Todos los campos son requeridos']
-		return response.redirect ﬁ.bundles['auth']
+	return response.render() if request.method is 'GET'
 
-	for user in Users
-		continue if request.body.mail isnt user.Email or request.body.pass isnt user.Password
-		# User found successfully
-		request.session.user = user
+	Model request, (error, data)->
+		if error
+			response.status error.status
+			response.flash 'notice-error', error.message
+			return response.render()
 
-		response.flash 'notice-info', ["¡Bienvenido!"]
+		redirect = request.flash 'auth_redirect'
+		request.session.user = data
+
+		response.flash 'notice-info', ["¡ Bienvenido #{data.name_first} !"]
+
+		return response.redirect redirect if redirect
 		return response.redirect ﬁ.bundles['home']
 
-	response.flash 'notice-error', ['Los datos proporcionados fueron incorrectos']
-	return response.redirect ﬁ.bundles['auth']

@@ -1,89 +1,76 @@
-#magazines.row.collapse
-	#magazines-header
-		a.uno(href="#") Registro
-form(method='post').signup
+h2#content-header
+	a(href=ﬁ.bundles['auth/signup']) Registro
 
-	.row: .large-12.small-12.columns
+form(method="post"):.row
+	.small-12.large-6.columns.small-centered
 
-		.large-6.small-12.columns
-			label Nombre(s)
-			input(type='text', name='nameF', required)
+		fieldset 
 
-		.large-6.small-12.columns
-			label Apellidos
-			input(type='text', name='nameL', required)
+			legend Datos personales
 
-		.large-6.small-12.columns
-			label Sexo
-			input(type='text', name='sex')
+			.small-6.columns
+				label Nombre(s)
+				input(type="text", name="name_first", placeholder="", required)
 
-		.large-6.small-12.columns
+			.small-6.columns
+				label Apellido(s)
+				input(type="text", name="name_last", placeholder="", required)
+
+
+			.small-4.columns
+				label Género
+				select(name="gender", required)
+					option
+					option(value="F") Femenino
+					option(valie="M") Masculino
+
+			.small-8.columns
+				label Grado de estudios
+				select(name="studies")
+					option
+					option(value=1) Estudiante
+					option(valie=2) Titulado
+					option(value=3) Otro
+
+			.small-12.columns
+				label Email
+				input(type="email", name="mail_1", placeholder="",required)
+
+
+			.small-12.columns
+				label Confirmar Email
+				input(type="email", name="mail_2", placeholder="", required)
+
+			.small-6.columns
+				label Contraseña
+				input(type="password", name="pass_1", placeholder="",required)
+
+			.small-6.columns
+				label Confirmar contraseña
+				input(type="password", name="pass_2", placeholder="", required)
+		.row.collapse
+			.small-10.columns
+				input(type="checkbox", name="is_mailable", checked)
+				label(for="is_mailable"): small
+					| Deseo recibir información y ofertas de 
+					strong &nbsp;REMEVET&nbsp;
+					| y sus patrocinadores.
+
+			.small-2.columns
+				input.button.small.right.expand(type="submit", value="Registro") 
+
+//-
+	.small-6.columns: fieldset
+
+		.small-8.columns
 			label Calle
-			input(type='text', name='street')
+			input(type="text", name="address_street") 
 
-		.large-6.small-12.columns
-			label Número
-			input(type='text', name='number')
+		.small-2.columns
+			label No.
+			input(type="text", name="address_number")
 
-		.large-6.small-12.columns
-			label Colonia
-			input(type='text', name='col', required)
+		.small-2.columns
+			label Int.
+			input(type="text", name="address_interior")
 
-		.large-6.small-12.columns
-			label C.P.
-			input(type='text', name='zp')
-
-		.large-6.small-12.columns
-			label Municipio
-			input(type='text', name='mun')
-
-		.large-6.small-12.columns
-			label Estado
-			input(type='text', name='state')
-
-		.large-6.small-12.columns
-			label País
-			input(type='text', name='country')
-
-		.large-6.small-12.columns
-			label Teléfono
-			input(type='text', name='phone', required)
-
-		.large-6.small-12.columns
-			label Fax
-			input(type='text', name='fax', required)
-
-		.large-6.small-12.columns
-			label Apellidos
-			input(type='text', name='nameL', required)
-
-
-		.large-6.small-12.columns
-			input(type="checkbox", name="receive")
-			small
-				span
-					| Deseo recibir newsletter de REMEVET y sus patrocinadores
-
-
-	.row: .large-12.small-12.columns
-
-		.large-6.small-12.columns
-			label Correo electrónico
-			input(type='email',name='mail1', required)
-
-		.large-6.small-12.columns
-			label Confirmar correo
-			input(type='email',name='mail2', required)
-
-	.row: .large-12.small-12.columns
-
-		.large-6.small-12.columns
-			label Contraseña
-			input(type='password',name='pass1', required)
-
-		.large-6.small-12.columns
-			label Confirma tu contraseña
-			input(type='password',name='pass2', required)
-
-		.large-4.small-4.columns
-			button.button.right(type='submit', name='confirmar') Enviar

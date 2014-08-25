@@ -2,11 +2,12 @@ Secure = ﬁ.require 'app', 'secure'
 
 ﬁ.routes.get  '/' , 'home'
 
-ﬁ.routes.get  '/sesion/entrar'           , 'auth'
+ﬁ.routes.get  '/sesion/entrar'           , 'auth/login'
 ﬁ.routes.post '/sesion/entrar'           , 'auth/login'
+ﬁ.routes.get  '/sesion/registro'         , 'auth/signup'
+ﬁ.routes.post '/sesion/registro'         , 'auth/signup'
 ﬁ.routes.get  '/sesion/salir'            , 'auth/logout'
 
-ﬁ.routes.all '/sesion/registrar'         , 'auth/signup'
 
 ﬁ.routes.get  '/nosotros'                , 'aboutus'
 

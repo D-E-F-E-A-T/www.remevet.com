@@ -8,7 +8,7 @@ module.exports = (request, response, next)->
 
 	# Initialize the user global
 	response.locals.USER =
-		id   : 0
+		_id  : 0
 		type : 'anon'
 
 	# The current URL will be a global
@@ -19,7 +19,7 @@ module.exports = (request, response, next)->
 
 	# if no user is logged, assign a temporary id.
 	if not request.session.user
-		response.locals.USER.id = request.session.uuid
+		response.locals.USER._id = request.session.uuid
 	# a user is logged, populate global variable.
 	else
 		response.locals.USER[k] = v for k,v of request.session.user

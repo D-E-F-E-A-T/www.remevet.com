@@ -1,7 +1,8 @@
 mixin notice(messages, type)
-	.large-4.large-centered.small-12.columns
-		each message in messages
-			.alert-box.radius.text-center(class=(type || ''))= message
+	each message in messages
+		.alert-box(class=(type || ''), data-alert)
+			span= message
+			a(ref="#", class="close") &nbsp;&nbsp; &times;
 
 if locals.NOTICE && locals.NOTICE.error && locals.NOTICE.error.length
 	+notice(NOTICE.error, 'warning')

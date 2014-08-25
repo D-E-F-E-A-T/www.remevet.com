@@ -30,14 +30,18 @@ button.color1
 
 
 body > header
+	z-index: 2
 	@import 'styles/header'
 
+body > #notice
+	z-index: 1
+	@import 'styles/notice'
+
 body > #content
-	
-	& > #content-notice .alert-box
-		text-align: center
+	z-index: 0
 
 body > footer
+	z-index: 2
 	@import 'styles/footer'
 	
 .fi
