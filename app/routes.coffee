@@ -2,6 +2,8 @@ Secure = ﬁ.require 'app', 'secure'
 
 ﬁ.routes.get  '/' , 'home'
 
+ﬁ.routes.get '/ping', (req, res)-> res.end 'OK'
+
 ﬁ.routes.get  '/sesion/entrar'           , 'auth/login'
 ﬁ.routes.post '/sesion/entrar'           , 'auth/login'
 ﬁ.routes.get  '/sesion/registro'         , 'auth/signup'
