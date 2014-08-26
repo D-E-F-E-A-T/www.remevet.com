@@ -16,7 +16,8 @@ for file in exec(cmd, silent:true).output.split('\n')
 	issue = parseInt(name.pop(),10) or 0
 	slug  = name.join '-'
 	name  = name.map((e)-> "#{e.charAt(0).toUpperCase()}#{e.substring(1)}").join ' '
-
+	# la chaca
+	name  = name.replace 'Pequenas', "Pequeñas"
 	continue if not slug or not slug.length 
 
 	file = file.replace(ﬁ.path.static,'/static')

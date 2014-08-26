@@ -4,6 +4,7 @@ module.exports = (request, callback)->
 
 	pdfs = []
 	self = @
+
 	collection.find(slug:'pequenas-especies')
 		.sort(issue:-1)
 		.limit(1).toArray (error, data)->
