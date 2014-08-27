@@ -25,12 +25,37 @@ form(method="post"):.row
 					option(valie="M") Masculino
 
 			.small-8.columns
+				label Interés
+				select(name="interest", required)
+					option
+					option(value=1) Pequeñas Especies
+					option(valie=2) Equinos
+					option(value=3) Fauna Silvestre
+
+			.small-8.columns
 				label Grado de estudios
 				select(name="studies")
 					option
 					option(value=1) Estudiante
 					option(valie=2) Titulado
 					option(value=3) Otro
+
+			.small-4.columns
+				label Posgrado
+				select(name="degree")
+					option
+					option(value=1) Si
+					option(valie=2) No
+
+			.small-4.columns
+				label País
+				input(type="text", name="country", placeholder="", required)
+			.small-4.columns
+				label Estado
+				input(type="text", name="state", placeholder="", required)
+			.small-4.columns
+				label Municipio
+				input(type="text", name="town", placeholder="", required)
 
 			.small-12.columns
 				label Email

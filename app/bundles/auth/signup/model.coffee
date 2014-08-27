@@ -37,6 +37,11 @@ module.exports = (request, callback)->
 			name_first : request.body.name_first
 			name_last1 : request.body.name_last
 			gender     : request.body.gender
+			interest   : request.body.interest
+			degree     : request.body.degree
+			country    : request.body.country
+			state      : request.body.state
+			town       : request.body.town
 			email      : request.body.mail_1
 			is_mailable: request.body.is_mailable,
 
