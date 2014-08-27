@@ -4,8 +4,17 @@ module.exports = (request, response, next)->
 
 	response.locals.TITLE = 'Registro'
 	
+	if request.method is 'GET'
+		return response.render
+			breadcrumbs: [
+				name:"Entrar"
+				href:ﬁ.bundles['auth/login']
+			,
+				name:"Registro"
+				href:ﬁ.bundles['auth/signup']
+			] 
 
-	return response.render() if request.method is 'GET'
+	# FORM
 
 	Model request, (error, data)->
 		if error

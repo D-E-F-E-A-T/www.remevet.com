@@ -1,0 +1,8 @@
+if ﬁ.util.isArray(locals.breadcrumbs)
+	nav#breadcrumbs
+		ul.inline-list
+			li: a(href=ﬁ.bundles['home']) Portada
+			for breadcrumb,i in breadcrumbs
+				li(class= (i+1) == breadcrumbs.length? 'last' : '')
+					a(href=breadcrumb.href)= breadcrumb.name
+					span

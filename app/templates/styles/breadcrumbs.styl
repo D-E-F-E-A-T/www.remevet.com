@@ -1,0 +1,30 @@
+& 	
+	background     : #543519
+	margin         : -5px 0 0 0
+	padding        : 0 0 0 38px
+	line-height    : 2.5em	
+	font-size      : 14pt
+	font-weight    : normal
+	font-family    : 'Cabin', sans-serif;
+	text-transform : uppercase
+
+	li
+		&:not(:first-child)
+			margin-left:0
+		a
+			color: rgba(255,255,255,0.5)
+
+			&:after
+				content    : "»"
+				padding: 0 0.5em
+
+			&:hover
+				color: #FC9732
+
+		&.last a
+			color: #FFFFFF
+			cursor:default
+
+			&:after
+				display:none
+
