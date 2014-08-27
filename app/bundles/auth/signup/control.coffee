@@ -1,6 +1,8 @@
 Model = require './model'
 
 module.exports = (request, response, next)->
+
+	response.locals.TITLE = 'Registro'
 	
 
 	return response.render() if request.method is 'GET'
