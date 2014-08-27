@@ -4,53 +4,14 @@
 	
 	#magazines-issues.row
 
-		.small-6.medium-4.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26760948/remevet-pequenas-especies")
-					img(src="/static/images/magazines/pequenas/thumbnails/pe_20.png")
-				figcaption
-					h4: a(href="#") Pequeñas Especies
-					aside: a(href="#") 20
-
-		.small-6.medium-4.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26760707/revision-medica-pequenas-especies-19")
-					img(src="/static/images/magazines/pequenas/thumbnails/pe_19.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Pequeñas Especies
-					aside: a(href=ﬁ.bundles['magazines']) 19
-
-		.hide-for-small.medium-4.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26760706/revision-medica-pequenas-especies-18")
-					img(src="/static/images/magazines/pequenas/thumbnails/pe_18.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Pequeñas Especies
-					aside: a(href=ﬁ.bundles['magazines']) 18
-
-		.hide-for-small.hide-for-medium.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26760702/revision-medica-pequenas-especies-17")
-					img(src="/static/images/magazines/pequenas/thumbnails/pe_17.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Pequeñas Especies
-					aside: a(href=ﬁ.bundles['magazines']) 17
-
-		.hide-for-small.hide-for-medium.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26760700/revision-medica-pequenas-especies-16")
-					img(src="/static/images/magazines/pequenas/thumbnails/pe_16.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Pequeñas Especies
-					aside: a(href=ﬁ.bundles['magazines']) 16
-
-		.hide-for-small.hide-for-medium.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26760699/revision-medica-pequenas-especies-15")
-					img(src="/static/images/magazines/pequenas/thumbnails/pe_15.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Pequeñas Especies
-					aside: a(href=ﬁ.bundles['magazines']) 15
+		for pdf in data.small
+			.small-6.medium-4.large-2.columns
+				figure.magazine
+					a(href=ﬁ.settings.app.pdf.url+pdf.file+ﬁ.settings.app.pdf.opts)
+						img(src=pdf.image)
+					figcaption
+						h4: a(href="#")=pdf.name
+						aside: a(href="#")=pdf.issue
 
 
 #magazines.row.collapse
@@ -59,53 +20,14 @@
 	
 	#magazines-issues.row
 
-		.small-6.medium-4.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26761876/equinos24pdf")
-					img(src="/static/images/magazines/equinos/thumbnails/eq_24.png")
-				figcaption
-					h4: a(href="#") Equinos
-					aside: a(href="#") 24
-
-		.small-6.medium-4.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26760644/revision-medica-equina-23")
-					img(src="/static/images/magazines/equinos/thumbnails/eq_23.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Equinos
-					aside: a(href=ﬁ.bundles['magazines']) 23
-
-		.hide-for-small.medium-4.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26760647/revision-medica-equina-22")
-					img(src="/static/images/magazines/equinos/thumbnails/eq_22.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Equinos
-					aside: a(href=ﬁ.bundles['magazines']) 22
-
-		.hide-for-small.hide-for-medium.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26760642/revision-medica-equina-21")
-					img(src="/static/images/magazines/equinos/thumbnails/eq_21.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Equinos
-					aside: a(href=ﬁ.bundles['magazines']) 21
-
-		.hide-for-small.hide-for-medium.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26760640/revision-medica-equina-20")
-					img(src="/static/images/magazines/equinos/thumbnails/eq_20.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Equinos
-					aside: a(href=ﬁ.bundles['magazines']) 20
-
-		.hide-for-small.hide-for-medium.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26760639/revision-medica-equina-19")
-					img(src="/static/images/magazines/equinos/thumbnails/eq_19.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Equinos
-					aside: a(href=ﬁ.bundles['magazines']) 19
+		for pdf in data.horses
+			.small-6.medium-4.large-2.columns
+				figure.magazine
+					a(href=ﬁ.settings.app.pdf.url+pdf.file+ﬁ.settings.app.pdf.opts)
+						img(src=pdf.image)
+					figcaption
+						h4: a(href="#")=pdf.name
+						aside: a(href="#")=pdf.issue
 
 #magazines.row.collapse
 	#magazines-header
@@ -113,52 +35,12 @@
 	
 	#magazines-issues.row
 
-
-		.small-6.medium-4.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26760937/fauna-silvestre")
-					img(src="/static/images/magazines/fauna/thumbnails/fs_08.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Fauna Silvestre
-					aside: a(href=ﬁ.bundles['magazines']) 08
-
-		.small-6.medium-4.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26760661/revision-medica-fauna-silvestre-7")
-					img(src="/static/images/magazines/fauna/thumbnails/fs_07.png")
-				figcaption
-					h4: a(href="#") Fauna Silvestre
-					aside: a(href="#") 07
-
-		.hide-for-small.medium-4.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26760658/revision-medica-fauna-silvestre-6")
-					img(src="/static/images/magazines/fauna/thumbnails/fs_06.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Fauna Silvestre
-					aside: a(href=ﬁ.bundles['magazines']) 06
-
-		.hide-for-small.hide-for-medium.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26760657/revision-medica-animales-exoticos-5")
-					img(src="/static/images/magazines/fauna/thumbnails/fs_05.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Fauna Silvestre
-					aside: a(href=ﬁ.bundles['magazines']) 05
-
-		.hide-for-small.hide-for-medium.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26760655/revision-medica-animales-exoticos-4")
-					img(src="/static/images/magazines/fauna/thumbnails/fs_04.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Fauna Silvestre
-					aside: a(href=ﬁ.bundles['magazines']) 04
-
-		.hide-for-small.hide-for-medium.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26760654/revision-medica-animales-exoticos-3")
-					img(src="/static/images/magazines/fauna/thumbnails/fs_03.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Fauna Silvestre
-					aside: a(href=ﬁ.bundles['magazines']) 03
+		for pdf in data.wild
+			.small-6.medium-4.large-2.columns
+				figure.magazine
+					a(href=ﬁ.settings.app.pdf.url+pdf.file+ﬁ.settings.app.pdf.opts)
+						img(src=pdf.image)
+					figcaption
+						h4: a(href="#")=pdf.name
+						aside: a(href="#")=pdf.issue
 

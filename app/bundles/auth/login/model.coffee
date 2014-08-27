@@ -1,4 +1,3 @@
-
 module.exports = (request, callback)->
 
 	request.assert('mail', 'Dirección de correo inválida.').notEmpty().isEmail()
