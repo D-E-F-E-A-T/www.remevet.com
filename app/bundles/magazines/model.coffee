@@ -12,7 +12,7 @@ module.exports = (request, callback)->
 				else message: ['No se han encontrado revistas'], status:403
 			return callback.call self, error
 
-		collection.find(slug:'pequenas-especies').toArray (error, horses)->
+		collection.find(slug:'equinos').toArray (error, horses)->
 			if error or not data
 				error = 
 					if error
@@ -29,8 +29,8 @@ module.exports = (request, callback)->
 					return callback.call self, error
 
 				data.horses = horses
-				data.small = small
-				data.wild = wild
+				data.small  = small
+				data.wild   = wild
 
 
 
