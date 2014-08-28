@@ -1,0 +1,32 @@
+.row: .large-4.small-8.large-centered.small-centered.columns
+	-console.log('========== ' + isPOST)
+	if  isPOST
+
+		h2 ¡Listo !
+		p
+			| Hemos generado una nueva contraseña y la hemos enviado
+			| al correo electrónico que nos proporcionaste.
+		p
+			| Cuando estés listo,
+			a(href="#{ﬁ.bundles['auth/login']}")  Entra
+			|  nuevamente.
+
+	else
+		if locals.errors
+			each error in locals.errors
+				.alert-box.secondary.radius= error
+		form(method='post').recovery
+
+			.large-12.small-12.columns
+				h2 Recupera tu contraseña
+
+			.large-12.small-12.columns
+				label Correo electrónico
+				input(name='mail',type='mail', tabindex="1", required)
+			.large-12.small-12.columns
+				label Confirmar correo
+				input(name='mail2',type='mail', tabindex="2", required)
+
+			.small-12.large-12.columns
+				button.button.small.radius.right(type='submit', tabindex="3")
+					|	Enviar

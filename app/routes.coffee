@@ -9,6 +9,7 @@ Secure = ﬁ.require 'app', 'secure'
 ﬁ.routes.get  '/sesion/registro'         , 'auth/signup'
 ﬁ.routes.post '/sesion/registro'         , 'auth/signup'
 ﬁ.routes.get  '/sesion/salir'            , 'auth/logout'
+ﬁ.routes.all  '/sesion/recuperar'        , 'auth/recovery'
 
 
 ﬁ.routes.get  '/nosotros'                , 'aboutus'
