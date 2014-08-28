@@ -4,3 +4,7 @@ module.exports = (request, response, next)->
 
 	response.render
 		SCRIPT: []
+		breadcrumbs: [
+			name:"Nosotros"
+			href:ﬁ.bundles['aboutus']
+		]

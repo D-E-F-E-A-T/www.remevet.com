@@ -30,4 +30,8 @@ module.exports = (request, response, next)->
 		return next(status:500, errors:[error]) if error
 		ﬁ.log.debug "Mailed:", JSON.stringify message
 		response.render
+			breadcrumbs: [
+				name:"Comunidad"
+				href:ﬁ.bundles['community']
+			]
 			infos: ['Envío exitoso; nos pondremos en contacto a la brevedad.']

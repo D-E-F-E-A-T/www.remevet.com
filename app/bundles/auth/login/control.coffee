@@ -3,6 +3,14 @@ Model = require './model'
 module.exports = (request, response, next)->
 	response.locals.TITLE = 'Ingresar'
 
+	if request.method is 'GET'
+		return response.render
+			breadcrumbs: [
+				name:"Entrar"
+				href:ﬁ.bundles['auth/login']
+			]
+
+
 	return response.render() if request.method is 'GET'
 
 	Model request, (error, data)->
