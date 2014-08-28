@@ -9,9 +9,9 @@ module.exports = (request, callback)->
 	collection = ﬁ.db.collection 'user'
 
 	collection.findOne (email: request.body.mail),
-		email    : true
-		name     : true
-		password : true
+		email      : true
+		name_first : true
+		password   : true
 
 		(error, data)->
 			if error or not data

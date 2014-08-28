@@ -13,11 +13,15 @@ module.exports = (request, response, next)->
 	if request.method is 'GET'
 		return response.render
 			breadcrumbs: [
-				name:"Recuperar contraseña"
+				name:"Entrar"
 				href:ﬁ.bundles['auth/login']
+			,
+				name:"Recuperar contraseña"
+				href:ﬁ.bundles['auth/recovery']
 			]
 
 	return next() if request.method isnt 'POST'
+	return next(status:403, errors:['Los correos no coinciden'], message:['Los correos no coinciden']) if request.body.mail isnt request.body.mail2
 
 
 	Model request, (error, data)->
@@ -30,15 +34,19 @@ module.exports = (request, response, next)->
 			from    : "soporte@remevet"
 			to      : "#{request.body.mail}"
 			subject : "Recuperación de contraseña"
-			text    : "Gracias por utilizar REMEVET. Tu contraseña es #{data.password}"
+			text    : "Hola #{data.name_first}.\n Tu contraseña es #{data.password}. \nREMEVET"
 
 
 		mailer.sendMail message, (error, message)->
 			return next(status:500, errors:[error]) if error
+			ﬁ.log.debug "Enviando contraseña al correo #{data.email}"
 			response.render
 				breadcrumbs: [
 					name:"Recuperar contraseña"
-					href:ﬁ.bundles['recovery']
+					href:ﬁ.bundles['auth/recovery']
+				,
+					name:"Entrar"
+					href:ﬁ.bundles['auth/login']
 				]
 				isPOST : true
 
