@@ -17,7 +17,7 @@ $(document).ready ->
 		infinite       : true
 		speed          : 500
 		slidesToShow   : 8
-		slidesToScroll : 2
+		slidesToScroll : 8
 		autoplay       : true
 		autoplaySpeed  : 10000
 		arrows         : false
