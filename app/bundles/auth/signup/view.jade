@@ -46,7 +46,36 @@ form(method="post"):.row
 
 			.small-4.columns
 				label País
-				input(type="text", name="country", placeholder="", required)
+				select(name="country")
+					option
+					option(value="AR") Argentina
+					option(value="BZ") Belice
+					option(value="BO") Bolivia
+					option(value="BR") Brasil
+					option(value="CA") Canadá
+					option(value="CL") Chile
+					option(value="CO") Colombia
+					option(value="CR") CostaRica
+					option(value="CU") Cuba
+					option(value="DM") Dominica
+					option(value="EC") Ecuador
+					option(value="SV") ElSalvador
+					option(value="ES") España
+					option(value="US") EstadosUnidos
+					option(value="GT") Guatemala
+					option(value="HN") Honduras
+					option(value="JM") Jamaica
+					option(value="MX") México
+					option(value="NI") Nicaragua
+					option(value="PA") Panamá
+					option(value="PY") Paraguay
+					option(value="PE") Perú
+					option(value="PR") PuertoRico
+					option(value="DO") RepúblicaDominicana
+					option(value="UY") Uruguay
+					option(value="VE") Venezuela
+					option(value="O") Otro
+
 			.small-4.columns
 				label Estado
 				input(type="text", name="state", placeholder="", required)
