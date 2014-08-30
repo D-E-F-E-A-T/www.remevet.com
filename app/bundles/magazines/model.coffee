@@ -4,7 +4,7 @@ module.exports = (request, callback)->
 	collection = ﬁ.db.collection 'pdf'
 	data       = {}
 
-	collection.find(slug:'pequenas-especies').toArray (error, small)->
+	collection.find(slug:'pequenas-especies').sort(issue:-1).toArray (error, small)->
 		if error or not data
 			error = 
 				if error
@@ -12,7 +12,7 @@ module.exports = (request, callback)->
 				else message: ['No se han encontrado revistas'], status:403
 			return callback.call self, error
 
-		collection.find(slug:'equinos').toArray (error, horses)->
+		collection.find(slug:'equinos').sort(issue:-1).toArray (error, horses)->
 			if error or not data
 				error = 
 					if error
@@ -20,7 +20,7 @@ module.exports = (request, callback)->
 					else message: ['No se han encontrado revistas'], status:403
 				return callback.call self, error
 
-			collection.find(slug:'fauna-silvestre').toArray (error, wild)->
+			collection.find(slug:'fauna-silvestre').sort(issue:-1).toArray (error, wild)->
 				if error or not data
 					error = 
 						if error
