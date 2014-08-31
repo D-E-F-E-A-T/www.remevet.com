@@ -39,3 +39,11 @@ $(document).ready ->
 				slidesToShow   : 3
 				slidesToScroll : 3
 		}]
+
+	initialize = ->
+		myLatlng = new google.maps.LatLng(-25.363882, 131.044922)
+		mapOptions =
+		zoom: 4
+		center: myLatlng
+
+google.maps.event.addDomListener window, "load", initialize
