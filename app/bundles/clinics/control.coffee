@@ -20,4 +20,3 @@ module.exports = (request, response, next) ->
 				href:ﬁ.bundles['clinics']
 			]
 			clinics : data
-			feature : data.small[0]
