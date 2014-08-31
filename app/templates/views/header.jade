@@ -1,18 +1,22 @@
-h1: a(href="/") REMEVET
-span.line
-span.patch
+//- Logotype
+h1#header-logo
+	a(href=ﬁ.bundles['_home_']) REMEVET
+span#header-line
 
-nav
+a#header-button(href="#")
+
+//- Main Navigation
+nav#header-menu
 	span.line
-	ul.inline-list
-		li.color1: a(href=ﬁ.bundles['aboutus']): span Nosotros
-		li.color2: a(href="/revistas"): span Revistas
-		li.color3: a(href="/eventos"): span Eventos
-		li.color5: a(href="/patrocinadores/articulos"): span Biblioteca
-		li.color4: a(href="/directorio"): span Directorio
-		li.color4: a(href="/comunidad"): span Comunidad
-		if USER.type == "anon"
-			li.color7: a(href="/sesion/entrar"): span Entrar
-		else
-			li.color7: a(href="/sesion/salir"): span Salir
-	span.patch
+	ul
+		li.color-1.color-darker: a.color-0.color-bg-1(href=ﬁ.bundles['about']):     span Nosotros
+		li.color-2.color-darker: a.color-0.color-bg-2(href=ﬁ.bundles['magazines']): span Revistas
+		li.color-3.color-darker: a.color-0.color-bg-3(href=ﬁ.bundles['events']):    span Eventos
+		li.color-4.color-darker: a.color-0.color-bg-4(href=ﬁ.bundles['sponsors']):  span Biblioteca
+		li.color-5.color-darker: a.color-0.color-bg-5(href=ﬁ.bundles['directory']): span Directorio
+		li.color-6.color-darker: a.color-0.color-bg-6(href=ﬁ.bundles['community']): span Comunidad
+		li.color-7.color-darker
+			if USER.type == "anon"
+				a.color-0.color-bg-7(href=ﬁ.bundles['auth/login']): span Entrar
+			else
+				a.color-0.color-bg-8(href=ﬁ.bundles['auth/logout']): span Salir

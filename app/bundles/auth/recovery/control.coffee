@@ -12,7 +12,7 @@ module.exports = (request, response, next)->
 	response.locals.TITLE = 'Recupera tu contraseña'
 	if request.method is 'GET'
 		return response.render
-			breadcrumbs: [
+			BREADCRUMBS: [
 				name:"Entrar"
 				href:ﬁ.bundles['auth/login']
 			,
@@ -41,7 +41,7 @@ module.exports = (request, response, next)->
 			return next(status:500, errors:[error]) if error
 			ﬁ.log.debug "Enviando contraseña al correo #{data.email}"
 			response.render
-				breadcrumbs: [
+				BREADCRUMBS: [
 					name:"Recuperar contraseña"
 					href:ﬁ.bundles['auth/recovery']
 				,

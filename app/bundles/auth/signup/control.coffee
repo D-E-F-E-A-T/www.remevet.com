@@ -3,16 +3,16 @@ Model = require './model'
 module.exports = (request, response, next)->
 
 	response.locals.TITLE = 'Registro'
-	
+
 	if request.method is 'GET'
 		return response.render
-			breadcrumbs: [
+			BREADCRUMBS: [
 				name:"Entrar"
 				href:ﬁ.bundles['auth/login']
 			,
 				name:"Registro"
 				href:ﬁ.bundles['auth/signup']
-			] 
+			]
 
 	# FORM
 
@@ -28,4 +28,4 @@ module.exports = (request, response, next)->
 		response.flash 'notice-info', ["¡ Muchas gracias por registrarte #{data.name_first} !"]
 
 		return response.redirect redirect if redirect
-		return response.redirect ﬁ.bundles['home']
+		return response.redirect ﬁ.bundles['_home_']

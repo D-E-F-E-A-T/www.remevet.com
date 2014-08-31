@@ -1,0 +1,52 @@
+@import '/../templates/styles/globals'
+
+
+#content
+	padding-top: 0 !important
+
+#content section
+	background-color    : white
+	background-position : center top
+	background-repeat   : no-repeat
+	background-size     : 100% auto
+	padding-top         : 0
+	padding-bottom      : 28em
+
+	h1,h2,h3,h4,h5,h6,a
+		color: $colors-normal[1]
+		&:hover
+			color: $colors-hover[1]
+
+	article
+		box-shadow : 0 0 2em #000
+
+		h2
+			margin      : 0 0 0.5em 0
+			padding     : 0
+			line-height : 1.5em
+
+		img
+			width: 33%
+			margin-bottom: 1em
+
+			&.left
+				margin-right  : 1em
+			&.right
+				margin-left   : 1em
+			&.no-bottom
+				margin-bottom : 0
+
+
+		padding    : 2em 0
+		background : white
+
+	@media screen and (max-width:640px)
+		&
+			padding-bottom:0
+
+			article
+				box-shadow: none
+
+				img
+					width:auto
+					max-height:200px

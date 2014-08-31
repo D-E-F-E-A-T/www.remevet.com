@@ -1,7 +1,7 @@
 module.exports = (request, response, next) ->
 	response.locals.TITLE = 'Comunidad'
 	response.render
-		breadcrumbs: [
+		BREADCRUMBS: [
 			name:"Comunidad"
 			href:ﬁ.bundles['community']
 		]

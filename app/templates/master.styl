@@ -1,99 +1,38 @@
 // TODO: Add this to FOUNDATION SASS
-@import url('http://fonts.googleapis.com/css?family=Cabin:700,700italic')
+@import url('//fonts.googleapis.com/css?family=Cabin:700')
+@import url('//fonts.googleapis.com/css?family=Nobile:400italic,400')
 
-html
-	#fallback
+@import 'styles/globals'
+@import 'styles/generic'
+@import 'styles/colors'
+
+
+body
+
+	& > header
+		z-index: 2
+		@import 'styles/header'
+
+	& > nav#breadcrumbs
+		@import 'styles/breadcrumbs'
+
+	& > #notice
+		z-index: 2
+		@import 'styles/notice'
+
+	& > #content
+		z-index: 0
+
+		& > .row.collapse
+			// Force rows depending directly on content to use all width
+			max-width:100%
+
+	& > footer
+		z-index: 2
+		@import 'styles/footer'
+
+	& > #fallback
 		display:none
 
-h1,h2,h3,h4,h5,h6
-	font-family : 'Cabin', sans-serif
-
-	&.bold
-		font-weight: bold
-
-	@media screen and (min-width: 1024px)
-
-		&.huge
-			font-size: 3.5em
-
-
-body > #content  > .row.collapse
-	max-width:100%
-
-
-
-button.color1
-.button.color1
-	
-	background-color: #943A6C
-
-	&:hover
-	&:focus
-		background-color: #990066
-
-
-body > header
-	z-index: 2
-	@import 'styles/header'
-
-body > #notice
-	z-index: 2
-	@import 'styles/notice'
-
-body > #breadcrumbs
-	z-index: 1
-	@import 'styles/breadcrumbs'
-
-body > #content
-	z-index: 0
-
-body > footer
-	z-index: 2
-	@import 'styles/footer'
-	
-.fi
-	font-size      : 1.50em
-	margin-right   : 0.25em
-	margin-left    : -.25em
-	vertical-align : sub
-
-html.ie8
-	&, & body
-		width:100%
-		height:100%
-
-	body 
-		& > #fallback
-			position   : absolute
-			display    : block
-			background : #543519
-			top        : 0
-			left       : 0
-			width      : 100%
-			height     : 100%
-
-			& > img
-				width       : 18em
-				position    : relative
-				display     : block
-				top         : 2.5em
-				margin      : 0 auto
-
-			& > p
-				width       : 100%
-				display     : block
-				position    : absolute
-				top         : 0
-				left        : 0
-				font-weight : bold
-				font-size   : 20pt
-				color       : white
-				padding     : 5em  
-				padding-top : 10em  
-
-		& > #data
-		& > header
-		& > #notice
-		& > #content
-		& > footer
-			display:none
+	html.fallback &
+		@import 'styles/fallback'

@@ -1,0 +1,67 @@
+// Define colors used throughout the project
+$color-span = 33%
+
+.color-primary
+	color: $colors-1st
+	&:hover
+	&:focus
+		color: lighten($colors-1st, $color-span)
+
+.color-bg-primary
+	background-color: $colors-1st
+	&:hover
+	&:focus
+		background-color: lighten($colors-1st, $color-span)
+
+.color-secondary
+	color: $colors-2nd
+	&:hover
+	&:focus
+		color: lighten($colors-2nd, $color-span)
+
+.color-bg-secondary
+	background-color: $colors-2nd
+	&:hover
+	&:focus
+		background-color: lighten($colors-2nd, $color-span)
+
+
+for $color,$number in $colors-normal
+
+	.color-{$number}
+		color: $color
+
+		&:hover
+		&:focus
+			color: $colors-hover[$number]
+
+
+		&.color-lighter
+			color: lighten($color, $color-span)
+
+		&.color-darker
+			color: darken($color, $color-span)
+
+	.color-bg-{$number}
+		background-color: $color
+
+		&:hover
+		&:focus
+			background-color: $colors-hover[$number]
+
+
+		&.color-lighter
+			background-color: lighten($color, $color-span)
+
+			&:hover
+			&:focus
+				background-color: lighten($colors-hover[$number], $color-span)
+
+		&.color-darker
+			background-color: darken($color, $color-span)
+
+			&:hover
+			&:focus
+				background-color: darken($colors-hover[$number], $color-span)
+
+

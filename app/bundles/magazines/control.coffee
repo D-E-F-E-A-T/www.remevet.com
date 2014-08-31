@@ -11,7 +11,7 @@ module.exports = (request, response, next) ->
 			return response.render()
 		response.render
 			data: data
-			breadcrumbs: [
+			BREADCRUMBS: [
 				name:"Revistas"
 				href:ﬁ.bundles['magazines']
 			]

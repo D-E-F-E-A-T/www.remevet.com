@@ -5,7 +5,7 @@ module.exports = (request, response, next)->
 
 	if request.method is 'GET'
 		return response.render
-			breadcrumbs: [
+			BREADCRUMBS: [
 				name:"Entrar"
 				href:ﬁ.bundles['auth/login']
 			]
@@ -25,5 +25,5 @@ module.exports = (request, response, next)->
 		response.flash 'notice-info', ["¡ Bienvenido #{data.name_first} !"]
 
 		return response.redirect redirect if redirect
-		return response.redirect ﬁ.bundles['home']
+		return response.redirect ﬁ.bundles['_home_']
 

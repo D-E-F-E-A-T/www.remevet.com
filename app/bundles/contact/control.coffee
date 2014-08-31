@@ -30,7 +30,7 @@ module.exports = (request, response, next)->
 		return next(status:500, errors:[error]) if error
 		ﬁ.log.debug "Mailed:", JSON.stringify message
 		response.render
-			breadcrumbs: [
+			BREADCRUMBS: [
 				name:"Comunidad"
 				href:ﬁ.bundles['community']
 			]

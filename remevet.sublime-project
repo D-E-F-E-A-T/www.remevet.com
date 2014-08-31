@@ -1,0 +1,25 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				".gitignore",
+				".gitmodules",
+				"remevet.sublime-project"
+			],
+			"folder_exclude_patterns":
+			[
+				"dump",
+				"node_modules",
+				"fi",
+				"app/static/images",
+				"app/static/revista",
+				"app/static/lib/pdf.js",
+				"app/static/lib/foundation"
+			],
+			"follow_symlinks": true,
+			"path": "."
+		}
+	]
+}

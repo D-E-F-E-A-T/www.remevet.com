@@ -1,0 +1,69 @@
+&
+	display    : block
+	position   : absolute
+	width      : 100%
+	bottom     : 25px
+	left       : 180px
+	overflow   : hidden
+
+	ul
+		z-index       : 1
+		display       : block
+		position      : relative
+		float         : left
+		list-style    : none
+		margin        : 0
+		padding       : 0
+		border-bottom : 5px solid $colors-1st
+
+		&:after
+			z-index    : 9999
+			content    : " "
+			display    : block
+			width      : 2em
+			height     : 40px
+			background : $colors-2nd
+			position   : absolute
+			right      : -1.4em
+			mixin-skew()
+
+		li
+			display:inline-block
+			position:relative
+			float:left
+			border-left       : 6px solid $colors-1st
+			margin-left       : 0
+			mixin-skew()
+
+			a
+				line-height : 35px
+				padding: 0 1em
+				color       : white
+				width       : 100%;
+				display     : block
+				text-align  : center
+				font-family : 'Cabin', sans-serif;
+				font-weight : 700
+				font-size   : 14pt
+				text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.33);
+
+			&:first-child
+				margin-left: 0.5em
+				border-left: 0
+
+			&:last-child
+				border-right : 6px solid $colors-1st
+				margin-right : 0.5em
+
+			span
+				display           : block
+
+	span.line
+		display    : block
+		position   : absolute
+		z-index    : 0
+		width      : 100%
+		background : $colors-2nd
+		height     : 40px
+		top        : 0
+		left       : 1em

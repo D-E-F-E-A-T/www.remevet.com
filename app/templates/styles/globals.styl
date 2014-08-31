@@ -1,0 +1,35 @@
+// angle that every box should have
+$colors-1st    = #4d2a08
+$colors-2nd    = #e67e17
+$colors-normal = (rgba(255,255,255,0.7) #ba4eba #66ccaa #e6b650 #29b8ff #f067c2 #306eff #66cc66 #e65c67)
+$colors-hover  = (rgba(255,255,255,  1) #9629cc #00cc88 #ffbf00 #0095ff #e617a1 #2e2ee6 #31cc29 #e62e4d)
+
+$header-height = 105px
+
+$skew = 25.62deg
+
+mixin-skew()
+	-webkit-transform : skew(-1 * $skew)
+	-moz-transform    :	skew(-1 * $skew)
+	-ms-transform     : skew(-1 * $skew)
+	-o-transform      : skew(-1 * $skew)
+	transform         : skew(-1 * $skew)
+
+	& span
+		display: block
+		-webkit-transform : skew($skew)
+		-moz-transform    :	skew($skew)
+		-ms-transform     : skew($skew)
+		-o-transform      : skew($skew)
+		transform         : skew($skew)
+
+
+mixin-font-heading()
+	font-family : 'Cabin', sans-serif
+	font-weight : 700
+
+mixin-font-paragraph()
+	font-size   : 17px
+	font-family : 'Nobile', sans-serif
+	font-weight : 400
+	line-height : 1.5em

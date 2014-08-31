@@ -1,171 +1,31 @@
-$skew       = 25.62deg
-$height     = 105px
-$color-bg   = rgb(84,53,25)
-$color-line = rgb(255,153,51)
-
 &
-	height     : $height
-	background : $color-bg
-	overflow   : hidden
 	position   : relative
+	height     : $header-height
+	background : $colors-1st
 
+	// Logotype
+	h1#header-logo
+		z-index: 1
+		@import 'header-logo'
 
+	// Line spanning accross header
+	span#header-line
+		z-index: 0
+		@import 'header-line'
 
-& > span.line
-	z-index    : 1
-	position   : absolute
-	top        : 80px
-	left       : 0
-	display    : block
-	height     : 20px
-	width      : 100%
-	background : $color-line
+	nav#header-menu
+		z-index: 2
 
-& > span.patch
-	z-index           : 2
-	position          :absolute
-	top               : 80px
-	left              : 30px
-	height            : 20px
-	width             : 144px
-	background        : $color-bg
-	-webkit-transform : skew(-1 * $skew)
-	-moz-transform    :	skew(-1 * $skew)
-	-ms-transform     : skew(-1 * $skew)
-	-o-transform      : skew(-1 * $skew)
+	@media screen and (max-width:768px)
+		@import 'header-small'
 
+	@media screen and (min-width:769px)
 
-& > h1
-	z-index       : 3
-	position      : absolute
-	margin-top    :   5px
-	margin-bottom :   5px
-	margin-left   :   9px
-	height        :  95px
-	width         : 161px
-	padding       :   0px
-	// background-image      : url('/static/images/logo-white.png')
-	// background-repeat     : no-repeat
-	// background-size       : 100%
-	// background-position   : center center
-	// background-attachment : scroll
+		&
+			overflow:hidden
 
-	a
-		background-size: 100%
-		background-image: url('/static/images/logo-white.png')
-		background-position: center
-		background-attachment: scroll
-		background-repeat: no-repeat
-		position    : absolute
-		width       : 100%
-		height      : 100%
-		top         : 0
-		left        : 0
-		text-indent : -300em
+		a#header-button
+			display:none
 
-nav
-	z-index  : 4
-	position : absolute
-	left     : 196px
-	top      : 40px
-	width    : 100%
-
-	& > span.line
-		z-index    : 0
-		width      : 100%
-		background : $color-line
-		height     : 40px
-		top        : 0
-		left       : 0
-		position   : absolute
-		-webkit-transform : skew(-1 * $skew)
-		-moz-transform    :	skew(-1 * $skew)
-		-ms-transform     : skew(-1 * $skew)
-		-o-transform      : skew(-1 * $skew)
-
-	& > span.patch
-		z-index     : 2
-		display     : inline-block
-		position    : absolute
-		background  : $color-line
-		width       : 55px
-		height      : 40px
-		border-left : 6px solid $color-bg
-		margin-left : -0.85em
-		-webkit-transform : skew(-1 * $skew)
-		-moz-transform    :	skew(-1 * $skew)
-		-ms-transform     : skew(-1 * $skew)
-		-o-transform      : skew(-1 * $skew)
-
-	ul.inline-list
-		z-index       : 1
-		display       : inline-block
-		position      : relative
-		border-bottom : 5px solid $color-bg
-
-		li 
-			-webkit-transform : skew(-1 * $skew)
-			-moz-transform    :	skew(-1 * $skew)
-			-ms-transform     : skew(-1 * $skew)
-			-o-transform      : skew(-1 * $skew)
-			border-left       : 6px solid $color-bg
-			margin-left       : 0
-			width             : 130px
-
-			a
-				line-height : 35px
-				color       : white
-				width       : 100%;
-				display     : block
-				text-align  : center
-				font-family : 'Cabin', sans-serif;
-				font-weight : 700
-				font-style  : italic
-				font-size   : 14pt
-				text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.33);
-
-
-			&.color1
-				background: #943A6C
-				a:hover
-					background: #990066
-
-			&.color2
-				background: #D9B24A
-				a:hover
-					background: #FFBB00
-
-			&.color3
-				background: #48B8B0
-				a:hover
-					background: #008C8C
-
-			&.color4
-				background: #3E8FC5
-				a:hover
-					background:#0077DD
-
-			&.color5
-				background: #DD5988
-				a:hover
-					background: #DE004E
-
-			&.color6
-				background: #8DB23B
-				a:hover
-					background:#99CC00
-
-			&:first-child
-				margin-left: 1em
-				border-left: 0
-			
-			&:last-child
-				margin-right  : 0.75em
-				padding-right : 0.25em
-
-			span
-				display           : block
-				-webkit-transform : skew($skew)
-				-moz-transform    :	skew($skew)
-				-ms-transform     : skew($skew)
-				-o-transform      : skew($skew)
+		nav#header-menu
+			@import 'header-menu'

@@ -1,0 +1,19 @@
+&
+	position   : absolute
+	display    : block
+	left       : 0
+	bottom     : 5px
+	height     : 20px
+	width      : 100%
+	background : $colors-2nd
+
+	&:after
+		content    : ' '
+		display    : block
+		position   : absolute
+		top        : 0
+		left       : 30px
+		height     : inherit
+		width      : 144px
+		background : $colors-1st
+		mixin-skew()

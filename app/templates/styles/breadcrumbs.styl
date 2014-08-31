@@ -1,30 +1,39 @@
-& 	
-	background     : #543519
+&
+	display        : block
+	position       : relative
+	background     : $colors-1st
 	margin         : -5px 0 0 0
-	padding        : 0 0 0 38px
-	line-height    : 2.5em	
+	padding        : 0 0 0 15px
+	line-height    : 2.5em
 	font-size      : 14pt
-	font-weight    : normal
-	font-family    : 'Cabin', sans-serif;
 	text-transform : uppercase
+	mixin-font-heading()
 
-	li
-		&:not(:first-child)
-			margin-left:0
-		a
-			color: rgba(255,255,255,0.5)
+	ul
+		margin  : 0
+		padding : 0
 
-			&:after
-				content    : "»"
-				padding: 0 0.5em
+		li
+			&:not(:first-child)
+				margin-left:0
+			a
+				color: $colors-normal[0]
 
-			&:hover
-				color: #FC9732
+				&:after
+					content    : "»"
+					padding: 0 0.5em
 
-		&.last a
-			color: #FFFFFF
-			cursor:default
+				&:hover
+					color: $colors-2nd
 
-			&:after
-				display:none
+					&:after
+						color:$colors-normal[0]
+						cursor:default
+
+			&.last a
+				color: #FFFFFF
+				cursor:default
+
+				&:after
+					display:none
 
