@@ -16,6 +16,10 @@
 	nav#header-menu
 		z-index: 2
 
+	aside#header-social
+		z-index: 9
+		display:none
+
 	@media screen and (max-width:768px)
 		@import 'header-small'
 
@@ -29,3 +33,6 @@
 
 		nav#header-menu
 			@import 'header-menu'
+
+		aside#header-social
+			@import 'header-social'

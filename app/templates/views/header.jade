@@ -3,6 +3,7 @@ h1#header-logo
 	a(href=ﬁ.bundles['_home_']) REMEVET
 span#header-line
 
+
 a#header-button(href="#")
 
 //- Main Navigation
@@ -15,8 +16,14 @@ nav#header-menu
 		li.color-4.color-darker: a.color-0.color-bg-4(href=ﬁ.bundles['sponsors']):  span Biblioteca
 		li.color-5.color-darker: a.color-0.color-bg-5(href=ﬁ.bundles['directory']): span Directorio
 		li.color-6.color-darker: a.color-0.color-bg-6(href=ﬁ.bundles['community']): span Comunidad
-		li.color-7.color-darker
-			if USER.type == "anon"
-				a.color-0.color-bg-7(href=ﬁ.bundles['auth/login']): span Entrar
-			else
-				a.color-0.color-bg-8(href=ﬁ.bundles['auth/logout']): span Salir
+
+		if USER.type == "anon"
+			li.color-7.color-darker: a.color-0.color-bg-7(href=ﬁ.bundles['auth/login']): span Entrar
+		else
+			li.color-8.color-darker: a.color-0.color-bg-8(href=ﬁ.bundles['auth/logout']): span Salir
+
+aside#header-social
+	ul.inline-list
+		li: a.facebook(href="//facebook.com/remevet1", title="¡Dale me gusta en facebook!") Facebook
+		li: a.twitter(href="//twiter.com/remevet", title="¡Síguenos en twitter!") Twitter
+		li: a.email(href=ﬁ.bundles['contact'], title="¿Dudas o comentarios? ¡contáctanos!") Contacto

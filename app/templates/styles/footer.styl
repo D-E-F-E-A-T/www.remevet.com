@@ -1,64 +1,10 @@
-@import 'nib'
+@import './globals'
 
-$skew       = 25.62deg
-$height     = 300px
-$color-bg   = rgb(84,53,25)
-$color-line = rgb(255,153,51)
-
-
-
-&
-	height     : $height
-	background : $color-bg
-	position   : relative
-
-.divcolor
-	
-	border-right solid 2px #f93
-	height 50%
-
-	img 
-		height 90%
-.line
-	padding-top 50px
-.line2
-	padding-top 10px
-
-.divcolor1
-	border-right solid 2px #f93
-	height 50%
-.facebook
-	height 2.3em
-	padding-top 5px	
-.fuente
-	font-size 1em
-.twitter
-	height 2.5em
-	padding-top 5px
-		
-
-	
-.divcolor2
-	border-right solid 2px #f93
-	height 50%
-h3
-	font-size .5em
-	text-aling left
-	padding 0,0,0,0 
-	color white	
-
-.size
-	width 90%
-.size1
-	width 40%
-.space
-	margin-top .5em
-
-
-.divcolor3	
-	border-right solid 2px transparent
-	height 50%
-
-.txttel
-	padding 0
-	
+a
+	display  :block
+	position :absolute
+	width    :5em
+	height   :5em
+	top      :5em
+	left     :5em
+	mixin-icon(social, 5em, rgba(255,0,0,0.3))

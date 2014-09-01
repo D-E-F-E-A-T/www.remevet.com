@@ -22,6 +22,7 @@ html.no-js(lang="es",class=is_desktop?'is_desktop':'')
 		script(src='/static/lib/foundation/js/vendor/modernizr.js')
 
 	body
+
 		header
 			include views/header
 
@@ -33,9 +34,9 @@ html.no-js(lang="es",class=is_desktop?'is_desktop':'')
 
 		#content
 			block ﬁ.content
-		//-
-			footer
-				include views/footer
+
+		//- footer
+		//- 	include views/footer
 
 		#fallback
 			include views/fallback
