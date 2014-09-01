@@ -39,3 +39,13 @@ $(document).ready ->
 				slidesToShow   : 3
 				slidesToScroll : 3
 		}]
+
+	$('.event').click ->
+		p   = $(this).data('p')
+		img = $(this).data('img')
+
+		$('#event p').text(p)
+		$('#event img').attr("src", img)
+		
+
+

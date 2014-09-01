@@ -8,7 +8,7 @@
 			br
 			br
 			br
-	#cover-article.large-8.medium-7.columns(style="background-image:url('/static/images/unam.jpg')")
+	#cover-article.large-8.medium-7.columns(style="background-image:url('http://cvdl.com.mx/14/top.jpg')")
 
 		article
 			.uno
@@ -32,24 +32,25 @@
 		#magazines-header
 			a.uno(href="#") Septiembre
 		each event in data.Septiembre
-			.event(style="height:200px;margin-top:0.8em")
+			.event(style="height:200px;margin-top:0.8em", data-p="#{event.desc}", data-img="#{event.logo}")
 				.small-6.large-4.columns
 					img(src=event.logo, width="120px")
 				.small-6.large-8.columns
-					p= event.desc
+					p= event.name
 
 		#magazines-header
 			a.uno(href="#") Octubre
 		each event in data.Octubre
-			.event(style="height:200px;margin-top:0.8em")
+			.event(style="height:200px;margin-top:0.8em", data-p="#{event.desc}", data-img="#{event.logo}")
 				.small-6.large-4.columns
 					img(src=event.logo, width="120px")
 				.small-6.large-8.columns
 					p= event.desc
 
 
-	.small-12.large-7.columns#map(style="height:500px;overflow:scroll")
-		img(src='/static/images/events/primer-simposio-de-cirugia-veterinaria.jpg', height="90%")
+	.small-12.large-7.columns#event(style="height:500px;overflow:scroll")
+		img(src='/static/images/events/primer-simposio-de-cirugia-veterinaria.jpg', style="margin:1em;max-height:400px;")
+		p(style="display:inline") La capital mundial de la educación continua veterinaria
 
 
 #clients.row.collapse
