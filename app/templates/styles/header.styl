@@ -16,7 +16,7 @@
 	nav#header-menu
 		z-index: 2
 
-	aside#header-social
+	aside.social
 		z-index: 9
 		display:none
 
@@ -34,5 +34,12 @@
 		nav#header-menu
 			@import 'header-menu'
 
-		aside#header-social
-			@import 'header-social'
+		aside.social
+			position : absolute
+			right    : 5px
+			top      : 5px
+
+			mixin-social(30px, rgba($colors-1st, 0.5))
+
+
+

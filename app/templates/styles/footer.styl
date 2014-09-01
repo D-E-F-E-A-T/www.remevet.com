@@ -1,10 +1,24 @@
-@import './globals'
+&
+	position   : relative
+	background : $colors-1st
+	padding    : 1.5em 2em
+	overflow   : hidden
 
-a
-	display  :block
-	position :absolute
-	width    :5em
-	height   :5em
-	top      :5em
-	left     :5em
-	mixin-icon(social, 5em, rgba(255,0,0,0.3))
+
+	.left
+		p, ul
+			mixin-font-heading()
+
+		p
+			margin    :0
+			padding   :0
+			color     : $colors-normal[0]
+			font-size : 11pt
+		a
+			color : $colors-hover[0]
+
+
+	.right
+		aside.social
+			position :relative
+			mixin-social(60px)

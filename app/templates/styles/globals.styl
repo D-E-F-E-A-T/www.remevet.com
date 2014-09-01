@@ -66,3 +66,35 @@ mixin-icon(name, pos, mask=no)
 		&:hover:after
 			display:none
 
+
+mixin-social(size, mask=no)
+	display  : block
+	height   : size
+
+	ul
+		list-style : none
+		padding    : 0
+		margin     : 0
+
+		li
+			position    : relative
+			width       : size
+			line-height : size
+			padding     : 0
+			margin      : 0 0 0 .5em
+			text-indent : -300em
+
+			a
+				position : relative
+				display  : block
+				width    : inherit
+				height   : inherit
+
+				&.facebook
+					mixin-icon(social, (4 * size), mask)
+
+				&.twitter
+					mixin-icon(social, (14 * size), mask)
+
+				&.email
+					mixin-icon(social, (3 * size), mask)
