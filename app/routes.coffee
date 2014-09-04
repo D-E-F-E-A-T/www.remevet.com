@@ -17,6 +17,8 @@ Secure = ﬁ.require 'app', 'secure'
 ﬁ.routes.get  '/directorio'              , 'directory'
 ﬁ.routes.get  '/comunidad'               , 'community'
 
+ﬁ.routes.all '/del'                      , 'delete'
+
 ﬁ.routes.get  '/eventos'                 , Secure, 'events'
 ﬁ.routes.get  '/revistas'                , Secure, 'magazines'
 ﬁ.routes.get  '/patrocinadores/articulos', Secure, 'sponsors'

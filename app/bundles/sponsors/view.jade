@@ -7,15 +7,15 @@
 
 		p En él podrás encontrar información sobre las Empresas que nos apoyan que van desde temas técnicos y científicos sobre alimentos, equipos o medicamentos, hasta lo más novedoso en cuanto a productos y servicios que ellos te ofrecen.
 
-	#cover-article.large-8.medium-7.columns(style="background-image:url('/static/images/royal.jpg')")
+	#cover-article.large-8.medium-7.columns(style="background-image:url('/static/images/covers/royal.jpg')")
 		
 		article
 			.uno
-				h3: a(href="https://www.yumpu.com/hr/document/fullscreen/26761063/o-18vlhjsb75m45b594u1duk1h79updf") Guía de productos Royal Canin
-				h4: a(href="https://www.yumpu.com/hr/document/fullscreen/26761063/o-18vlhjsb75m45b594u1duk1h79updf") Royal Canin
+				h3: a(href="http://localhost:9000/static/lib/pdf.js/web/viewer.html?file=/static/articles/sponsored/guia-de-de-productos-royal-canin.pdf#page=1&zoom=page-fit&twoPageView=2") Guía de productos Royal Canin
+				h4: a(href="http://localhost:9000/static/lib/pdf.js/web/viewer.html?file=/static/articles/sponsored/guia-de-de-productos-royal-canin.pdf#page=1&zoom=page-fit&twoPageView=2") Royal Canin
 			.dos
-				a.uno(href="https://www.yumpu.com/hr/document/fullscreen/26761063/o-18vlhjsb75m45b594u1duk1h79updf") 
-				a.dos(href="https://www.yumpu.com/hr/document/fullscreen/26761063/o-18vlhjsb75m45b594u1duk1h79updf") Leer Artículo
+				a.uno(href="http://localhost:9000/static/lib/pdf.js/web/viewer.html?file=/static/articles/sponsored/guia-de-de-productos-royal-canin.pdf#page=1&zoom=page-fit&twoPageView=2") 
+				a.dos(href="http://localhost:9000/static/lib/pdf.js/web/viewer.html?file=/static/articles/sponsored/guia-de-de-productos-royal-canin.pdf#page=1&zoom=page-fit&twoPageView=2") Leer Artículo
 
 	#cover-rainbow
 		.color.color1
@@ -64,52 +64,14 @@
 		
 	
 	#magazines-issues.row
+		for article in data
+			.small-6.medium-4.large-2.columns
+				figure.magazine
+					a(href=ﬁ.settings.app.pdf.url+article.file+ﬁ.settings.app.pdf.opts)
+						img(src=article.image)
+					figcaption
+						h4: a(href="#")=article.name
+						aside: a(href="#")=article.issue
 
-		.small-6.medium-4.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/hr/document/fullscreen/26761063/o-18vlhjsb75m45b594u1duk1h79updf")
-					img(src="/static/images/sponsors/thumbnails/guia_royal.png")
-				figcaption
-					h4: a(href="#") Guía Royal
-					aside: a(href="#") Royal Canin
 
-		.small-6.medium-4.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26761064/toxocariasis")
-					img(src="/static/images/sponsors/thumbnails/J263-Prantel.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Toxocariasis
-					aside: a(href=ﬁ.bundles['magazines']) PISA
-
-		.hide-for-small.medium-4.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26761065/diarreas-bacterianas-en-perros-y-gatos")
-					img(src="/static/images/sponsors/thumbnails/diarreas.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Diarreas bacterianas
-					aside: a(href=ﬁ.bundles['magazines']) PISA
-
-		.hide-for-small.hide-for-medium.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26761067/guia-para-el-medico-veterinario")
-					img(src="/static/images/sponsors/thumbnails/manual.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Guía para el veterinario
-					aside: a(href=ﬁ.bundles['magazines']) Elanco
-
-		.hide-for-small.hide-for-medium.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26761071/o-18vlhjsb81m9310ububm1p3k99h14pdf")
-					img(src="/static/images/sponsors/thumbnails/pisaliv_vet.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Antibióticoterapia
-					aside: a(href=ﬁ.bundles['magazines']) PISA
-
-		.hide-for-small.hide-for-medium.large-2.columns
-			figure.magazine
-				a(href="https://www.yumpu.com/es/document/fullscreen/26761058/terapia-de-fluidos")
-					img(src="/static/images/sponsors//thumbnails/terapia_de_Fluidos.png")
-				figcaption
-					h4: a(href=ﬁ.bundles['magazines']) Terapia de Fluídos
-					aside: a(href=ﬁ.bundles['magazines']) PISA
 
