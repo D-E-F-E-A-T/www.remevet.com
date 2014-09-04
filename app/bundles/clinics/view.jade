@@ -37,7 +37,6 @@
 					img(src=clinic.logo, width="120px")
 				.small-6.large-8.columns
 					a(href=clinic.website)= clinic.name
-					- console.log(JSON.stringify(clinic.phone.length))
 					if clinic.phone.length > 1
 						ul telefono
 							each phone in clinic.phone
@@ -56,7 +55,6 @@
 						img(src=clinic.logo, width="120px")
 					.small-6.large-8.columns
 						a(href=clinic.website)= clinic.name
-						- console.log(JSON.stringify(clinic.phone.length))
 						if clinic.phone.length > 1
 							ul telefono
 								each phone in clinic.phone

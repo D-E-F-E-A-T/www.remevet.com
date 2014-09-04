@@ -3,6 +3,8 @@ Secure = ﬁ.require 'app', 'secure'
 ﬁ.routes.get  '/'    , '_home_'
 ﬁ.routes.get  '/test' , 'test'
 
+ﬁ.routes.get  '/aviso-de-privacidad'     , 'plain/privacy'
+
 ﬁ.routes.get  '/sesion/entrar'           , 'auth/login'
 ﬁ.routes.post '/sesion/entrar'           , 'auth/login'
 ﬁ.routes.get  '/sesion/registro'         , 'auth/signup'
@@ -16,8 +18,6 @@ Secure = ﬁ.require 'app', 'secure'
 ﬁ.routes.get  '/nosotros'                , 'about'
 ﬁ.routes.get  '/directorio'              , 'directory'
 ﬁ.routes.get  '/comunidad'               , 'community'
-
-ﬁ.routes.all '/del'                      , 'delete'
 
 ﬁ.routes.get  '/eventos'                 , Secure, 'events'
 ﬁ.routes.get  '/revistas'                , Secure, 'magazines'
