@@ -1,3 +1,6 @@
+if errorMessage
+	.alert-box.info.radius(data-alert)= errorMessage
+
 form(method="post"): .row: .large-6.small-12.columns.large-centered
 	
 	.row.collapse
@@ -10,6 +13,7 @@ form(method="post"): .row: .large-6.small-12.columns.large-centered
 
 		label Contraseña
 			input(type="password", name="pass", required)
+
 
 	.row.collapse
 

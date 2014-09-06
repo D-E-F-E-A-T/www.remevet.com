@@ -20,7 +20,9 @@ module.exports = (request, response, next)->
 		if error
 			response.status error.status
 			response.flash 'notice-error', error.message
-			return response.render()
+			return response.render
+				errorMessage : error.message
+
 
 		redirect = request.flash 'auth_redirect'
 		request.session.user = data
