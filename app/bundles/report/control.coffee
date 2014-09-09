@@ -17,9 +17,9 @@ module.exports = (request, response, next)->
 			ﬁ.log.debug 'la fecha es ' + user._id.getTimestamp()
 			x += "\n Usuario: #{user.name_first} #{user.name_last1} Correo: #{user.email} Fecha de Registro: #{user._id.getTimestamp()}"
 
-		ﬁ.log.debug '====='
-		ﬁ.log.debug x
-		ﬁ.log.debug '====='
+		ﬁ.log.error '====='
+		ﬁ.log.error x
+		ﬁ.log.error '====='
 
 		FS.appendFile 'message.txt', x, (err) ->
 			throw err if err
