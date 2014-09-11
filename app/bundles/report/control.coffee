@@ -82,8 +82,7 @@ module.exports = (request, response, next)->
 
 		for h in henry
 			continue if remevet.indexOf(h) is -1
-			ﬁ.log.debug '--> ' + h
-			
+			ﬁ.log.error '--> ' + h
 
 
 
