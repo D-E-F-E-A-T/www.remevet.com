@@ -34,7 +34,7 @@ module.exports = (request, response, next)->
 			from    : "soporte@remevet"
 			to      : "#{request.body.mail}"
 			subject : "Recuperación de contraseña"
-			text    : "Hola #{data.name_first}.\n Tu contraseña es #{data.password}. \nREMEVET"
+			text    : "Hola #{data.name_first}.\n Tu contraseña es #{data.password} \nREMEVET"
 
 
 		mailer.sendMail message, (error, message)->
