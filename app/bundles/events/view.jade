@@ -36,7 +36,10 @@
 		each event in data.Septiembre
 			.event(style="height:200px;margin-top:0.8em", data-p="#{event.desc}", data-img="#{event.logo}")
 				.small-6.large-4.columns
-					img(src=event.logo, width="120px")
+					a(href="#", data-reveal-id="#{event.slug}")
+						img(src=event.logo, width="120px")
+					.reveal-modal(id="#{event.slug}", data-reveal)
+						img(src=event.logo)
 				.small-6.large-8.columns
 					p= event.name
 
@@ -45,7 +48,10 @@
 		each event in data.Octubre
 			.event(style="height:200px;margin-top:0.8em", data-p="#{event.desc}", data-img="#{event.logo}")
 				.small-6.large-4.columns
-					img(src=event.logo, width="120px")
+					a(href="#", data-reveal-id="#{event.slug}")
+						img(src=event.logo, width="120px")
+					.reveal-modal(id="#{event.slug}", data-reveal)
+						img(src=event.logo)
 				.small-6.large-8.columns
 					p= event.desc
 
@@ -54,7 +60,10 @@
 		each event in data.Noviembre
 			.event(style="height:200px;margin-top:0.8em", data-p="#{event.desc}", data-img="#{event.logo}")
 				.small-6.large-4.columns
-					img(src=event.logo, width="120px")
+					a(href="#", data-reveal-id="#{event.slug}")
+						img(src=event.logo, width="120px")
+					.reveal-modal(id="#{event.slug}", data-reveal)
+						img(src=event.logo)
 				.small-6.large-8.columns
 					p= event.desc
 

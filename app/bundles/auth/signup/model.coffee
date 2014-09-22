@@ -33,6 +33,7 @@ module.exports = (request, callback)->
 			return callback.call self, error
 
 		collection.insert
+			signupDate : new Date()
 			password   : request.body.pass_1
 			name_first : request.body.name_first
 			name_last1 : request.body.name_last
