@@ -1,21 +1,24 @@
 #cover.row.collapse
 
 	#cover-welcome.medium-5.large-4.columns
+		&nbsp
 		h2.color1 ¡Bienvenido!
+		&nbsp
 		p
 			strong REMEVET&nbsp;
 			| es una publicación electrónica en español que está dirigida a los médicos veterinarios, estudiantes de veterinaria, académicos y personas interesadas en la medicina tanto de equinos, pequeñas especies y fauna silvestre en general.
-
+			&nbsp
 		p.hide-for-small.hide-for-medium En sus páginas se analizan temas actuales de la medicina veterinaria, casos clínicos y procedimientos de vanguardia, con aportaciones de los especialistas más reconocidos de nuestro país y del extranjero.
-
+			&nbsp
 		p.hide-for-small.hide-for-medium
 			strong REMEVET&nbsp;
 			| es el mejor medio en español para estar actualizado y aprender sobre los avances médicos, procedimientos actuales y casos clínicos.
+			
+		.btnazul.a.button.color1.right(href=ﬁ.bundles['about']) Conócenos
 
-		a.button.color1.right(href=ﬁ.bundles['about']) Conócenos
 
-	#cover-article.large-8.medium-7.columns(style="background:white")
-		video#video(controls, autoplay)
+	#cover-article.large-8.medium-7.columns(style="background:#e7e2db")
+		video#video(controls, autoplay, loop)
 			source(src="/static/videos/COMFORTIS_ESP_VET_FINAL_H264.mp4", type="video/mp4")
 			source(src="/static/videos/COMFORTIS_ESP_VET_FINAL_H264.ogg", type="video/ogg")
 
@@ -32,6 +35,7 @@
 
 	#clients-slider
 		.slide: a(href="http://www.laveccs.org/"): img(src="/static/images/logos/33.png")
+		.slide: a(href="http://www.maltacleyton.com.mx"): img(src="/static/images/logos/35.jpg")
 		.slide: a(href="http://www.merial.com.mx"): img(src="/static/images/logos/01.png")
 		.slide: a(href="http://www.ceamvet.com.mx"): img(src="/static/images/logos/02.jpg")
 		.slide: a(href="http://www.bio-zoo.com.mx"): img(src="/static/images/logos/03.jpg")
@@ -48,6 +52,7 @@
 		.slide: a(href="http://www.royalcanin.com.mx/"): img(src="/static/images/logos/14.jpg")
 		.slide: a(href="http://www.pisaagropecuaria.com.mx/"): img(src="/static/images/logos/15.jpg")
 		.slide: a(href="http://www.acmevez.mx"): img(src="/static/images/logos/16.jpg")
+		.slide: a(href="http://www.maltacleyton.com.mx"): img(src="/static/images/logos/34.jpg")
 		.slide: a(href="https://www.zoetis.mx"): img(src="/static/images/logos/17.jpg")
 		.slide: a(href="http://www.frontline.com.mx"): img(src="/static/images/logos/18.png")
 		.slide: a(href="http://www.fcm.mx"): img(src="/static/images/logos/20.jpg")
@@ -61,6 +66,8 @@
 		.slide: a(href="http://www.pisaagropecuaria.com.mx/"): img(src="/static/images/logos/29.jpg")
 		.slide: a(href="http://www.ropasanluis.com.mx/"): img(src="/static/images/logos/31.jpg")
 		.slide: a(href="https://desego.com"): img(src="/static/images/logos/32.jpg")
+		
+		
 
 	.rainbow
 		.color.color3

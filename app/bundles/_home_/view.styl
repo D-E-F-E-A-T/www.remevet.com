@@ -1,7 +1,11 @@
 #video
 	width   : 100%
+	height: cover-welcome !important
+	//height: 100%
 	margin  : 0
 	padding : 0
+	position: relative
+	
 
 
 
@@ -35,6 +39,7 @@
 
 #cover
 	background: linear-gradient(to bottom,  #FFFCF3 0%, #DFDCD3 100%);
+	
 
 	#cover-welcome
 		z-index:1
@@ -66,6 +71,8 @@
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
+		overflow:hidden;
+		height:50% !important;
 
 		article
 			position:absolute
@@ -304,3 +311,23 @@
 				background: #3DB7AD
 				font-style  : italic
 				font-size   : 15pt
+
+
+@media screen and (max-width : 1800px)
+
+	.btnazul
+		margin-bottom 1.2em
+		margin-top 5em
+
+@media screen and (max-width : 800px)
+
+
+	.btnazul
+		margin-bottom .2em
+		margin-top .3em
+
+@media screen and (max-width : 2000px)
+
+	.btnazul
+		margin-bottom .2em
+		margin-top 5em
