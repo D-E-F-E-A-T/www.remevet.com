@@ -53,7 +53,7 @@ mixin-icon(name, pos, mask=no)
 	background-size     : 100% auto
 	background-position : 0 (-1 * pos)
 
-	/.no-svg &
+	.no-svg &
 		background-image : url('/static/icons/'(name)'.png')
 
 	if mask
