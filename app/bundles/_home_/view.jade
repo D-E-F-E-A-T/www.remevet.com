@@ -1,4 +1,5 @@
 include /../templates/mixins/rainbow
+include /../templates/mixins/ads
 
 .cover.row.collapse
 
@@ -45,35 +46,11 @@ include /../templates/mixins/rainbow
 					li: a(href=tmplink) Fauna Silvestre
 					li: a(href=tmplink): span Leer Artículo
 
-		article.color-0.color-bg-4
-
-			.content(style=tmpimage)
-
-			nav.top.left
-				header
-					h3
-						a(href=tmplink) jfshdflakjfhalskjdhfljasdhf
-					h4
-						a(href=tmplink) hhfagsdjfhgajshdfgjahsd
-
-				footer: ul
-					li: a(href=tmplink) Biblioteca
-					li: a(href=tmplink): span Visítala
 +rainbow()
++ads(ads)
 
-.ads.row.collapse
-	- l = ads.l.shift() || [];
-	- m = ads.m.shift() || [];
-	- s = ads.s.shift() || [];
-	- x = ads.x.shift() || [];
-	for ad,i in x
-		- c += i<3? ' small-4'  : ' hide-for-small';
-		- c += i<4? ' medium-3' : ' hide-for-medium';
-		- c += i<6? ' large-2'  : ' hide-for-large';
-		- c += ' xlarge-1 columns'
-		div(class=c)
-			a(href=ad.href): img(src=ad.src, width='100%')
-
++rainbow()
++ads(ads)
 
 
 +rainbow()
