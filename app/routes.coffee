@@ -1,7 +1,6 @@
 Secure = ﬁ.require 'app', 'secure'
 
 ﬁ.routes.get  '/'    , '_home_'
-ﬁ.routes.get  '/test' , 'test'
 
 ﬁ.routes.get  '/aviso-de-privacidad'     , 'plain/privacy'
 

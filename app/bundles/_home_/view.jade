@@ -1,92 +1,79 @@
-#cover.row.collapse
+include /../templates/mixins/rainbow
 
-	#cover-welcome.medium-5.large-4.columns
-		&nbsp
-		h2.color1 ¡Bienvenido!
-		&nbsp
+.cover.row.collapse
+
+	.medium-6.large-4.columns.gradient: .cover-left
+
+		h2.color-1 ¡Bienvenido!
 		p
-			strong REMEVET&nbsp;
-			| es una publicación electrónica en español que está dirigida a los médicos veterinarios, estudiantes de veterinaria, académicos y personas interesadas en la medicina tanto de equinos, pequeñas especies y fauna silvestre en general.
-			&nbsp
-		p En sus páginas se analizan temas actuales de la medicina veterinaria, casos clínicos y procedimientos de vanguardia, con aportaciones de los especialistas más reconocidos de nuestro país y del extranjero.
-			&nbsp
-		p
-			strong REMEVET&nbsp;
-			| es el mejor medio en español para estar actualizado y aprender sobre los avances médicos, procedimientos actuales y casos clínicos.
-			
-		.btnazul.a.button.color1.right(href=ﬁ.bundles['about']) Conócenos
+			strong.color-1 REMEVET&nbsp;
+			| es una publicación electrónica en español que está dirigida a los médicos
+			| veterinarios, estudiantes de veterinaria, académicos y personas interesadas
+			| en la medicina tanto de equinos, pequeñas especies y fauna silvestre en general.
 
-	#cover-article.large-8.medium-7.columns(style="background-image:url('/static/images/covers/gato.jpg')")
-
-		article
-			.uno
-				h3: a(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2", target="_blank") Actualización en métodos de medición de la presión arterial sistemica en pequeños
-				h4: a(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2", target="_blank") MV. Iván Álvarez - MV. Cesar Mayorga
-			.dos
-				a.uno(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2", target="_blank") Pequeñas Especies
-				a.dos(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2", target="_blank") Leer Artículo
-
-	.rainbow
-		.color.color1
-		.color.color2
-		.color.color3
-		.color.color4
-		.color.color5
-		.color.color6
+		p.hide-for-small.hide-for-medium
+			|	En sus páginas se analizan temas actuales de la medicina veterinaria,
+			|	casos clínicos y procedimientos de vanguardia, con aportaciones de los
+			|	especialistas más reconocidos de nuestro país y del extranjero.
 
 
-include /logos
+		p.hide-for-small.hide-for-portrait
+			strong.color-1 REMEVET&nbsp;
+			|	es el mejor medio en español para estar actualizado y aprender sobre los
+			|	avances médicos, procedimientos actuales y casos clínicos.
 
-	.rainbow
-		.color.color3
-		.color.color6
-		.color.color5
-		.color.color4
-		.color.color2
-		.color.color1
-
-.row.collapse
-	#magazines.small-12.medium-6.large-6.columns
-		#magazines-header
-			a.uno(href=ﬁ.bundles['magazines']) Revistas
-			a.dos(href=ﬁ.bundles['magazines']) Ver anteriores
-
-		#magazines-issues.row
-			for pdf in pdfs
-				.small-4.medium-6.large-4.columns
-					figure.magazine
-						a(href=ﬁ.settings.app.pdf.url+pdf.file+ﬁ.settings.app.pdf.opts)
-							img(src=pdf.image)
-						figcaption
-							h4: a(href="#")=pdf.name
-							aside: a(href="#")=pdf.issue
+		a.button.color-0.color-bg-1.expand(href=ﬁ.bundles['about']) Conócenos
 
 
-	#events.small-12.medium-6.large-6.columns
+	.medium-6.large-8.columns: .cover-right: .cover-contain
 
-		#events-header
-			a.uno(href=ﬁ.bundles['events']) Eventos
-			a.dos(href=ﬁ.bundles['events']) Ver calendario
+		- var tmplink  = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/fauna-silvestre/fauna-silvestre-008.pdf#page=1&zoom=page-fit&twoPageView=2"
+		- var tmpimage = "background-image:url('/static/images/covers/home-01.jpg')"
 
-		#events-event.row
-			.small-6.medium-6.large-4.columns
-				figure.event
-					a(href=ﬁ.bundles['events'])
-						img(src="/static/images/events/xxxvi-congreso-anual-2014-de-la-asociacion-mexicana-de-medicos-veterinarios-especialistas-en-equinos-ac.jpg")
-					figcaption
-						aside: a(href=ﬁ.bundles['events']) Octubre
+		article.color-0.color-bg-2
+
+			.content(style=tmpimage)
+
+			nav.bottom.right
+				header
+					h3
+						a(href=tmplink) Bases del Bienestar Animal en Fauna Silvestre
+					h4
+						a(href=tmplink) MVZ. M en C. Adriana Cossío Bayúgar
+
+				footer: ul
+					li: a(href=tmplink) Fauna Silvestre
+					li: a(href=tmplink): span Leer Artículo
+
+		article.color-0.color-bg-4
+
+			.content(style=tmpimage)
+
+			nav.top.left
+				header
+					h3
+						a(href=tmplink) jfshdflakjfhalskjdhfljasdhf
+					h4
+						a(href=tmplink) hhfagsdjfhgajshdfgjahsd
+
+				footer: ul
+					li: a(href=tmplink) Biblioteca
+					li: a(href=tmplink): span Visítala
++rainbow()
+
+.ads.row.collapse
+	- l = ads.l.shift() || [];
+	- m = ads.m.shift() || [];
+	- s = ads.s.shift() || [];
+	- x = ads.x.shift() || [];
+	for ad,i in x
+		- c += i<3? ' small-4'  : ' hide-for-small';
+		- c += i<4? ' medium-3' : ' hide-for-medium';
+		- c += i<6? ' large-2'  : ' hide-for-large';
+		- c += ' xlarge-1 columns'
+		div(class=c)
+			a(href=ad.href): img(src=ad.src, width='100%')
 
 
-			.small-6.medium-6.large-4.columns
-				figure.event
-					a(href=ﬁ.bundles['events'])
-						img(src="/static/images/events/small.03.jpg")
-					figcaption
-						aside: a(href=ﬁ.bundles['events']) Octubre
 
-			.hide-for-small.hide-for-medium.large-4.columns
-				figure.event
-					a(href=ﬁ.bundles['events'])
-						img(src="/static/images/events/small.04.jpg")
-					figcaption
-						aside: a(href=ﬁ.bundles['events']) Octubre
++rainbow()

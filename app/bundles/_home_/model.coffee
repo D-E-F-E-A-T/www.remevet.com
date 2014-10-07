@@ -1,5 +1,19 @@
-module.exports = (request, callback)->
+Shuffle     = (require 'knuth-shuffle').knuthShuffle
+Advertising = require './ads'
 
+module.exports = (request, callback)->
+	# Ads
+
+	ADS = Shuffle(Advertising.slice(0))
+	ads = s:[], m:[], l:[], x:[]
+	while ADS.length
+		tmp = ADS.splice(0,12)
+		ads.x.push tmp
+		ads.l.push(tmp.slice i, i+6) for i in [0..6] by 6
+		ads.m.push(tmp.slice i, i+4) for i in [0..8] by 4
+		ads.s.push(tmp.slice i, i+3) for i in [0..9] by 3
+
+	# PDFs
 	collection = ﬁ.db.collection 'pdf'
 
 	pdfs = []
@@ -8,9 +22,9 @@ module.exports = (request, callback)->
 	collection.find(slug:'pequenas-especies')
 		.sort(issue:-1)
 		.limit(1).toArray (error, data)->
-			
+
 			pdfs.push data[0]
-			
+
 			collection.find(slug:'fauna-silvestre')
 				.sort(issue:-1)
 				.limit(1).toArray (error, data)->
@@ -23,7 +37,9 @@ module.exports = (request, callback)->
 
 							pdfs.push data[0]
 
-							callback.call self, null, pdfs
+							callback.call self, null,
+								pdfs: pdfs
+								ads: ads
 ###
 module.exports = (request, callback)->
 
@@ -34,7 +50,7 @@ module.exports = (request, callback)->
 
 	aggregator = []
 
-    # Agrupa por "slug" y determina el máximo de "issue", 
+    # Agrupa por "slug" y determina el máximo de "issue",
     # pasa los fields "tal cual" usando $first
 	aggregator.push	$group:
 		_id   : "$slug"
@@ -44,8 +60,8 @@ module.exports = (request, callback)->
 		image : $first : "$image"
 
 
-    # Renombra el resultado anterior, 
-    # impide que _id se publique y mapea su resultado a "slug", 
+    # Renombra el resultado anterior,
+    # impide que _id se publique y mapea su resultado a "slug",
     # los demas pasan "tal cual"
 	aggregator.push $project:
 		slug:"$_id",_id:0,issue:1,name:1,file:1,image:1

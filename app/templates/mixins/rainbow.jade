@@ -1,0 +1,7 @@
+
+mixin rainbow(reverse)
+	- var arr = Array.apply(null, {length: 8}).map(Number.call, Number)
+	- if (reverse) arr.reverse()
+	.rainbow
+		for i in arr
+			div(class='color-bg-'+(i+1))
