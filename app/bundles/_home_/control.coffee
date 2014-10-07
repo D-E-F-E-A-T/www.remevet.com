@@ -7,3 +7,4 @@ module.exports = (request, response, next)->
 		response.render
 			pdfs : data.pdfs
 			ads  : data.ads
+			eventos : data.eventos

@@ -78,14 +78,13 @@ include /../templates/mixins/ads
 			a.dos(href=ﬁ.bundles['events']) Ver calendario
 
 		#events-event.row
-			.small-4.medium-2.columns
-				figure.event
-					a(href=ﬁ.bundles['events'])
-						img(src="/static/images/events/xxxvi-congreso-anual-2014-de-la-asociacion-mexicana-de-medicos-veterinarios-especialistas-en-equinos-ac.jpg")
-					figcaption
-						aside: a(href=ﬁ.bundles['events']) Octubre
-
-
+			for ev in eventos
+				.small-4.medium-2.columns
+					figure.event
+						a(href=ﬁ.bundles['events'])
+							img(src=ev.logo)
+						figcaption
+							aside: a(href=ﬁ.bundles['events'])= ev.month
 
 +rainbow()
 <<<<<<< Updated upstream

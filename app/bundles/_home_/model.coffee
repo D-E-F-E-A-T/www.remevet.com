@@ -15,8 +15,10 @@ module.exports = (request, callback)->
 
 	# PDFs
 	collection = ﬁ.db.collection 'pdf'
+	events     = ﬁ.db.collection 'events'
 
 	pdfs = []
+	eventos = []
 	self = @
 
 	collection.find(slug:'pequenas-especies')
@@ -37,9 +39,14 @@ module.exports = (request, callback)->
 
 							pdfs.push d for d in data
 
-							callback.call self, null,
-								pdfs: pdfs
-								ads: ads
+							events.find()
+								.sort(slug:-1)
+								.limit(6).toArray (error, ev)->
+
+									callback.call self, null,
+										pdfs    : pdfs
+										ads     : ads
+										eventos : ev
 ###
 module.exports = (request, callback)->
 
