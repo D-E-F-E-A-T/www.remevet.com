@@ -21,21 +21,21 @@ module.exports = (request, callback)->
 
 	collection.find(slug:'pequenas-especies')
 		.sort(issue:-1)
-		.limit(1).toArray (error, data)->
+		.limit(2).toArray (error, data)->
 
-			pdfs.push data[0]
+			pdfs.push d for d in data
 
 			collection.find(slug:'fauna-silvestre')
 				.sort(issue:-1)
-				.limit(1).toArray (error, data)->
+				.limit(2).toArray (error, data)->
 
-					pdfs.push data[0]
+					pdfs.push d for d in data
 
 					collection.find(slug:'equinos')
 						.sort(issue:-1)
-						.limit(1).toArray (error, data)->
+						.limit(2).toArray (error, data)->
 
-							pdfs.push data[0]
+							pdfs.push d for d in data
 
 							callback.call self, null,
 								pdfs: pdfs

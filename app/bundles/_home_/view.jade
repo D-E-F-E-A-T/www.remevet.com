@@ -48,9 +48,45 @@ include /../templates/mixins/ads
 
 +rainbow()
 +ads(ads)
++rainbow(true)
+
+.row.collapse
+	#magazines.small-12.columns
+		#magazines-header
+			a.uno(href=ﬁ.bundles['magazines']) Revistas
+			a.dos(href=ﬁ.bundles['magazines']) Ver anteriores
+
+		#magazines-issues.row
+			for pdf in pdfs
+				.small-4.medium-2.columns
+					figure.magazine
+						a(href=ﬁ.settings.app.pdf.url+pdf.file+ﬁ.settings.app.pdf.opts)
+							img(src=pdf.image)
+						figcaption
+							h4: a(href="#")=pdf.name
+							aside: a(href="#")=pdf.issue
 
 +rainbow()
 +ads(ads)
++rainbow(true)
+
+.row.collapse
+	#events.columns
+
+		#events-header
+			a.uno(href=ﬁ.bundles['events']) Eventos
+			a.dos(href=ﬁ.bundles['events']) Ver calendario
+
+		#events-event.row
+			.small-4.medium-2.columns
+				figure.event
+					a(href=ﬁ.bundles['events'])
+						img(src="/static/images/events/xxxvi-congreso-anual-2014-de-la-asociacion-mexicana-de-medicos-veterinarios-especialistas-en-equinos-ac.jpg")
+					figcaption
+						aside: a(href=ﬁ.bundles['events']) Octubre
+
 
 
 +rainbow()
++ads(ads)
++rainbow(true)
