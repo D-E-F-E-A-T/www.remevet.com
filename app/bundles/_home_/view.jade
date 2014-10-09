@@ -28,7 +28,7 @@ include /../templates/mixins/ads
 
 	.medium-6.large-8.columns: .cover-right: .cover-contain
 
-		- var tmplink  = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/fauna-silvestre/fauna-silvestre-008.pdf#page=1&zoom=page-fit&twoPageView=2"
+		- var tmplink  = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2"
 		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
 
 		article.color-0.color-bg-1
@@ -38,12 +38,12 @@ include /../templates/mixins/ads
 			nav.bottom.right.color-0
 				header
 					h3
-						a(href=tmplink) Bases del Bienestar Animal en Fauna Silvestre
+						a(href=tmplink, target="_blank") Actualización en métodos de medición de la presión arterial sistémica en pequeños
 					h4
-						a(href=tmplink) MVZ. M en C. Adriana Cossío Bayúgar
+						a(href=tmplink) MV Iván Álvarez MV César Mayorga
 
 				footer: ul
-					li: a(href=tmplink) Fauna Silvestre
+					li: a(href=tmplink) Pequeñas Especies
 					li: a(href=tmplink): span Leer Artículo
 
 +rainbow()
@@ -66,9 +66,7 @@ include /../templates/mixins/ads
 							h4: a(href="#")=pdf.name
 							aside: a(href="#")=pdf.issue
 
-+rainbow()
-+ads(ads)
-+rainbow(true)
+
 
 .row.collapse
 	#events.columns
@@ -86,8 +84,4 @@ include /../templates/mixins/ads
 						figcaption
 							aside: a(href=ﬁ.bundles['events'])= ev.month
 
-+rainbow()
-
-+ads(ads)
-+rainbow(true)
 
