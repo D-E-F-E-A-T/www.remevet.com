@@ -1,42 +1,51 @@
-#cover.row.collapse
+include /../templates/mixins/rainbow
+include /../templates/mixins/ads
 
-	#cover-welcome.large-4.medium-5.columns
-		h2.color1 Directorio de clínicas
+.cover.row.collapse
+
+	.medium-6.large-4.columns.gradient: .cover-left
+
+		h2.color-5 Directorio de clínicas
 		p
+			strong.color-5 REMEVET&nbsp;
+			| pone a tu disposición un directorio de clínicas y hospitales veteriarios en la República Mexicana.
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
 
-			| REMEVET pone a tu disposición un directorio de clínicas y hospitales veteriarios en la República Mexicana.
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-	#cover-article.large-8.medium-7.columns(style="background-image:url('/static/images/covers/gato.jpg')")
+	.medium-6.large-8.columns: .cover-right: .cover-contain
 
-		article
-			.uno
-				h3: a(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2", target="_blank") Actualización en métodos de medición de la presión arterial sistemica en pequeños
-				h4: a(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2", target="_blank") MV. Iván Álvarez - MV. Cesar Mayorga
-			.dos
-				a.uno(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2", target="_blank") Pequeñas Especies
-				a.dos(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2", target="_blank") Leer Artículo
+		- var tmplink = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2"
+		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
 
+		article.color-0.color-bg-5
 
-	#cover-rainbow
-		.color.color1
-		.color.color2
-		.color.color3
-		.color.color4
-		.color.color5
-		.color.color6
+			.content(style=tmpimage)
 
+			nav.bottom.left.color-0
+				header
+					h3
+						a(href=tmplink) Actualización en métodos de medición de la presión arterial sistemica en pequeños
+					h4
+						a(href=tmplink) MV. Iván Álvarez - MV. Cesar Mayorga
+
+				footer: ul
+					li: a(href=tmplink) Pequeñas Especies
+					li: a(href=tmplink): span Leer Artículo
+
++rainbow
+include /logos
++rainbow
 
 #magazines.row.collapse
-	.small-12.large-5.columns(style="height:500px;overflow:scroll;")
+	.small-12.large-4.columns(style="height:500px;overflow:scroll;")
 		#magazines-header
 			a.uno(href=ﬁ.bundles['clinics']) Pequeñas Especies y Fauna Silvestre
 		each clinic in clinics.small
@@ -69,10 +78,8 @@
 									li= phone			
 			#magazines-issues.row
 
-	.small-12.large-7.columns#map(style="height:500px;")
+	.small-12.large-8.columns#map(style="height:500px;")
 
-
-include /logos
 
 script!="window.feature=" + JSON.stringify(feature) + ';'
 
