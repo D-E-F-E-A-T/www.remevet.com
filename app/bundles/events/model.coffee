@@ -1,4 +1,18 @@
+Shuffle     = (require 'knuth-shuffle').knuthShuffle
+Advertising = require './ads'
+
 module.exports = (request, callback)->
+	# Ads
+
+	ADS = Shuffle(Advertising.slice(0))
+	ads = s:[], m:[], l:[], x:[]
+	while ADS.length
+		tmp = ADS.splice(0,12)
+		ads.x.push tmp
+		ads.l.push(tmp.slice i, i+6) for i in [0..6] by 6
+		ads.m.push(tmp.slice i, i+4) for i in [0..8] by 4
+		ads.s.push(tmp.slice i, i+3) for i in [0..9] by 3
+
 
 	self       = @
 	collection = ﬁ.db.collection 'events'

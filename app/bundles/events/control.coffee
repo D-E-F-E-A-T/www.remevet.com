@@ -16,3 +16,4 @@ module.exports = (request, response, next)->
 				href:ﬁ.bundles['calendar']
 			]
 			data:data
+			ads  : data.ads
