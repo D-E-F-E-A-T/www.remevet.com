@@ -27,6 +27,11 @@ include /../templates/mixins/ads
 
 
 	.medium-6.large-8.columns: .cover-right: .cover-contain
+		#cover-article.large-8.medium-7.columns(style="background:#e7e2db")
+		video#video(controls, autoplay, loop)
+			source(src="/static/videos/COMFORTIS_ESP_VET_FINAL_H264.mp4", type="video/mp4")
+			source(src="/static/videos/COMFORTIS_ESP_VET_FINAL_H264.ogg", type="video/ogg")
+
 
 		- var tmplink  = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2"
 		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
@@ -47,8 +52,8 @@ include /../templates/mixins/ads
 					li: a(href=tmplink): span Leer Artículo
 
 +rainbow()
-+ads(ads)
-+rainbow(true)
+include /logos
++rainbow()
 
 .row.collapse
 	#magazines.small-12.columns
