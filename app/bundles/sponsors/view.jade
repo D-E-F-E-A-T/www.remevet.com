@@ -1,34 +1,43 @@
-#cover.row.collapse
+include /../templates/mixins/rainbow
+include /../templates/mixins/ads
 
-	#cover-welcome.large-4.medium-5.columns
-		h2.color1 Artículos de nuestros patrocinadores
+.cover.row.collapse
+
+	.medium-6.large-4.columns.gradient: .cover-left
+		
+		h2.color-4 Artículos de nuestros patrocinadores
 		p
 			| Este apartado es un medio de comunicación directa entre los usuarios de este portal y nuestros patrocinadores.
 
-		p En él podrás encontrar información sobre las Empresas que nos apoyan que van desde temas técnicos y científicos sobre alimentos, equipos o medicamentos, hasta lo más novedoso en cuanto a productos y servicios que ellos te ofrecen.
+		p
+			|En él podrás encontrar información sobre las Empresas que nos apoyan que van desde temas técnicos y científicos sobre alimentos, equipos o medicamentos, hasta lo más novedoso en cuanto a productos y servicios que ellos te ofrecen.
 
-	#cover-article.large-8.medium-7.columns(style="background-image:url('/static/images/covers/horse_1.jpg')")
+	.medium-6.large-8.columns: .cover-right: .cover-contain
+
+		- var tmplink = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/equinos/equinos-024.pdf#page=41&zoom=page-fit&twoPageView=2"
+		- var tmpimage = "background-image:url('/static/images/covers/horse_1.jpg')"
 		
-		article
-			.uno
-				h3: a(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/equinos/equinos-024.pdf#page=41&zoom=page-fit&twoPageView=2", target="_blank") Una enfermedad presente en la zona centro- norte del estado de veracruz.
-				h4: a(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/equinos/equinos-024.pdf#page=41&zoom=page-fit&twoPageView=2", target="_blank") MVZ. Antonio Fernando Martínez
-			.dos
-				a.uno(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/equinos/equinos-024.pdf#page=41&zoom=page-fit&twoPageView=2", target="_blank") Equinos
-				a.dos(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/equinos/equinos-024.pdf#page=41&zoom=page-fit&twoPageView=2", target="_blank") Leer Artículo
+		article.color-0.color-bg-4
 
-	#cover-rainbow
-		.color.color1
-		.color.color2
-		.color.color3
-		.color.color4
-		.color.color5
-		.color.color6
+			.content(style=tmpimage)
 
+			nav.bottom.left.color-0
+				header
+					h3
+						a(href=tmplink) Una enfermedad presente en la zona centro- norte del estado de veracruz.
+					h4
+						a(href=tmplink) MVZ. Antonio Fernando Martínez
+
+				footer: ul
+					li: a(href=tmplink) Equinos
+					li: a(href=tmplink): span Leer Artículo
+			
++rainbow
 include /logos
++rainbow
 
 #magazines.row.collapse
-	#magazines-header
+	#magazines-header.color-4
 		a.uno(href=ﬁ.bundles['magazines']) Artículos
 		
 	
