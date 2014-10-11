@@ -15,9 +15,10 @@ module.exports = (request, response, next) ->
 			return response.render()
 
 		response.render
-			breadcrumbs: [
+			BREADCRUMBS: [
 				name:"Directorio"
-				href:ﬁ.bundles['clinics']
+				href:ﬁ.bundles['calendar']
 			]
 			clinics : data
 			feature : data.small[0]
+

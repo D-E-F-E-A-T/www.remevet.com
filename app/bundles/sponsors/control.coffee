@@ -13,6 +13,6 @@ module.exports = (request, response, next) ->
 		response.render
 			data:data
 			BREADCRUMBS: [
-				name:"Artículos de Patrocinadores"
+				name:"Biblioteca"
 				href:ﬁ.bundles['sponsors']
 			]

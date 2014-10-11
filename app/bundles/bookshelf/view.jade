@@ -23,7 +23,7 @@ include /../templates/mixins/ads
 			|	es el mejor medio en español para estar actualizado y aprender sobre los
 			|	avances médicos, procedimientos actuales y casos clínicos.
 
-		a.button.color-0.color-bg-2.expand(href=ﬁ.bundles['about']) Conócenos
+		
 
 	.medium-6.large-8.columns: .cover-right: .cover-contain
 
@@ -50,7 +50,7 @@ include /../templates/mixins/ads
 
 #magazines.row.collapse
 	#magazines-header
-		a.uno(href=ﬁ.bundles['magazines']) Equinos
+		a.uno(href=ﬁ.bundles['magazines']) #{coverData.Name2}
 	
 	#magazines-issues.row
 		- console.log(JSON.stringify(data.horses))
