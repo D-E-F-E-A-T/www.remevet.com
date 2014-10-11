@@ -1,30 +1,37 @@
-#cover.row.collapse
+include /../templates/mixins/rainbow
+include /../templates/mixins/ads
 
-	#cover-welcome.large-4.medium-5.columns
-		h2.color1 Comunidad
+.cover.row.collapse
+
+	.medium-6.large-4.columns.gradient: .cover-left
+
+		h2.color-6 Comunidad
 		p
-			| ¿Te interesa aplicar tus conocimientos y no sabes dónde buscar? o ¿Necesitas contratar Médicos Veterinarios para tu Clínica u Hospital? REMEVET apoya al sector uniéndolos a través de su Bolsa de Trabajo. Además, también fomentamos el vínculo entre Veterinarios para que puedas vender equipo que ya no usarás o conseguir equipo y material a un menor precio gracias a nuestros “Avisos de Ocasión”.
-			br
-			br
-			br
-			br
-
-	#cover-article.large-8.medium-7.columns(style="background-image:url('/static/images/covers/horse_1.jpg')")
 		
-		article
-			.uno
-				h3: a(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/equinos/equinos-024.pdf#page=41&zoom=page-fit&twoPageView=2", target="_blank") Una enfermedad presente en la zona centro- norte del estado de veracruz.
-				h4: a(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/equinos/equinos-024.pdf#page=41&zoom=page-fit&twoPageView=2", target="_blank") MVZ. Antonio Fernando Martínez
-			.dos
-				a.uno(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/equinos/equinos-024.pdf#page=41&zoom=page-fit&twoPageView=2", target="_blank") Equinos
-				a.dos(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/equinos/equinos-024.pdf#page=41&zoom=page-fit&twoPageView=2", target="_blank") Leer Artículo
+			| ¿Te interesa aplicar tus conocimientos y no sabes dónde buscar? o ¿Necesitas contratar Médicos Veterinarios para tu Clínica u Hospital? REMEVET apoya al sector uniéndolos a través de su Bolsa de Trabajo. Además, también fomentamos el vínculo entre Veterinarios para que puedas vender equipo que ya no usarás o conseguir equipo y material a un menor precio gracias a nuestros “Avisos de Ocasión”.
 
-	#cover-rainbow
-		.color.color1
-		.color.color2
-		.color.color3
-		.color.color4
-		.color.color5
-		.color.color6
+		p.hide-for-small.hide-for-medium
+			|	En sus páginas se analizan temas actuales de la medicina veterinaria,
+			|	casos clínicos y procedimientos de vanguardia, con aportaciones de los
+			|	especialistas más reconocidos de nuestro país y del extranjero.
 
-include /logos
+
+	.medium-6.large-8.columns: .cover-right: .cover-contain
+
+		- var tmplink  = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/fauna-silvestre/fauna-silvestre-008.pdf#page=1&zoom=page-fit&twoPageView=2"
+		- var tmpimage = "background-image:url('/static/images/covers/horse_1.jpg')"
+
+		article.color-0.color-bg-6
+
+			.content(style=tmpimage)
+
+			nav.bottom.right.color-0
+				header
+					h3
+						a(href=tmplink) Una enfermedad presente en la zona centro-norte del estado de veracruz.
+					h4
+						a(href=tmplink) MVZ. Antonio Fernando Martínez
+
+				footer: ul
+					li: a(href=tmplink) Equinos
+					li: a(href=tmplink): span Leer Artículo
