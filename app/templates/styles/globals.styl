@@ -1,11 +1,11 @@
-// angle that every box should have
 $colors-1st    = #4d2a08
 $colors-2nd    = #e67e17
-$colors-normal = (rgba(255,255,255,0.7) #ba4eba #66ccaa #e6b650 #29b8ff #f067c2 #306eff #66cc66 #e65c67)
-$colors-hover  = (rgba(255,255,255,  1) #9629cc #00cc88 #ffbf00 #0095ff #e617a1 #004CE6 #31cc29 #e62e4d)
+$colors-normal = (rgba(255,255,255,0.7) #ba4eba #e6b650 #66ccaa #29b8ff #f067c2 #306eff #66cc66 #e65c67)
+$colors-hover  = (rgba(255,255,255,  1) #9629cc #ffbf00 #00cc88 #0095ff #e617a1 #004CE6 #31cc29 #e62e4d)
 
 $header-height = 105px
 
+// angle that every box should have
 $skew = 25.62deg
 
 // 0     ,  640px
@@ -25,29 +25,29 @@ $screen-landscape = $screen + ' and (orientation: landscape)'
 $screen-portrait  = $screen + ' and (orientation: portrait)'
 
 $media-small-up        =  $screen
-$media-small-only      =  $screen          + ' and (max-width:' + $range-small[1] + ')'
-$media-small-landscape =  $screen-landscape + ' and (max-width:' + $range-small[1] + ')'
-$media-small-portrait  =  $screen-portrait + ' and (max-width:' + $range-small[1] + ')'
+$media-small-only      =  $screen            + ' and (max-width:' + $range-small[1] + ')'
+$media-small-landscape =  $screen-landscape  + ' and (max-width:' + $range-small[1] + ')'
+$media-small-portrait  =  $screen-portrait   + ' and (max-width:' + $range-small[1] + ')'
 
-$media-medium-up        = $screen          + ' and (min-width:' + $range-medium[0] + ')'
-$media-medium-only      = $screen          + ' and (min-width:' + $range-medium[0] + ') and (max-width:' + $range-medium[1] + ')'
-$media-medium-landscape = $screen-landscape + ' and (min-width:' + $range-medium[0] + ') and (max-width:' + $range-medium[1] + ')'
-$media-medium-portrait  = $screen-portrait + ' and (min-width:' + $range-medium[0] + ') and (max-width:' + $range-medium[1] + ')'
+$media-medium-up        = $screen            + ' and (min-width:' + $range-medium[0] + ')'
+$media-medium-only      = $screen            + ' and (min-width:' + $range-medium[0] + ') and (max-width:' + $range-medium[1] + ')'
+$media-medium-landscape = $screen-landscape  + ' and (min-width:' + $range-medium[0] + ') and (max-width:' + $range-medium[1] + ')'
+$media-medium-portrait  = $screen-portrait   + ' and (min-width:' + $range-medium[0] + ') and (max-width:' + $range-medium[1] + ')'
 
-$media-large-up        = $screen          + ' and (min-width:' + $range-large[0] + ')'
-$media-large-only      = $screen          + ' and (min-width:' + $range-large[0] + ') and (max-width:' + $range-large[1] + ')'
-$media-large-landscape = $screen-landscape + ' and (min-width:' + $range-large[0] + ') and (max-width:' + $range-large[1] + ')'
-$media-large-portrait  = $screen-portrait + ' and (min-width:' + $range-large[0] + ') and (max-width:' + $range-large[1] + ')'
+$media-large-up        = $screen             + ' and (min-width:' + $range-large[0] + ')'
+$media-large-only      = $screen             + ' and (min-width:' + $range-large[0] + ') and (max-width:' + $range-large[1] + ')'
+$media-large-landscape = $screen-landscape   + ' and (min-width:' + $range-large[0] + ') and (max-width:' + $range-large[1] + ')'
+$media-large-portrait  = $screen-portrait    + ' and (min-width:' + $range-large[0] + ') and (max-width:' + $range-large[1] + ')'
 
-$media-xlarge-up        = $screen          + ' and (min-width:' + $range-xlarge[0] + ')'
-$media-xlarge-only      = $screen          + ' and (min-width:' + $range-xlarge[0] + ') and (max-width:' + $range-xlarge[1] + ')'
-$media-xlarge-landscape = $screen-landscape + ' and (min-width:' + $range-xlarge[0] + ') and (max-width:' + $range-xlarge[1] + ')'
-$media-xlarge-portrait  = $screen-portrait + ' and (min-width:' + $range-xlarge[0] + ') and (max-width:' + $range-xlarge[1] + ')'
+$media-xlarge-up        = $screen            + ' and (min-width:' + $range-xlarge[0] + ')'
+$media-xlarge-only      = $screen            + ' and (min-width:' + $range-xlarge[0] + ') and (max-width:' + $range-xlarge[1] + ')'
+$media-xlarge-landscape = $screen-landscape  + ' and (min-width:' + $range-xlarge[0] + ') and (max-width:' + $range-xlarge[1] + ')'
+$media-xlarge-portrait  = $screen-portrait   + ' and (min-width:' + $range-xlarge[0] + ') and (max-width:' + $range-xlarge[1] + ')'
 
-$media-xxlarge-up        = $screen          + ' and (min-width:' + $range-xxlarge[0] + ')'
-$media-xxlarge-only      = $screen          + ' and (min-width:' + $range-xxlarge[0] + ')'
+$media-xxlarge-up        = $screen           + ' and (min-width:' + $range-xxlarge[0] + ')'
+$media-xxlarge-only      = $screen           + ' and (min-width:' + $range-xxlarge[0] + ')'
 $media-xxlarge-landscape = $screen-landscape + ' and (min-width:' + $range-xxlarge[0] + ')'
-$media-xxlarge-portrait  = $screen-portrait + ' and (min-width:' + $range-xxlarge[0] + ')'
+$media-xxlarge-portrait  = $screen-portrait  + ' and (min-width:' + $range-xxlarge[0] + ')'
 
 mixin-skew()
 	-webkit-transform : skew(-1 * $skew)

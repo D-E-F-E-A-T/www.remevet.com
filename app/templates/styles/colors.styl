@@ -1,5 +1,6 @@
 // Define colors used throughout the project
 $color-span = 33%
+$color-max  = 66%
 
 .color-primary
 	color: $colors-1st
@@ -39,6 +40,10 @@ for $color,$number in $colors-normal
 		&.color-lighter
 			color: lighten($color, $color-span)
 
+		&.color-lightest
+			color: lighten($color, $color-max)
+
+
 		&.color-darker
 			color: darken($color, $color-span)
 
@@ -56,6 +61,14 @@ for $color,$number in $colors-normal
 			&:hover
 			&:focus
 				background-color: lighten($colors-hover[$number], $color-span)
+
+		&.color-lightest
+			background-color: lighten($color, $color-max)
+
+			&:hover
+			&:focus
+				background-color: lighten($colors-hover[$number], $color-max)
+
 
 		&.color-darker
 			background-color: darken($color, $color-span)

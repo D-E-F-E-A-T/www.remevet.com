@@ -1,79 +1,45 @@
 Shuffle     = (require 'knuth-shuffle').knuthShuffle
-Advertising = require './ads'
+Advertisers = require './ads'
 
 module.exports = (request, callback)->
+
+	self   = @
+	result = advertisers:[], magazines:[], events:[], articles:[]
+
+	magazines   = ﬁ.db.collection 'magazines'
+	events      = ﬁ.db.collection 'events'
+	articles    = ﬁ.db.collection 'temp'
+	advertisers = Shuffle(Advertisers.slice(0))
+
 	# Ads
-
-	ADS = Shuffle(Advertising.slice(0))
-	ads = s:[], m:[], l:[], x:[]
-	while ADS.length
-		tmp = ADS.splice(0,12)
-		ads.x.push tmp
-		ads.l.push(tmp.slice i, i+6) for i in [0..6] by 6
-		ads.m.push(tmp.slice i, i+4) for i in [0..8] by 4
-		ads.s.push(tmp.slice i, i+3) for i in [0..9] by 3
-
-	# PDFs
-	collection = ﬁ.db.collection 'pdf'
-	events     = ﬁ.db.collection 'events'
-
-	pdfs = []
-	eventos = []
-	self = @
-
-	collection.find(slug:'pequenas-especies')
-		.sort(issue:-1)
-		.limit(2).toArray (error, data)->
-
-			pdfs.push d for d in data
-
-			collection.find(slug:'fauna-silvestre')
-				.sort(issue:-1)
-				.limit(2).toArray (error, data)->
-
-					pdfs.push d for d in data
-
-					collection.find(slug:'equinos')
-						.sort(issue:-1)
-						.limit(2).toArray (error, data)->
-
-							pdfs.push d for d in data
-
-							events.find()
-								.sort(slug:-1)
-								.limit(6).toArray (error, ev)->
-
-									callback.call self, null,
-										pdfs    : pdfs
-										ads     : ads
-										eventos : ev
-###
-module.exports = (request, callback)->
-
-	collection = ﬁ.db.collection 'pdf'
-
-	pdfs = []
-	self = @
-
-	aggregator = []
-
-    # Agrupa por "slug" y determina el máximo de "issue",
-    # pasa los fields "tal cual" usando $first
-	aggregator.push	$group:
-		_id   : "$slug"
-		issue : $max   : "$issue"
-		name  : $first : "$name"
-		file  : $first : "$file"
-		image : $first : "$image"
+	# data = s:[], m:[], l:[], x:[]
+	# while advertisers.length
+	# 	tmp = advertisers.splice(0,12)
+	# 	data.x.push tmp
+	# 	data.l.push(tmp.slice i, i+6) for i in [0..6] by 6
+	# 	data.m.push(tmp.slice i, i+4) for i in [0..8] by 4
+	# 	data.s.push(tmp.slice i, i+3) for i in [0..9] by 3
+	# result.advertisers = data
+	result.advertisers = advertisers.splice(0,12)
 
 
-    # Renombra el resultado anterior,
-    # impide que _id se publique y mapea su resultado a "slug",
-    # los demas pasan "tal cual"
-	aggregator.push $project:
-		slug:"$_id",_id:0,issue:1,name:1,file:1,image:1
+	# Magazines
+	magazines.aggregate
+		$group:(_id: "$slug",document: $last: "$$ROOT"), (error, data)->
+			callback.call(self, error) if error
+			result.magazines = data.map (v)-> v.document
 
-	collection.aggregate aggregator, (error, data)->
-		return callback.call(self, (message:[String error], status:500)) if error
-		callback.call self, null,data
-###
+			# Events
+			events
+				.find("date.end": $gte: new Date)
+				.sort("date.ini": 1)
+				.limit(6).toArray (error, data)->
+					callback.call(self,error) if error
+					result.events = data
+
+					articles.find().limit(5).toArray (error, data)->
+						callback.call(self, error) if error
+						result.articles = data
+
+						# Ended
+						callback.call self, null, result

@@ -1,0 +1,70 @@
+section
+
+	main
+		padding: 1.5em 0
+
+		.element
+			margin:0
+
+			& > a
+				z-index:0
+				position:relative
+				display:block
+				top:0
+				left:0
+				height:100%
+
+			& > footer
+			& > header
+				z-index:1
+				position:relative
+				display:block
+				overflow:hidden
+
+				& > *
+					position    :relative
+					font-family : 'Cabin', sans-serif
+					font-weight : 700
+					line-height : 25px
+					margin      : 0
+					padding     : 0
+
+					a
+						padding: 0 0.5em
+						font-size:14pt
+
+				aside
+					float:right
+					a, a:hover
+						color: white
+
+
+				h4
+					float:left
+
+	header
+		line-height:3em
+		overflow: hidden
+		font-family : 'Cabin', sans-serif;
+		text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8);
+
+		a
+			color: white
+			text-shadow: 1px 1px 0px #000
+			display:block
+			padding: 0 2em
+
+			&:hover
+				color:white
+				text-shadow: 0 -1px 0 #000;
+
+			&.uno
+				float:left
+				font-size: 18pt
+				text-transform: uppercase
+				padding-left: 1em
+
+			&.dos
+				float      :right
+				font-style : italic
+				font-size  : 15pt
