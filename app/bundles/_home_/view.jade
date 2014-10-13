@@ -73,7 +73,6 @@ include /../templates/mixins/ads
 
 		main.row: .columns.small-12
 			for article in articles
-				-console.info(article)
 				article(style='padding:0.5em; margin:0.5em').color-bg-0
 					strong: a(href=article.href).color-primary= article.name
 					div(style='text-align:right; margin-top:0.5em'): strong: a(href=article.href).color-secondary=article.author

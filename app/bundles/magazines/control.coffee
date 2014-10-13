@@ -3,14 +3,9 @@ Model = require './model'
 module.exports = (request, response, next)->
 
 	Model request, (error,data)->
+		data.BREADCRUMBS = [
+			name : "Revistas"
+			href : ﬁ.bundles['calendar']
+		]
 
-	
-		response.render
-			BREADCRUMBS: [
-				name:"Revistas"
-				href:ﬁ.bundles['calendar']
-			]
-			data:data
-			ads  : data.ads
-			pdfs : data.pdfs
-			ads  : data.ads
+		response.render data

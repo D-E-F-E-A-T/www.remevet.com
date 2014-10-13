@@ -3,78 +3,84 @@ include /../templates/mixins/ads
 
 .cover.row.collapse
 
-	.medium-6.large-4.columns.gradient: .cover-left
+	.show-for-large-up.large-4.columns.gradient: .cover-left
 
-		h2.color-2 Comunidad
 		p
 			strong.color-2 REMEVET&nbsp;
-			| ¿Te interesa aplicar tus conocimientos y no sabes dónde buscar? o ¿Necesitas contratar Médicos Veterinarios para tu Clínica u Hospital? REMEVET apoya al sector uniéndolos a través de su Bolsa de Trabajo. Además, también fomentamos el vínculo entre Veterinarios para que puedas vender equipo que ya no usarás o conseguir equipo y material a un menor precio gracias a nuestros “Avisos de Ocasión”.
-
+			| ¿Te interesa aplicar tus conocimientos y no sabes dónde buscar? o ¿Necesitas
+			| contratar Médicos Veterinarios para tu Clínica u Hospital? REMEVET apoya al
+			| sector uniéndolos a través de su Bolsa de Trabajo. Además, también fomentamos el vínculo entre Veterinarios para que puedas vender equipo que ya no usarás o conseguir equipo y material a un menor precio gracias a nuestros “Avisos de Ocasión”.
 			| veterinarios, estudiantes de veterinaria, académicos y personas interesadas
 			| en la medicina tanto de equinos, pequeñas especies y fauna silvestre en general.
 
-		p.hide-for-small.hide-for-medium
+		p
 			|	En sus páginas se analizan temas actuales de la medicina veterinaria,
 			|	casos clínicos y procedimientos de vanguardia, con aportaciones de los
 			|	especialistas más reconocidos de nuestro país y del extranjero.
 
-
-		p.hide-for-small.hide-for-portrait
+		p
 			strong.color-2 REMEVET&nbsp;
 			|	es el mejor medio en español para estar actualizado y aprender sobre los
 			|	avances médicos, procedimientos actuales y casos clínicos.
 
 
-	.medium-6.large-8.columns: .cover-right: .cover-contain
+	.large-8.columns: .cover-right: .cover-contain
 
 		- var tmplink  = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/fauna-silvestre/fauna-silvestre-008.pdf#page=1&zoom=page-fit&twoPageView=2"
+		- var tmplink  = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2"
 		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
 
 		article.color-0.color-bg-2
 
-			.content(style=tmpimage)
+			main.content(style=tmpimage)
 
 			nav.bottom.right.color-0
 				header
 					h3
-						a(href=tmplink) Bases del Bienestar Animal en Fauna Silvestre
+						a(href=tmplink, target="_blank") Actualización en métodos de medición de la presión arterial sistémica en pequeños
 					h4
-						a(href=tmplink) MVZ. M en C. Adriana Cossío Bayúgar
+						a(href=tmplink) MV Iván Álvarez MV César Mayorga
 
 				footer: ul
-					li: a(href=tmplink) Fauna Silvestre
+					li: a(href=tmplink) Pequeñas Especies
 					li: a(href=tmplink): span Leer Artículo
 
+		//- article.color-0.color-bg-2
+
+		//- 	.content(style=tmpimage)
+
+		//- 	nav.bottom.right.color-0
+		//- 		header
+		//- 			h3
+		//- 				a(href=tmplink) Bases del Bienestar Animal en Fauna Silvestre
+		//- 			h4
+		//- 				a(href=tmplink) MVZ. M en C. Adriana Cossío Bayúgar
+
+		//- 		footer: ul
+		//- 			li: a(href=tmplink) Fauna Silvestre
+		//- 			li: a(href=tmplink): span Leer Artículo
+
 +rainbow()
-cover.row.collapse
-	#catego.large-12.medium-6.columns
-		h2 Selecciona tu categoria
-	.large-12.medium-6.columns.color-bg-2
 
-		#perro.large-4.columns
-			a(href=ﬁ.bundles['bookshelf'].replace(":slug","pequenas-especies"))
-				img(src='static/images/perro.png', alt='Smiley face', height="285" width="285")
-			h3 pequeñas especies
-
-		#elefante.large-4.columns
-			a(href=ﬁ.bundles['bookshelf'].replace(":slug","fauna-silvestre"))
-				img(src='static/images/elefante.jpg', alt='Smiley face', height="285" width="285")
-			h3 fauna silvestre
-
-		#caballo.large-4.columns
-			a(href=ﬁ.bundles['bookshelf'].replace(":slug","equinos"))
-				img(src='static/images/caballo.png', alt='Smiley face', height="275" width="275")
-			h3 equinos
-			
+#clients.row.collapse: #clients-slider
+	for advertiser in advertisers
+		.slide: a(href=advertiser.href || '#', target="_blank", onclick="tracklOutboundLink('" + advertiser.href + "')", return)
+			img(src=advertiser.src)
 
 +rainbow(true)
 
+.row.collapse.color-bg-2.color-lightest
+	section.small-12.columns.color-bg-2.color-lightest
+		header.color-bg-2
+			a.uno(href=ﬁ.bundles['magazines']) ¿Qué sección deseas visitar?
 
-
-	
-		
-	
-	
-	
-	
-
+		main.row: .small-12.large-8.columns.large-centered
+			for magazine in magazines
+				- url = ﬁ.settings.app.pdf.url + magazine.file + ﬁ.settings.app.pdf.opts
+				.small-4.columns.element
+					a(href=url)
+						img(src=magazine.image)
+					footer.color-bg-0
+						h4: a.color-primary(href=url)= magazine.name
+						aside.color-bg-2.color-darker: a(href="#")= magazine.issue
++rainbow()
