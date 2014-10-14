@@ -16,8 +16,7 @@ module.exports = (request, response, next) ->
 	Model section, (error, data)->
 		return next(status:500, errors:[error]) if error
 
-		response.render
-			BREADCRUMBS : [name: section, href: ﬁ.bundles['magazines']]
-			cover       : found
-			magazines   : data
+		data.cover = found
+		data.BREADCRUMBS = [name: section, href: ﬁ.bundles['magazines']]
 
+		response.render data

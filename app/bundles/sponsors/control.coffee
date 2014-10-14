@@ -10,9 +10,9 @@ module.exports = (request, response, next) ->
 
 		ﬁ.log.debug '-------------------->', JSON.stringify data
 
-		response.render
-			data:data
-			BREADCRUMBS: [
-				name:"Biblioteca"
-				href:ﬁ.bundles['sponsors']
-			]
+		data.BREADCRUMBS = [
+			name:"Biblioteca"
+			href:ﬁ.bundles['sponsors']
+		]
+
+		response.render data

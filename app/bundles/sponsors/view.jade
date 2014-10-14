@@ -1,22 +1,13 @@
 include /../templates/mixins/rainbow
-include /../templates/mixins/ads
+include /../templates/mixins/advertisers
 
 .cover.row.collapse
 
-	.medium-6.large-4.columns.gradient: .cover-left
-		
-		h2.color-4 Artículos de nuestros patrocinadores
-		p
-			| Este apartado es un medio de comunicación directa entre los usuarios de este portal y nuestros patrocinadores.
-
-		p
-			|En él podrás encontrar información sobre las Empresas que nos apoyan que van desde temas técnicos y científicos sobre alimentos, equipos o medicamentos, hasta lo más novedoso en cuanto a productos y servicios que ellos te ofrecen.
-
-	.medium-6.large-8.columns: .cover-right: .cover-contain
+	.small-12.columns: .cover-right: .cover-contain
 
 		- var tmplink = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/equinos/equinos-024.pdf#page=41&zoom=page-fit&twoPageView=2"
 		- var tmpimage = "background-image:url('/static/images/covers/horse_1.jpg')"
-		
+
 		article.color-0.color-bg-4
 
 			.content(style=tmpimage)
@@ -31,18 +22,18 @@ include /../templates/mixins/ads
 				footer: ul
 					li: a(href=tmplink) Equinos
 					li: a(href=tmplink): span Leer Artículo
-			
-+rainbow
-include /logos
-+rainbow
+
++rainbow(true)
++advertisers(advertisers)
++rainbow()
 
 #magazines.row.collapse
 	#magazines-header.color-4
 		a.uno(href=ﬁ.bundles['magazines']) Artículos
-		
-	
+
+
 	#magazines-issues.row
-		for article in data
+		for article in articles
 			.small-6.medium-4.large-2.columns
 				figure.magazine
 					a(href=ﬁ.settings.app.pdf.url+article.file+ﬁ.settings.app.pdf.opts)

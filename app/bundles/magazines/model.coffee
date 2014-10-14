@@ -2,10 +2,9 @@ Advertisers = ﬁ.require 'templates', 'models/advertisers'
 
 module.exports = (data, callback)->
 
-	self   = @
-	result = advertisers:[], magazines:[]
-
-	magazines   = ﬁ.db.collection 'magazines'
+	self      = @
+	magazines = ﬁ.db.collection 'magazines'
+	result    = advertisers:[], magazines:[]
 
 	# Magazines
 	magazines.aggregate

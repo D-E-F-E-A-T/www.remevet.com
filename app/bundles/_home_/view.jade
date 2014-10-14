@@ -42,7 +42,7 @@ include /../templates/mixins/advertisers
 			a.dos.color-bg-2.color-darker.hide-for-small-only(href=ﬁ.bundles['magazines']) Ver mas
 
 		main.row: for magazine in magazines
-			- magazine.href  = ﬁ.settings.app.pdf.url + magazine.file + ﬁ.settings.app.pdf.opts
+			- magazine.href  = ﬁ.bundles['magazines/section'].replace(':section', magazine.slug)
 			- magazine.title = magazine.name + ': ' + magazine.issue
 			.small-4.columns.element
 				a(href=magazine.href)

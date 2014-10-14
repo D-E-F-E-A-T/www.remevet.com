@@ -10,10 +10,6 @@ $document.foundation().ready ->
 	$('#header-button').click ->
 		$(this).parent().toggleClass 'toggle'
 
-	$elem = $('.cover-right article:first-child > :first-child')
-	$('.cover, .cover-right, .cover-left').height $elem.height()
-
-
 	screenUpdate = (e)->
 		$slides = $('#clients-slider .slide');
 		$slides.height $slides.first().width()

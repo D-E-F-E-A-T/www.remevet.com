@@ -1,21 +1,9 @@
 include /../templates/mixins/rainbow
+include /../templates/mixins/advertisers
 
 .cover.row.collapse
 
-	.medium-6.large-4.columns.gradient: .cover-left
-
-		h2.color-2 Revistas
-		p
-			strong.color-2 REMEVET&nbsp;
-			| es una publicación independiente creada para la educación y actualización contnua
-			| de los médicos veterinarios zootecnistas. Para tu comodidad, facilitamos la búsqueda
-			| de los temas y artículos de tu interés dividiendo la revista en tres ramas
-
-
-	.medium-6.large-8.columns: .cover-right: .cover-contain
-
-		- var tmplink  = "https://s3-us-west-1.amazonaws.com/uat.magazine/fauna-silvestre/fauna-silvestre-008/fauna-silvestre-008.html#p=8"
-		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
+	.small-12.columns: .cover-right: .cover-contain
 
 		article.color-0.color-bg-2
 
@@ -34,19 +22,33 @@ include /../templates/mixins/rainbow
 						li: a(href=tmplink): span Leer Artículo
 
 +rainbow()
++advertisers(advertisers)
++rainbow(true)
 
-#magazines.row.collapse
-	#magazines-header
-		a.uno(href=ﬁ.bundles['magazines']) #{cover.Name2}
+mixin magazine(magazine)
+	- magazine.href  = ﬁ.settings.app.pdf.url + magazine.slug + magazine.file + '.html'
+	- magazine.title = magazine.name + ': ' + magazine.issue
 
-	#magazines-issues.row
-		for magazine in magazines
-			.small-6.medium-4.large-2.columns
-				figure.magazine
-					a(href=ﬁ.settings.app.pdf.url + magazine.slug + magazine.file + '.html' target="_blank")
-						img(src=magazine.image)
-					figcaption
-						h4: a(href="#")=magazine.name
-						aside: a(href="#")=magazine.issue
+	a(href=magazine.href, target='_blank')
+		img(src=magazine.image, alt=magazine.title, title=magazine.title, width='100%')
+	footer.color-bg-0.hide-for-small-only
+		h4: a.color-primary(href=magazine.href, target='_blank')= magazine.name
+		aside.color-bg-2.color-darker: a(href=magazine.href, target='_blank')= magazine.issue
+
+mixin magazine-n(name, n, magazine)
+	div(class='columns element ' + name + '-' + n)
+		+magazine(magazine)
+
+
+.row.collapse.color-bg-2.color-lightest
+
+	section.small-12.columns.color-bg-2.color-lightest
+
+		header.color-bg-2
+			a.uno(href=ﬁ.bundles['magazines']) Revistas
+		- if(magazines.length%2) console.info('sssss')
+		main.row: for magazine in magazines
+			.small-6.medium-4.large-2.columns.element(style='margin-bottom:1em')
+				+magazine(magazine)
 
 +rainbow(true)
