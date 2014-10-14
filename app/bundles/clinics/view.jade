@@ -1,23 +1,24 @@
 #cover.row.collapse
 
-	#cover-welcome.large-4.medium-5.columns
-		h2.color-5 Directorio de clínicas
-		p
+	.small-12.columns: .cover-right: .cover-contain
 
-			| REMEVET pone a tu disposición un directorio de clínicas y hospitales veteriarios en la República Mexicana.
-			br
-			br
-			br
+		- var tmplink = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
+		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
 
-	#cover-article.large-8.medium-7.columns(style="background-image:url('/static/images/covers/gato.jpg')")
+		article.color-0.color-bg-5
 
-		article
-			.uno
-				h3: a(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2", target="_blank") Actualización en métodos de medición de la presión arterial sistemica en pequeños
-				h4: a(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2", target="_blank") MV. Iván Álvarez - MV. Cesar Mayorga
-			.dos
-				a.uno(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2", target="_blank") Pequeñas Especies
-				a.dos(href="/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2", target="_blank") Leer Artículo
+			.content(style=tmpimage)
+
+			nav.bottom.left.color-0
+				header
+					h3
+						a(href=tmplink) Actualización en métodos de medición de la presión arterial sistemica en pequeños
+					h4
+						a(href=tmplink) MV. Iván Álvarez - MV. Cesar Mayorga
+
+				footer: ul
+					li: a(href=tmplink) Pequeñas Especies
+					li: a(href=tmplink): span Leer Artículo
 
 	#cover-rainbow
 		.color.color1

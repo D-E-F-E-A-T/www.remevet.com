@@ -1,3 +1,4 @@
+Advertisers = ﬁ.require 'templates', 'models/advertisers'
 module.exports = (request, callback)->
 
 	self       = @

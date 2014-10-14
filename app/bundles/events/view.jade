@@ -1,22 +1,11 @@
+-console.info(data)
+
 include /../templates/mixins/rainbow
-include /../templates/mixins/ads
+include /../templates/mixins/advertisers
 
 .cover.row.collapse
 
-	.medium-6.large-4.columns.gradient: .cover-left
-		
-		h2.color-3 Eventos
-		p
-			| Encuentra aquí toda la información sobre: 
-		p
-			|cursos, diplomados y congresos con relación al área veterinaria; todo calendarizado para darte más visibilidad y que puedas programar tus asistencias. No dejes de consultar esta sección para estar al día de los próximos eventos más relevantes.
-			br
-			br
-			br
-			br
-			br
-
-	.medium-6.large-8.columns: .cover-right: .cover-contain
+	.small-12: .cover-right: .cover-contain
 
 		- var tmplink = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2"
 		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
@@ -36,8 +25,8 @@ include /../templates/mixins/ads
 					li: a(href=tmplink) Pequeñas Especies
 					li: a(href=tmplink): span Leer Artículo
 
-+rainbow()
-include /logos
++rainbow(true)
+//- +advertisers(advertisers)
 +rainbow()
 
 .row.collapse
@@ -45,27 +34,16 @@ include /logos
 
 		#magazines-header
 			a.uno(href="#") Octubre
-		each event in data.Octubre
-			.event(style="height:200px;margin-top:0.8em", data-p="#{event.desc}", data-img="#{event.logo}")
-				.small-6.large-4.columns
-					a(href="#", data-reveal-id="#{event.slug}")
-						img(src=event.logo, style="max-width:100%;max-height:100%")
-					.reveal-modal(id="#{event.slug}", data-reveal)
-						img(src=event.logo)
-				.small-6.large-8.columns
-					p= event.desc
+		//- each event in events
+		//- 	.event(style="height:200px;margin-top:0.8em", data-p="#{event.desc}", data-img="#{event.logo}")
+		//- 		.small-6.large-4.columns
+		//- 			a(href="#", data-reveal-id="#{event.slug}")
+		//- 				img(src=event.logo, style="max-width:100%;max-height:100%")
+		//- 			.reveal-modal(id="#{event.slug}", data-reveal)
+		//- 				img(src=event.logo)
+		//- 		.small-6.large-8.columns
+		//- 			p= event.desc
 
-		#magazines-header
-			a.uno(href="#") Noviembre
-		each event in data.Noviembre
-			.event(style="height:200px;margin-top:0.8em", data-p="#{event.desc}", data-img="#{event.logo}")
-				.small-6.large-4.columns
-					a(href="#", data-reveal-id="#{event.slug}")
-						img(src=event.logo, style="max-width:100%;max-height:100%")
-					.reveal-modal(id="#{event.slug}", data-reveal)
-						img(src=event.logo)
-				.small-6.large-8.columns
-					p= event.desc
 
 
 	.small-12.large-8.columns#event

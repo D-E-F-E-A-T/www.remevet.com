@@ -9,6 +9,7 @@ module.exports = (request, response, next)->
 			response.status = error.status
 			response.flash 'notice-error', error.message
 			return response.render()
+		console.log "EN EL CONTROL " + JSON.stringify data
 
 		response.render
 			BREADCRUMBS: [
@@ -16,4 +17,3 @@ module.exports = (request, response, next)->
 				href:ﬁ.bundles['calendar']
 			]
 			data:data
-			ads  : data.ads

@@ -1,28 +1,11 @@
 include /../templates/mixins/rainbow
-include /../templates/mixins/ads
+include /../templates/mixins/advertisers
 
 .cover.row.collapse
 
-	.medium-6.large-4.columns.gradient: .cover-left
+	.small-12.columns: .cover-right: .cover-contain
 
-		h2.color-5 Directorio de clínicas
-		p
-			strong.color-5 REMEVET&nbsp;
-			| pone a tu disposición un directorio de clínicas y hospitales veteriarios en la República Mexicana.
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-
-	.medium-6.large-8.columns: .cover-right: .cover-contain
-
-		- var tmplink = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2"
+		- var tmplink = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
 		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
 
 		article.color-0.color-bg-5
@@ -40,9 +23,9 @@ include /../templates/mixins/ads
 					li: a(href=tmplink) Pequeñas Especies
 					li: a(href=tmplink): span Leer Artículo
 
-+rainbow
-include /logos
-+rainbow
++rainbow(true)
+//- +advertisers(advertisers)
++rainbow()
 
 #magazines.row.collapse
 	.small-12.large-4.columns(style="height:500px;overflow:scroll;")
