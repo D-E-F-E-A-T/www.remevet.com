@@ -6,5 +6,5 @@ module.exports =
 
 	pdf:
 		base : '/revista/'
-		url  : '/static/lib/pdf.js/web/viewer.html?file='
+		url  : 'https://s3-us-west-1.amazonaws.com/uat.magazine'
 		opts : '#page=1&zoom=page-fit&twoPageView=2'

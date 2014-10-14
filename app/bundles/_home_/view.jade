@@ -32,22 +32,6 @@ include /../templates/mixins/ads
 				source(src="/static/videos/COMFORTIS_ESP_VET_FINAL_H264.mp4", type="video/mp4")
 				source(src="/static/videos/COMFORTIS_ESP_VET_FINAL_H264.ogg", type="video/ogg")
 
-		article.color-0.color-bg-1
-
-			main.content(style=tmpimage)
-
-			nav.bottom.right.color-0
-				header
-					h3
-						a(href=tmplink, target="_blank") Actualización en métodos de medición de la presión arterial sistémica en pequeños
-					h4
-						a(href=tmplink) MV Iván Álvarez MV César Mayorga
-
-				footer: ul
-					li: a(href=tmplink) Pequeñas Especies
-					li: a(href=tmplink): span Leer Artículo
-
-
 +rainbow()
 
 .row.collapse.color-bg-2.color-lightest
@@ -55,16 +39,17 @@ include /../templates/mixins/ads
 	section.small-12.large-8.columns.color-bg-2.color-lightest
 		header.color-bg-2
 			a.uno(href=ﬁ.bundles['magazines']) Revistas
-			a.dos(href=ﬁ.bundles['magazines']).color-bg-2.color-darker Ver mas
+			a.dos.color-bg-2.color-darker.hide-for-small-only(href=ﬁ.bundles['magazines']) Ver mas
 
 		main.row: for magazine in magazines
-			- url = ﬁ.settings.app.pdf.url + magazine.file + ﬁ.settings.app.pdf.opts
+			- magazine.href  = ﬁ.settings.app.pdf.url + magazine.file + ﬁ.settings.app.pdf.opts
+			- magazine.title = magazine.name + ': ' + magazine.issue
 			.small-4.columns.element
-				a(href=url)
-					img(src=magazine.image)
-				footer.color-bg-0
-					h4: a.color-primary(href=url)= magazine.name
-					aside.color-bg-2.color-darker: a(href="#")= magazine.issue
+				a(href=magazine.href)
+					img(src=magazine.image, alt=magazine.title, title=magazine.title)
+				footer.color-bg-0.hide-for-small-only
+					h4: a.color-primary(href=magazine.href)= magazine.name
+					aside.color-bg-2.color-darker: a(href=magazine.href)= magazine.issue
 
 
 	section.hide-for-medium-down.large-4.columns.color-bg-1.color-lightest
@@ -91,18 +76,23 @@ include /../templates/mixins/ads
 	section.small-12.columns.color-bg-3.color-lightest
 		header.color-bg-3
 			a.uno(href=ﬁ.bundles['magazines']) Eventos
-			a.dos(href=ﬁ.bundles['magazines']).color-bg-3.color-darker Ver calendario
+			a.dos.color-bg-3.color-darker.hide-for-small-only(href=ﬁ.bundles['magazines']) Ver calendario
 
 		main.row
 			- var klass, base = 'element columns small-6 medium-4 large-2'
 			for event,i in events
+				- event.date.day   = { ini: event.date.ini.getDate(), end: event.date.end.getDate() }
+				- event.date.day   = (event.date.day.ini == event.date.day.end)? event.date.day.ini : event.date.day.ini + ' - ' + event.date.day.end
 				- klass = base
 				- if(i >= 2) klass += ' hide-for-small-only';
 				- if(i >= 3) klass += ' hide-for-medium-only';
 				div(class=klass)
 					header.color-bg-0
-						h4: a(href=ﬁ.bundles['events']).color-3.color-darker= ﬁ.datemonth(event.date.ini.getMonth())
-						aside.color-bg-3.color-darker: a(href="#")= event.date.ini.getDay()
+						h4: a.color-3.color-darker(href=ﬁ.bundles['events'])
+							span.hide-for-small-only=ﬁ.datemonth(event.date.ini.getMonth())
+							span.show-for-small-only=ﬁ.datemonth(event.date.ini.getMonth(), true)
+
+						aside.color-bg-3.color-darker: a(href="#")=event.date.day
 					a(href=ﬁ.bundles['events'])
 						img(src=event.logo, width='100%')
 

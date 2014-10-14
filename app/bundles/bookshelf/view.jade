@@ -5,34 +5,24 @@ include /../templates/mixins/ads
 
 	.medium-6.large-4.columns.gradient: .cover-left
 
-		h2.color-2 ¡Bienvenido!
+		h2.color-2 Revistas
 		p
 			strong.color-2 REMEVET&nbsp;
-			| es una publicación electrónica en español que está dirigida a los médicos
-			| veterinarios, estudiantes de veterinaria, académicos y personas interesadas
-			| en la medicina tanto de equinos, pequeñas especies y fauna silvestre en general.
-
-		p.hide-for-small.hide-for-medium
-			|	En sus páginas se analizan temas actuales de la medicina veterinaria,
-			|	casos clínicos y procedimientos de vanguardia, con aportaciones de los
-			|	especialistas más reconocidos de nuestro país y del extranjero.
+			| es una publicación independiente creada para la educación y actualización contnua
+			| de los médicos veterinarios zootecnistas. Para tu comodidad, facilitamos la búsqueda
+			| de los temas y artículos de tu interés dividiendo la revista en tres ramas
 
 
-		p.hide-for-small.hide-for-portrait
-			strong.color-2 REMEVET&nbsp;
-			|	es el mejor medio en español para estar actualizado y aprender sobre los
-			|	avances médicos, procedimientos actuales y casos clínicos.
 
-		
 
 	.medium-6.large-8.columns: .cover-right: .cover-contain
 
-		- var tmplink  = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/fauna-silvestre/fauna-silvestre-008.pdf#page=1&zoom=page-fit&twoPageView=2"
+		- var tmplink  = "https://s3-us-west-1.amazonaws.com/uat.magazine/fauna-silvestre/fauna-silvestre-008/fauna-silvestre-008.html#p=8"
 		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
 
 		article.color-0.color-bg-2
 
-			.content 
+			.content
 				img(src=coverData.image width="100%")
 
 				nav.bottom.right.color-0
@@ -51,33 +41,15 @@ include /../templates/mixins/ads
 #magazines.row.collapse
 	#magazines-header
 		a.uno(href=ﬁ.bundles['magazines']) #{coverData.Name2}
-	
-	#magazines-issues.row
-		- console.log(JSON.stringify(data.horses))
 
+	#magazines-issues.row
 		for pdf in data
 			.small-6.medium-4.large-2.columns
 				figure.magazine
-					a(href=ﬁ.settings.app.pdf.url+pdf.file+ﬁ.settings.app.pdf.opts target="_blank")
+					a(href=ﬁ.settings.app.pdf.url+pdf.slug+pdf.file+'.html' target="_blank")
 						img(src=pdf.image)
 					figcaption
 						h4: a(href="#")=pdf.name
 						aside: a(href="#")=pdf.issue
 
-
-
-
-
-
 +rainbow(true)
-
-
-
-	
-		
-	
-	
-	
-	
-
-
