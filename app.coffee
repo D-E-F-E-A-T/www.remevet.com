@@ -22,6 +22,6 @@ require './fi'
 	ﬁ.db    = instance
 	ﬁ.mongo = mongo
 
-	ﬁ.extend 'pdf'
+	ﬁ.extend 'magazines'
 
 	ﬁ.listen()

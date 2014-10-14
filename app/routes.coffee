@@ -20,8 +20,10 @@ Secure = ﬁ.require 'app', 'secure'
 
 ﬁ.routes.get  '/aviso-de-privacidad'	 , 'plain/privacy'
 ﬁ.routes.get  '/eventos'                 , Secure, 'events'
+
 ﬁ.routes.get  '/revistas'                , Secure, 'magazines'
+ﬁ.routes.get  '/revistas/:section'       , Secure, 'magazines/section'
+
 ﬁ.routes.get  '/patrocinadores/articulos', Secure, 'sponsors'
-ﬁ.routes.get  '/revistas/:slug'          , Secure, 'bookshelf'
 ﬁ.routes.get   '/ping'  , 'util/ping'
 ﬁ.routes.error '/error' , 'util/error'

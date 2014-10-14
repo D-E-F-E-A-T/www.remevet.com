@@ -11,14 +11,14 @@ PDF = []
 for file in exec(cmd, silent:true).output.split('\n')
 	name = file.replace(path.abs,'').replace(/\.pdf$/,'').replace(/\/[^\/]+\//,'').split('-')
 
-	continue if not name 
+	continue if not name
 
 	issue = parseInt(name.pop(),10) or 0
 	slug  = name.join '-'
 	name  = name.map((e)-> "#{e.charAt(0).toUpperCase()}#{e.substring(1)}").join ' '
 	# la chaca
 	name  = name.replace 'Pequenas', "Pequeñas"
-	continue if not slug or not slug.length 
+	continue if not slug or not slug.length
 
 	file = file.replace(ﬁ.path.static,'/static')
 
@@ -30,7 +30,7 @@ for file in exec(cmd, silent:true).output.split('\n')
 		image : file.replace('.pdf','.png')
 
 
-collection = ﬁ.db.collection 'pdf'
+collection = ﬁ.db.collection 'magazines'
 
 collection.remove {}, (error, howmany)->
 	throw new ﬁ.error error if error

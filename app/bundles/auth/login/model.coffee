@@ -7,12 +7,12 @@ module.exports = (request, callback)->
 
 	if (errors = request.validationErrors())
 		return callback.call @, (message: errors.map((e)-> e.msg), status: 403)
-	
-	self = @
-	collection = ﬁ.db.collection 'user'
 
-	# TODO : md5 comparisson should be done here		
-	collection.findOne (password: request.body.pass, email: request.body.mail), 
+	self = @
+	collection = ﬁ.db.collection 'users'
+
+	# TODO : md5 comparisson should be done here
+	collection.findOne (password: request.body.pass, email: request.body.mail),
 
 		email      : true
 		name_first : true

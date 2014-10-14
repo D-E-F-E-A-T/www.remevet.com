@@ -1,10 +1,10 @@
-module.exports = (request, callback)->
+module.exports = (section, callback)->
 
 	self       = @
-	collection = ﬁ.db.collection 'pdf'
+	collection = ﬁ.db.collection 'magazines'
 	data       = {}
 
-	collection.find(slug:request.param 'slug').sort(issue:-1).toArray (error, data)->
+	collection.find(slug:section).sort(issue:-1).toArray (error, data)->
 		if error or not data
 			error =
 				if error

@@ -13,8 +13,6 @@ include /../templates/mixins/ads
 			| de los temas y artículos de tu interés dividiendo la revista en tres ramas
 
 
-
-
 	.medium-6.large-8.columns: .cover-right: .cover-contain
 
 		- var tmplink  = "https://s3-us-west-1.amazonaws.com/uat.magazine/fauna-silvestre/fauna-silvestre-008/fauna-silvestre-008.html#p=8"
@@ -23,7 +21,7 @@ include /../templates/mixins/ads
 		article.color-0.color-bg-2
 
 			.content
-				img(src=coverData.image width="100%")
+				img(src=cover.image width="100%")
 
 				nav.bottom.right.color-0
 					header
@@ -40,7 +38,7 @@ include /../templates/mixins/ads
 
 #magazines.row.collapse
 	#magazines-header
-		a.uno(href=ﬁ.bundles['magazines']) #{coverData.Name2}
+		a.uno(href=ﬁ.bundles['magazines']) #{cover.Name2}
 
 	#magazines-issues.row
 		for pdf in data
