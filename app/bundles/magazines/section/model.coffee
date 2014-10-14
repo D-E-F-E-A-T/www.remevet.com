@@ -3,7 +3,7 @@ Advertisers = ﬁ.require 'templates', 'models/advertisers'
 module.exports = (data, callback)->
 
 	self       = @
-	collection = ﬁ.db.collection 'magazines'
+	collection = ﬁ.db.collection 'flip'
 	result     = advertisers:[], magazines:[]
 
 	collection.find(slug:data).sort(issue:-1).toArray (error, data)->

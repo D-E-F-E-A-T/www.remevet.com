@@ -1,6 +1,6 @@
 Advertisers = ﬁ.require 'templates', 'models/advertisers'
 
-module.exports = (request, callback)->
+module.exports = (data, callback)->
 
 	self       = @
 	collection = ﬁ.db.collection 'events'

@@ -24,9 +24,6 @@ include /../templates/mixins/advertisers
 
 	.large-8.columns: .cover-right: .cover-contain
 
-		- var tmplink  = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2"
-		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
-
 		article
 			video.content(controls, autoplay, loop)
 				source(src="/static/videos/COMFORTIS_ESP_VET_FINAL_H264.mp4", type="video/mp4")
@@ -59,7 +56,7 @@ include /../templates/mixins/advertisers
 		main.row: .columns.small-12
 			for article in articles
 				article(style='padding:0.5em; margin:0.5em').color-bg-0
-					strong: a(href=article.href).color-primary= article.name
+					strong: a(href=article.href, target="_blank").color-primary= article.name
 					div(style='text-align:right; margin-top:0.5em'): strong: a(href=article.href).color-secondary=article.author
 
 

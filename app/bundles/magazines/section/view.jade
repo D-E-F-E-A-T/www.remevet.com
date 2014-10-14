@@ -26,7 +26,7 @@ include /../templates/mixins/advertisers
 +rainbow(true)
 
 mixin magazine(magazine)
-	- magazine.href  = ﬁ.settings.app.pdf.url + magazine.slug + magazine.file + '.html'
+	- magazine.href  = magazine.href
 	- magazine.title = magazine.name + ': ' + magazine.issue
 
 	a(href=magazine.href, target='_blank')

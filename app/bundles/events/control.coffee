@@ -11,9 +11,8 @@ module.exports = (request, response, next)->
 			return response.render()
 		console.log "EN EL CONTROL " + JSON.stringify data
 
-		response.render
-			BREADCRUMBS: [
-				name:"Eventos"
-				href:ﬁ.bundles['calendar']
-			]
-			data:data
+		data.BREADCRUMBS= [
+			name:"Eventos"
+			href:ﬁ.bundles['calendar']
+		]
+		response.render data
