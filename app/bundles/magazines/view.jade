@@ -1,5 +1,5 @@
 include /../templates/mixins/rainbow
-include /../templates/mixins/ads
+include /../templates/mixins/advertisers
 
 .cover.row.collapse
 
@@ -14,7 +14,6 @@ include /../templates/mixins/ads
 
 	.large-8.columns: .cover-right: .cover-contain
 
-		- var tmplink  = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/fauna-silvestre/fauna-silvestre-008.pdf#page=1&zoom=page-fit&twoPageView=2"
 		- var tmplink  = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2"
 		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
 
@@ -33,28 +32,8 @@ include /../templates/mixins/ads
 					li: a(href=tmplink) Pequeñas Especies
 					li: a(href=tmplink): span Leer Artículo
 
-		//- article.color-0.color-bg-2
-
-		//- 	.content(style=tmpimage)
-
-		//- 	nav.bottom.right.color-0
-		//- 		header
-		//- 			h3
-		//- 				a(href=tmplink) Bases del Bienestar Animal en Fauna Silvestre
-		//- 			h4
-		//- 				a(href=tmplink) MVZ. M en C. Adriana Cossío Bayúgar
-
-		//- 		footer: ul
-		//- 			li: a(href=tmplink) Fauna Silvestre
-		//- 			li: a(href=tmplink): span Leer Artículo
-
 +rainbow()
-
-#clients.row.collapse: #clients-slider
-	for advertiser in advertisers
-		.slide: a(href=advertiser.href || '#', target="_blank", onclick="tracklOutboundLink('" + advertiser.href + "')", return)
-			img(src=advertiser.src)
-
++advertisers(advertisers)
 +rainbow(true)
 
 .row.collapse.color-bg-2.color-lightest

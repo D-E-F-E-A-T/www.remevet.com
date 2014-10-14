@@ -1,6 +1,6 @@
-Shuffle = (require 'knuth-shuffle').knuthShuffle
+Advertisers = ﬁ.require 'templates', 'models/advertisers'
 
-module.exports = (request, callback)->
+module.exports = (data, callback)->
 
 	self   = @
 	result = advertisers:[], magazines:[], events:[], articles:[]
@@ -8,7 +8,6 @@ module.exports = (request, callback)->
 	magazines   = ﬁ.db.collection 'magazines'
 	events      = ﬁ.db.collection 'events'
 	articles    = ﬁ.db.collection 'articles'
-	advertisers = ﬁ.db.collection 'advertisers'
 
 	# Magazines
 	magazines.aggregate
@@ -17,9 +16,9 @@ module.exports = (request, callback)->
 			result.magazines = data.map (v)-> v.document
 
 			# Advertisers
-			advertisers.find().toArray (error, data)->
+			Advertisers (error, data)->
 				callback.call(self,error) if error
-				result.advertisers = Shuffle data
+				result.advertisers = data
 
 				# Events
 				events

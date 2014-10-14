@@ -1,5 +1,5 @@
 include /../templates/mixins/rainbow
-include /../templates/mixins/ads
+include /../templates/mixins/advertisers
 
 .cover.row.collapse
 
@@ -65,10 +65,7 @@ include /../templates/mixins/ads
 
 
 +rainbow(true)
-#clients.row.collapse: #clients-slider
-	for advertiser in advertisers
-		.slide: a(href=advertiser.href || '#', target="_blank", onclick="tracklOutboundLink('" + advertiser.href + "')", return)
-			img(src=advertiser.src)
++advertisers(advertisers)
 +rainbow()
 
 .row.collapse

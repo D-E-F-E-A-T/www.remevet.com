@@ -1,3 +1,4 @@
+Model  = ﬁ.require 'templates', 'model'
 Notice = ﬁ.require 'templates', 'controls/notice'
 
 module.exports = (request, response, next)->
