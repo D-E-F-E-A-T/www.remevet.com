@@ -5,14 +5,14 @@ include /../templates/mixins/advertisers
 
 .cover.row.collapse
 
-	.small-12: .cover-right: .cover-contain
+	.small-12.columns: .cover-right: .cover-contain
 
-		- var tmplink = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/pequenas-especies/pequenas-especies-020.pdf#page=64&zoom=page-fit&twoPageView=2"
+		- var tmplink = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
 		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
 
 		article.color-0.color-bg-3
 
-			.content(style=tmpimage)
+			main.content(style=tmpimage)
 
 			nav.bottom.left.color-0
 				header
