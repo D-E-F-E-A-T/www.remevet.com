@@ -43,11 +43,8 @@ include /../templates/mixins/advertisers
 
 		main.row: .small-12.large-8.columns.large-centered
 			for magazine in magazines
-				- url = ﬁ.settings.app.pdf.url + magazine.file + ﬁ.settings.app.pdf.opts
+				- url = './revistas/' + magazine.slug
 				.small-4.columns.element
 					a(href=url)
-						img(src=magazine.image)
-					footer.color-bg-0
-						h4: a.color-primary(href=url)= magazine.name
-						aside.color-bg-2.color-darker: a(href="#")= magazine.issue
+						img(src=magazine.image, title=magazine.name, alt=magazine.name)
 +rainbow()
