@@ -5,21 +5,32 @@ include /../templates/mixins/advertisers
 
 .cover.row.collapse
 
-	.small-12.columns: .cover-right: .cover-contain
+	.show-for-large-up.large-4.columns.gradient: .cover-left
 
-		- var tmplink = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
+		p
+		p
+			strong.color-2 Eventos, &nbsp;  
+			| Encuentra aquí toda la información sobre: cursos, diplomados y congresos con relación al área veterinaria;
+			| todo calendarizado para darte más visibilidad y que puedas programar tus asistencias.
+		p
+			| No dejes de consultar esta sección para estar al día de los próximos eventos más relevantes.
+			
+
+	.large-8.columns: .cover-right: .cover-contain
+
+		- var tmplink  = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
 		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
 
-		article.color-0.color-bg-3
+		article.color-0.color-bg-2
 
 			main.content(style=tmpimage)
 
-			nav.bottom.left.color-0
+			nav.bottom.right.color-0
 				header
 					h3
-						a(href=tmplink) Actualización en métodos de medición de la presión arterial sistemica en pequeños
+						a(href=tmplink, target="_blank") Actualización en métodos de medición de la presión arterial sistémica en pequeños
 					h4
-						a(href=tmplink) MV. Iván Álvarez - MV. Cesar Mayorga
+						a(href=tmplink) MV Iván Álvarez MV César Mayorga
 
 				footer: ul
 					li: a(href=tmplink) Pequeñas Especies
@@ -28,22 +39,20 @@ include /../templates/mixins/advertisers
 +rainbow(true)
 +advertisers(advertisers)
 +rainbow()
+-console.info(events)
 
 .row.collapse
 	#magazines.small-12.large-4.columns(style="height:500px;overflow:scroll;")
 
-		#magazines-header
-			a.uno(href="#") Octubre
-		//- each event in events
-		//- 	.event(style="height:200px;margin-top:0.8em", data-p="#{event.desc}", data-img="#{event.logo}")
-		//- 		.small-6.large-4.columns
-		//- 			a(href="#", data-reveal-id="#{event.slug}")
-		//- 				img(src=event.logo, style="max-width:100%;max-height:100%")
-		//- 			.reveal-modal(id="#{event.slug}", data-reveal)
-		//- 				img(src=event.logo)
-		//- 		.small-6.large-8.columns
-		//- 			p= event.desc
-
+		each event in events
+			.event(style="height:400px;margin-top:0.8em", data-p="#{event.desc}", data-img="#{event.logo}")
+				.small-6.large-4.columns
+					a(href="#", data-reveal-id="#{event.slug}")
+						img(src=event.logo, style="max-width:100%;max-height:100%")
+					.reveal-modal(id="#{event.slug}", data-reveal)
+						img(src=event.logo)
+				.small-6.large-8.columns
+					p= event.desc
 
 
 	.small-12.large-8.columns#event

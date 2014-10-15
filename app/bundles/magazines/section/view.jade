@@ -3,23 +3,40 @@ include /../templates/mixins/advertisers
 
 .cover.row.collapse
 
-	.small-12.columns: .cover-right: .cover-contain
+	.show-for-large-up.large-4.columns.gradient: .cover-left
+
+		p
+		p
+			strong.color-2 REMEVET&nbsp;  
+			| es una publicación independiente creada para la educación y actualización continua 
+			| de los Médicos Veterinarios Zootecnistas. 
+		p
+			| Para tu comodidad, facilitamos la búsqueda
+			| de los temas y artículos de tu interés dividiendo las revistas en tres ramas:
+			| Pequeñas especies
+			| Equinos
+			| Fauna silvestre
+			
+
+	.large-8.columns: .cover-right: .cover-contain
+
+		- var tmplink  = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
+		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
 
 		article.color-0.color-bg-2
 
-			.content
-				img(src=cover.image width="100%")
+			main.content(style=tmpimage)
 
-				nav.bottom.right.color-0
-					header
-						h3
-							a(href=tmplink) Bases del Bienestar Animal en Fauna Silvestre
-						h4
-							a(href=tmplink) MVZ. M en C. Adriana Cossío Bayúgar
+			nav.bottom.right.color-0
+				header
+					h3
+						a(href=tmplink, target="_blank") Actualización en métodos de medición de la presión arterial sistémica en pequeños
+					h4
+						a(href=tmplink) MV Iván Álvarez MV César Mayorga
 
-					footer: ul
-						li: a(href=tmplink) Fauna Silvestre
-						li: a(href=tmplink): span Leer Artículo
+				footer: ul
+					li: a(href=tmplink) Pequeñas Especies
+					li: a(href=tmplink): span Leer Artículo
 
 +rainbow()
 +advertisers(advertisers)
