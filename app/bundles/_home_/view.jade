@@ -31,6 +31,41 @@ include /../templates/mixins/advertisers
 				source(src="/static/videos/COMFORTIS_ESP_VET_FINAL_H264.mp4", type="video/mp4")
 				source(src="/static/videos/COMFORTIS_ESP_VET_FINAL_H264.ogg", type="video/ogg")
 
++rainbow()
+
+.cover.row.collapse
+
+	.large-8.columns: .cover-right: .cover-contain
+
+		- var tmplink  = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
+		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
+
+		article.color-0.color-bg-2
+
+			main.content(style=tmpimage)
+
+			nav.bottom.right.color-0
+				header
+					h3
+						a(href=tmplink, target="_blank") Actualización en métodos de medición de la presión arterial sistémica en pequeños
+					h4
+						a(href=tmplink) MV Iván Álvarez MV César Mayorga
+
+				footer: ul
+					li: a(href=tmplink) Pequeñas Especies
+					li: a(href=tmplink): span Leer Artículo
+
+	.large-4.columns.gradient: .cover-right: .cover-contain
+
+
+		- var tmplink  = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
+		- var tmpimage = "background-image:url('/static/images/magazines/pequenas/thumbnails/pe_20.png')"
+
+		article.color-0.color-bg-2
+
+			main.content.large-centered(style=tmpimage)
+
+
 
 +rainbow(true)
 +advertisers(advertisers)
