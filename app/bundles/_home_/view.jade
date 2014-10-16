@@ -31,37 +31,6 @@ include /../templates/mixins/advertisers
 				source(src="/static/videos/COMFORTIS_ESP_VET_FINAL_H264.mp4", type="video/mp4")
 				source(src="/static/videos/COMFORTIS_ESP_VET_FINAL_H264.ogg", type="video/ogg")
 
-+rainbow()
-
-.row.collapse.color-bg-2.color-lightest
-
-	section.small-12.large-8.columns.color-bg-2.color-lightest
-		header.color-bg-2
-			a.uno(href=ﬁ.bundles['magazines']) Revistas
-			a.dos.color-bg-2.color-darker.hide-for-small-only(href=ﬁ.bundles['magazines']) Ver mas
-
-		main.row: for magazine in magazines
-			- magazine.href  = ﬁ.bundles['magazines/section'].replace(':section', magazine.slug)
-			- magazine.title = magazine.name + ': ' + magazine.issue
-			.small-4.columns.element
-				a(href=magazine.href)
-					img(src=magazine.image, alt=magazine.title, title=magazine.title)
-				footer.color-bg-0.hide-for-small-only
-					h4: a.color-primary(href=magazine.href)= magazine.name
-					aside.color-bg-2.color-darker: a(href=magazine.href)= magazine.issue
-
-
-	section.hide-for-medium-down.large-4.columns.color-bg-1.color-lightest
-		header.color-bg-1
-			a.uno(href=ﬁ.bundles['magazines']) Artículos
-
-		main.row: .columns.small-12
-			for article in articles
-				article(style='padding:0.5em; margin:0.5em').color-bg-0
-					strong: a(href=article.href, target="_blank").color-primary= article.name
-					div(style='text-align:right; margin-top:0.5em'): strong: a(href=article.href).color-secondary=article.author
-
-
 
 +rainbow(true)
 +advertisers(advertisers)
