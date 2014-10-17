@@ -20,37 +20,22 @@ include /../templates/mixins/advertisers
 
 	.large-8.columns: .cover-right: .cover-contain
 
-		- var tmplink  = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
-		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
+		.row.collapse
+			section.small-12.columns.color-bg-2.color-lightest
+				header.color-bg-2
+					a.uno(href=ﬁ.bundles['magazines']) ¿Qué sección deseas visitar?
 
-		article.color-0.color-bg-2
-
-			main.content(style=tmpimage)
-
-			nav.bottom.right.color-0
-				header
-					h3
-						a(href=tmplink, target="_blank") Actualización en métodos de medición de la presión arterial sistémica en pequeños
-					h4
-						a(href=tmplink) MV Iván Álvarez MV César Mayorga
-
-				footer: ul
-					li: a(href=tmplink) Pequeñas Especies
-					li: a(href=tmplink): span Leer Artículo
+				main.row: .small-12.large-8.columns.large-centered
+					for magazine in magazines
+						- url = './revistas/' + magazine.slug
+						.small-4.columns.element
+							a(href=url)
+								img(src=magazine.image, title=magazine.name, alt=magazine.name)
+		
 
 +rainbow()
 +advertisers(advertisers)
 +rainbow(true)
 
-.row.collapse.color-bg-2.color-lightest
-	section.small-12.columns.color-bg-2.color-lightest
-		header.color-bg-2
-			a.uno(href=ﬁ.bundles['magazines']) ¿Qué sección deseas visitar?
 
-		main.row: .small-12.large-8.columns.large-centered
-			for magazine in magazines
-				- url = './revistas/' + magazine.slug
-				.small-4.columns.element
-					a(href=url)
-						img(src=magazine.image, title=magazine.name, alt=magazine.name)
-+rainbow()
+
