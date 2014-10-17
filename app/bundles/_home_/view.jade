@@ -33,7 +33,7 @@ include /../templates/mixins/advertisers
 
 +rainbow()
 
-.cover.row.collapse
+.cover.row.collapse.color-bg-2.color-lightest
 
 	.large-8.columns: .cover-right: .cover-contain
 
@@ -55,46 +55,16 @@ include /../templates/mixins/advertisers
 					li: a(href=tmplink) Pequeñas Especies
 					li: a(href=tmplink): span Leer Artículo
 
-		
 
-	.large-4.columns.gradient.color-bg-2	
-
-		.large-12.columns.gradient.contenedor.cover-contain
-				article.color-0.color-bg-2
-						
-			.large-4.columns.gradient.foto
-				article.color-0.color-bg-2
-					img.imgl(src="http://placehold.it/350x380")
-
-			.large-8.columns.gradient.texto1
-				article.color-0.color-bg-2
-					h4.lorem1 Dr. Oscar Robert Echandi
-					h5.lorem Medico Veterinario
-					p.lorem2 El Dr. Robert nació el 8 de setiembre de 1960 en San José, Costa Rica y pasó gran parte de su infancia en las fincas lecheras de su  familia, en las faldas del Volcán Irazú,  exactamente en el pueblo de San Juan de Chicua. 
-
-		.large-12.columns.gradient.texto1
-			article.color-0.color-bg-2.lorem2
-				br
-				p  Fue ahí donde empezó su gran amor por los animales, heredando de su  abuelo paterno la pasión por las lecherías y los caballos, y de su abuelo materno el amor por los perros, lo que combinado con la profesión de medicina de su padre, lo motivó a estudiar Medicina Veterinaria, donde podía combinar su amor por la medicina y su pasión por los animales.
-				p  En 1978 ingresó a la Escuela de Medicina Veterinaria de la Universidad Nacional de Costa Rica donde obtuvo su licenciatura en Medicina Veterinaria y posteriormente continuó con sus estudios  en la Universidad de Fresno en California, Estados Unidos y en los Laboratorios Golden Genes en Davis, California, especializándose en transferencia de embriones en bovinos.
-				br
-				br
-				br
-				br
-
-				
-
-
-
-
-		- var tmplink  = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
-		- var tmpimage = "background-image:url('/static/images/magazines/pequenas/thumbnails/pe_20.png')"
-
-		article.color-0.color-bg-2
-
-			main.content.large-centered(style=tmpimage)
-
-
+	.show-for-large-up.large-4.columns
+		.row: article.small-12.columns.author
+			header
+				h4 Dr. Oscar Robert Echandi
+				h5.subheader Medico Veterinario
+			main
+				img.left(src="http://placehold.it/350x380")
+				p El Dr. Robert nació el 8 de setiembre de 1960 en San José, Costa Rica y pasó gran parte de su infancia en las fincas lecheras de su  familia, en las faldas del Volcán Irazú,  exactamente en el pueblo de San Juan de Chicua.
+				p Fue ahí donde empezó su gran amor por los animales, heredando de su  abuelo paterno la pasión por las lecherías y los caballos, y de su abuelo materno el amor por los perros, lo que combinado con la profesión de medicina de su padre, lo motivó a estudiar Medicina Veterinaria, donde podía combinar su amor por la medicina y su pasión por los animales.
 
 +rainbow(true)
 +advertisers(advertisers)
