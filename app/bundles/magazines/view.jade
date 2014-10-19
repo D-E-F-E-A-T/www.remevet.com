@@ -25,7 +25,7 @@ include /../templates/mixins/advertisers
 				header.color-bg-2
 					a.uno(href=ﬁ.bundles['magazines']) ¿Qué sección deseas visitar?
 
-				main.row: .small-12.large-8.columns.large-centered
+				main.row: .small-12.large-12.columns.large-centered
 					for magazine in magazines
 						- url = './revistas/' + magazine.slug
 						.small-4.columns.element
@@ -36,6 +36,3 @@ include /../templates/mixins/advertisers
 +rainbow()
 +advertisers(advertisers)
 +rainbow(true)
-
-
-
