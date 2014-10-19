@@ -1,6 +1,5 @@
-
 mixin advertisers(advertisers)
-	#clients.row.collapse: #clients-slider
+	.advertisers.row.collapse.color-bg-0: .advertisers-slider
 		for advertiser in advertisers
 			.slide: a(href=advertiser.href || '#', target="_blank", onclick="tracklOutboundLink('" + advertiser.href + "')", return)
 				img(src=advertiser.src)

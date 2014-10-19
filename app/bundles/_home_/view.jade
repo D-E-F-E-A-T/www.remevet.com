@@ -1,9 +1,7 @@
 include /../templates/mixins/rainbow
 include /../templates/mixins/advertisers
--console.log("En JADE la magaziens es: " + JSON.stringify(magazines))
--console.log("En JADE la arts es: " + JSON.stringify(articles))
 
-.cover.row.collapse
+.row.collapse.cover
 
 	.show-for-large-up.large-4.columns.gradient: .cover-left
 
@@ -21,26 +19,12 @@ include /../templates/mixins/advertisers
 			| es el mejor medio en español para estar actualizado y aprender sobre los
 			| avances médicos, procedimientos actuales y casos clínicos.
 
-		h3: a.color-1(href=ﬁ.bundles['about']) ¡ Conócenos !
-
-
-	.large-8.columns: .cover-right: .cover-contain
-
-		article
-			video.content(controls, autoplay, loop)
-				source(src="/static/videos/COMFORTIS_ESP_VET_FINAL_H264.mp4", type="video/mp4")
-				source(src="/static/videos/COMFORTIS_ESP_VET_FINAL_H264.ogg", type="video/ogg")
-
-+rainbow()
-
-.cover.row.collapse.color-bg-2.color-lightest
-
-	.large-8.columns: .cover-right: .cover-contain
+	.small-12.large-8.columns: .cover-right: .cover-contain(data-timeout="20")
 
 		- var tmplink  = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
 		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
 
-		article.color-0.color-bg-2
+		article.color-0.color-bg-2.slide
 
 			main.content(style=tmpimage)
 
@@ -56,18 +40,42 @@ include /../templates/mixins/advertisers
 					li: a(href=tmplink): span Leer Artículo
 
 
-	.show-for-large-up.large-4.columns
-		.row: article.small-12.columns.author
-			header
-				h4 Dr. Oscar Robert Echandi
-				h5.subheader Medico Veterinario
-			main
-				img.left(src="http://placehold.it/350x380")
-				p El Dr. Robert nació el 8 de setiembre de 1960 en San José, Costa Rica y pasó gran parte de su infancia en las fincas lecheras de su  familia, en las faldas del Volcán Irazú,  exactamente en el pueblo de San Juan de Chicua.
-				p Fue ahí donde empezó su gran amor por los animales, heredando de su  abuelo paterno la pasión por las lecherías y los caballos, y de su abuelo materno el amor por los perros, lo que combinado con la profesión de medicina de su padre, lo motivó a estudiar Medicina Veterinaria, donde podía combinar su amor por la medicina y su pasión por los animales.
+		article: video.content(controls, autoplay=false, loop, poster='/static/videos/COMFORTIS_ESP_VET_FINAL_H264.jpg')
+			source(src="/static/videos/COMFORTIS_ESP_VET_FINAL_H264.mp4", type="video/mp4")
+			source(src="/static/videos/COMFORTIS_ESP_VET_FINAL_H264.ogg", type="video/ogg")
 
-+rainbow(true)
-+advertisers(advertisers)
+
+		article.color-0.color-bg-3.slide
+
+			main.content(style=tmpimage)
+
+			nav.bottom.right.color-0
+				header
+					h3
+						a(href=tmplink, target="_blank") Actualización en métodos de medición de la presión arterial sistémica en pequeños
+					h4
+						a(href=tmplink) MV Iván Álvarez MV César Mayorga
+
+				footer: ul
+					li: a(href=tmplink) Pequeñas Especies
+					li: a(href=tmplink): span Leer Artículo
+
+
+		article.color-0.color-bg-4.slide
+
+			main.content(style=tmpimage)
+
+			nav.bottom.right.color-0
+				header
+					h3
+						a(href=tmplink, target="_blank") Actualización en métodos de medición de la presión arterial sistémica en pequeños
+					h4
+						a(href=tmplink) MV Iván Álvarez MV César Mayorga
+
+				footer: ul
+					li: a(href=tmplink) Pequeñas Especies
+					li: a(href=tmplink): span Leer Artículo
+
 +rainbow()
-
-
++advertisers(advertisers)
++rainbow(true)

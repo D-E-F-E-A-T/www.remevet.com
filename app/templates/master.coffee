@@ -1,7 +1,9 @@
 window.$window   = $ window
 window.$document = $ document
 
-$document.readyStack = []
+$window.loadStack     = []
+$document.readyStack  = []
+$document.screenStack = []
 
 $document.foundation().ready ->
 	window.IS_DESKTOP = $('html').hasClass 'is_desktop'
@@ -10,44 +12,20 @@ $document.foundation().ready ->
 	$('#header-button').click ->
 		$(this).parent().toggleClass 'toggle'
 
-	screenUpdate = (e)->
-		$slides = $('#clients-slider .slide');
-		$slides.height $slides.first().width()
-		timer = null
-
-	$(window).resize ->
-		clearTimeout(timer) if timer isnt null
-		timer = setTimeout(screenUpdate, 666)
-
-	$('#clients-slider').slick
-		dots           : false
-		infinite       : true
-		speed          : 500
-		slidesToShow   : 8
-		slidesToScroll : 8
-		autoplay       : true
-		autoplaySpeed  : 10000
-		arrows         : false
-		draggable      : true
-		onInit         : screenUpdate
-		responsive     : [{
-			breakpoint         : 1080
-			settings           :
-				slidesToShow   : 6
-				slidesToScroll : 6
-			},{
-			breakpoint         : 960
-			settings           :
-				slidesToShow   : 4
-				slidesToScroll : 4
-			},{
-			breakpoint         : 480
-			settings           :
-				slidesToShow   : 3
-				slidesToScroll : 3
-		}]
+	require 'scripts/advertisers'
 
 	# Execute all onReady functions
 	(fn.call(this) if typeof fn is 'function') for fn in $document.readyStack
 
+	# Execute all onLoad functions
+	(fn.call(this) if typeof fn is 'function') for fn in $window.loadStack
 
+	# Execute screen resize functions
+	screenTimer = null
+	screenFn = (e)->
+		(fn.call(this) if typeof fn is 'function') for fn in $document.screenStack
+		screenTimer = null
+
+	$(window).resize ->
+		clearTimeout(screenTimer) if screenTimer isnt null
+		screenTimer = setTimeout(screenFn, 666)

@@ -1,18 +1,14 @@
 .cover
-	position:relative
-	overflow:hidden
+	position   : relative
+	overflow   : hidden
+	height     : 500px
 	background : lighten($colors-1st,90%)
 
-	@media $media-small-up
-		.cover-left
-		.cover-right
-			height: 240px
 
-	@media $media-medium-up
-		.cover-left
-		.cover-right
-			visibility: visible
-			height: 500px
+	& > .columns
+	.cover-left
+	.cover-right
+		height: inherit
 
 	& > .columns
 		&:first-child
@@ -66,6 +62,10 @@
 			nav
 				z-index:1
 				position:absolute
+
+				@media $media-medium-only
+					width:75%
+
 				&:.top
 					top:0
 					bottom:auto

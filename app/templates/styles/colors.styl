@@ -16,14 +16,15 @@ $color-max  = 66%
 
 .color-secondary
 	color: $colors-2nd
-	&:hover
-	&:focus
+
+	&.color-hover:hover
+	&.color-hover:focus
 		color: lighten($colors-2nd, $color-span)
 
 .color-bg-secondary
 	background-color: $colors-2nd
-	&:hover
-	&:focus
+	&.color-hover:hover
+	&.color-hover:focus
 		background-color: lighten($colors-2nd, $color-span)
 
 
@@ -32,10 +33,9 @@ for $color,$number in $colors-normal
 	.color-{$number}
 		color: $color
 
-		&:hover
-		&:focus
+		&.color-hover:hover
+		&.color-hover:focus
 			color: $colors-hover[$number]
-
 
 		&.color-lighter
 			color: lighten($color, $color-span)
@@ -47,34 +47,40 @@ for $color,$number in $colors-normal
 		&.color-darker
 			color: darken($color, $color-span)
 
+		&.color-darkest
+			color: darken($color, $color-max)
+
 	.color-bg-{$number}
 		background-color: $color
 
-		&:hover
-		&:focus
+		&.color-hover:hover
+		&.color-hover:focus
 			background-color: $colors-hover[$number]
 
-
-		&.color-lighter
+		&.color-bg-lighter
 			background-color: lighten($color, $color-span)
 
-			&:hover
-			&:focus
+			&.color-hover:hover
+			&.color-hover:focus
 				background-color: lighten($colors-hover[$number], $color-span)
 
-		&.color-lightest
+		&.color-bg-lightest
 			background-color: lighten($color, $color-max)
 
-			&:hover
-			&:focus
+			&.color-hover:hover
+			&.color-hover:focus
 				background-color: lighten($colors-hover[$number], $color-max)
 
-
-		&.color-darker
+		&.color-color-darker
 			background-color: darken($color, $color-span)
 
-			&:hover
-			&:focus
+			&.color-hover:hover
+			&.color-hover:focus
 				background-color: darken($colors-hover[$number], $color-span)
 
+		&.color-bg-darkest
+			background-color: darken($color, $color-max)
 
+			&.color-hover:hover
+			&.color-hover:focus
+				background-color: darken($colors-hover[$number], $color-max)
