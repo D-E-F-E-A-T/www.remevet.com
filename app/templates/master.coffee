@@ -12,6 +12,10 @@ $document.foundation().ready ->
 	$('#header-button').click ->
 		$(this).parent().toggleClass 'toggle'
 
+	$covr = $ '.cover.cover-fit'
+	$elem = $covr.find('article > *').first()
+	$covr.height $elem.height()
+
 	require 'scripts/advertisers'
 
 	# Execute all onReady functions

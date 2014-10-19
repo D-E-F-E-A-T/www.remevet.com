@@ -2,6 +2,7 @@ do ->
 
 	onScreen = ->
 		$slides = $('.advertisers-slider .slide');
+		$slides.find('img').css width: '100%'
 		$slides.height $slides.first().width()
 
 	$('.advertisers-slider').slick

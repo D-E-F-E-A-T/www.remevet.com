@@ -1,10 +1,3 @@
-$document.readyStack.push ->
-
-	$covr = $ '.cover.cover-fit'
-	$elem = $covr.find('article > *').first()
-	$covr.height $elem.height()
-
-
 $window.loadStack.push ->
 
 	$contain  = $('.cover:not(.cover-fit) .cover-contain')
