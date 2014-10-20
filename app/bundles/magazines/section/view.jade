@@ -32,7 +32,7 @@ mixin magazine(magazine)
 	- magazine.title = magazine.name + ': ' + magazine.issue
 
 	a(href=magazine.href, target='_blank')
-		img(src=magazine.image, alt=magazine.title, title=magazine.title, width='100%')
+		img(src=ﬁ.settings.app.static + magazine.image, alt=magazine.title, title=magazine.title, width='100%')
 	footer.color-bg-0.hide-for-small-only
 		h4: a.color-primary(href=magazine.href, target='_blank') &nbsp;
 		aside.color-bg-2.color-darker: a(href=magazine.href, target='_blank')= magazine.issue
