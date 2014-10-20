@@ -13,7 +13,7 @@ include /../templates/mixins/advertisers
 		each clinic in clinics
 			.clinic(style="height:200px;margin-top:0.8em", data-lat="#{clinic.lat}", data-long="#{clinic.long}", data-serv="#{clinic.description}")
 				.small-6.large-4.columns
-					img(src=clinic.logo, width="120px")
+					img(src= ﬁ.settings.app.static +clinic.logo, width="120px")
 				.small-6.large-8.columns
 					a(href=clinic.website, target="_blank")= clinic.name
 					if clinic.phone.length > 1
