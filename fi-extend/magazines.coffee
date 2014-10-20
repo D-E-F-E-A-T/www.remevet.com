@@ -1,6 +1,5 @@
 Path    = require 'path'
 ShellJS = require 'shelljs/global'
-
 path     = {}
 path.abs = Path.resolve Path.join(ﬁ.path.static, ﬁ.settings.app.pdf.base)
 path.rel = path.abs.replace ﬁ.path.static, ''

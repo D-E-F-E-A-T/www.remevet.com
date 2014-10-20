@@ -1,5 +1,6 @@
-remevet_web.log
+*.log
 node_modules
-bower_components
 .DS_*
 Icon*
+app/static/lib
+

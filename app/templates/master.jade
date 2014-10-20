@@ -15,8 +15,7 @@ html.no-js(lang="es",class=is_desktop?'is_desktop':'')
 
 		link(rel='shortcut icon', href='/static/favicon.ico')
 		link(rel='stylesheet',    href='/static/lib/foundation/css/foundation.css')
-		link(rel='stylesheet',    href='/static/lib/foundation/ico/foundation-icons.css')
-		link(rel='stylesheet',    href='/static/lib/slick-master/slick/slick.css')
+		link(rel='stylesheet',    href='/static/lib/slick.js/slick/slick.css')
 		block ﬁ.link
 
 		script(src='/static/lib/foundation/js/vendor/modernizr.js')
@@ -41,11 +40,11 @@ html.no-js(lang="es",class=is_desktop?'is_desktop':'')
 		#fallback
 			include views/fallback
 
-		script(src='/static/lib/foundation/js/vendor/jquery.js')
+		script(src='/static/lib/jquery/dist/jquery.min.js')
 		script(src='/static/lib/foundation/js/vendor/fastclick.js')
 		script(src='/static/lib/foundation/js/foundation.min.js')
-		script(src="/static/lib/slick-master/slick/slick.min.js")
-		script(src='/static/lib/browser-update.js')
+		script(src='/static/lib/slick.js/slick/slick.min.js')
+		script(src='/static/lib/browser-update/browser-update.min.js')
 		block ﬁ.script
 
 		if ﬁ.conf.live

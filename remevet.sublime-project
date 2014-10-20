@@ -12,12 +12,7 @@
 			[
 				"dump",
 				"node_modules",
-				"fi",
-				"app/static/images",
-				"app/static/revista",
-				"app/static/lib/pdf.js",
-				"app/static/lib/foundation",
-				"bower_components"
+				"fi"
 			],
 			"follow_symlinks": true,
 			"path": "."

@@ -88,13 +88,13 @@ mixin-font-paragraph()
 
 
 mixin-icon(name, pos, mask=no)
-	background-image    : url('/static/icons/'(name)'.svg')
+	background-image    : url('http://s3.amazonaws.com/uat-website/icons/'(name)'.svg')
 	background-repeat   : no-repeat
 	background-size     : 100% auto
 	background-position : 0 (-1 * pos)
 
 	.no-svg &
-		background-image : url('/static/icons/'(name)'.png')
+		background-image : url('http://s3.amazonaws.com/uat-website/icons/'(name)'.png')
 
 	if mask
 

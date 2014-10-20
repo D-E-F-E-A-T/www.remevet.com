@@ -22,7 +22,7 @@ include /../templates/mixins/advertisers
 	.small-12.large-8.columns: .cover-right: .cover-contain(data-timeout="20")
 
 		- var tmplink  = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
-		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
+		- var tmpimage = "background-image:url('" + ﬁ.settings.app.static + "/images/covers/gato.jpg')"
 
 		article.color-0.color-bg-2.slide
 
@@ -40,9 +40,9 @@ include /../templates/mixins/advertisers
 					li: a(href=tmplink): span Leer Artículo
 
 
-		article: video.content(controls, autoplay=false, loop, poster='/static/videos/COMFORTIS_ESP_VET_FINAL_H264.jpg')
-			source(src="/static/videos/COMFORTIS_ESP_VET_FINAL_H264.mp4", type="video/mp4")
-			source(src="/static/videos/COMFORTIS_ESP_VET_FINAL_H264.ogg", type="video/ogg")
+		article: video.content(controls, autoplay=false, loop, poster="#{ﬁ.settings.app.static}/videos/COMFORTIS_ESP_VET_FINAL_H264.jpg")
+			source(src="#{ﬁ.settings.app.static}/videos/COMFORTIS_ESP_VET_FINAL_H264.mp4", type="video/mp4")
+			source(src="#{ﬁ.settings.app.static}/videos/COMFORTIS_ESP_VET_FINAL_H264.ogg", type="video/ogg")
 
 
 		article.color-0.color-bg-3.slide

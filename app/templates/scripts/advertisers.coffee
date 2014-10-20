@@ -2,8 +2,9 @@ do ->
 
 	onScreen = ->
 		$slides = $('.advertisers-slider .slide');
-		$slides.find('img').css width: '100%'
-		$slides.height $slides.first().width()
+		$slides.$img = $slides.find 'img'
+		$slides.$img.css width: '100%'
+		$slides.closest('.advertisers').height $slides.$img.first().width()
 
 	$('.advertisers-slider').slick
 		dots           : false

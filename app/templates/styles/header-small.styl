@@ -9,22 +9,22 @@
 		margin          : 0 1em
 		width           : 2em
 		height          : $header-height - 25px
-		background      : url('/static/images/header/menu-open.svg') no-repeat center center
+		background      : url('http://s3.amazonaws.com/uat-website/images/header/menu-open.svg') no-repeat center center
 		background-size : contain
 
 		// Android 2.3 does not support SVG
 		.no-svg &
-			background-image    : url('/static/images/header/menu-open.png')
+			background-image    : url('http://s3.amazonaws.com/uat-website/images/header/menu-open.png')
 			background-position : center center
 			background-size     : 100%
 
 	&.toggle a#header-button
 		left: 0
-		background-image: url('/static/images/header/menu-close.svg')
+		background-image: url('http://s3.amazonaws.com/uat-website/images/header/menu-close.svg')
 
 		// Android 2.3 does not support SVG
 		.no-svg &
-			background-image    : url('/static/images/header/menu-close.png')
+			background-image    : url('http://s3.amazonaws.com/uat-website/images/header/menu-close.png')
 
 
 	// Menu

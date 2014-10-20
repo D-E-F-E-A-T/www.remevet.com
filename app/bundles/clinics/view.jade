@@ -3,7 +3,7 @@
 	.small-12.columns: .cover-right: .cover-contain
 
 		- var tmplink = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
-		- var tmpimage = "background-image:url('/static/images/covers/PE_Presion_arterial.jpg')"
+		- var tmpimage = "background-image:url('http://s3.amazonaws.com/uat-website/images/covers/PE_Presion_arterial.jpg')"
 
 		article.color-0.color-bg-5
 
@@ -45,7 +45,7 @@
 								li= phone
 
 
-		
+
 		#magazines-issues.row
 
 		#magazines.row.collapse
@@ -60,7 +60,7 @@
 						if clinic.phone.length > 1
 							ul telefono
 								each phone in clinic.phone
-									li= phone			
+									li= phone
 			#magazines-issues.row
 
 	.small-12.large-7.columns#map(style="height:500px;")

@@ -1,7 +1,7 @@
 {
   "name": "poc.remevet",
   "version": "0.0.1",
-  "description": "Proof of Concept for REMEVET",
+  "description": "REMEVET",
   "main": "app.coffee",
   "dependencies": {
     "knuth-shuffle": "^1.0.1",

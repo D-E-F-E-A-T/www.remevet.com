@@ -6,7 +6,7 @@ include /../templates/mixins/advertisers
 	.small-12.columns: .cover-right: .cover-contain
 
 		- var tmplink = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
-		- var tmpimage = "background-image:url('/static/images/covers/gato.jpg')"
+		- var tmpimage = "background-image:url('http://s3.amazonaws.com/uat-website/images/covers/gato.jpg')"
 
 		article.color-0.color-bg-5
 
@@ -43,7 +43,7 @@ include /../templates/mixins/advertisers
 								li= phone
 
 
-		
+
 		#magazines-issues.row
 
 		#magazines.row.collapse
@@ -58,7 +58,7 @@ include /../templates/mixins/advertisers
 						if clinic.phone.length > 1
 							ul telefono
 								each phone in clinic.phone
-									li= phone			
+									li= phone
 			#magazines-issues.row
 
 	.small-12.large-8.columns#map(style="height:500px;")
