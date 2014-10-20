@@ -14,11 +14,10 @@ module.exports = (request, response, next) ->
 			response.flash 'notice-error', error.message
 			return response.render()
 
-		response.render
-			BREADCRUMBS: [
-				name:"Directorio"
-				href:ﬁ.bundles['calendar']
-			]
-			clinics : data
-			feature : data.small[0]
+		data.BREADCRUMBS= [
+			name:"Directorio"
+			href:ﬁ.bundles['directory']
+		]
+
+		response.render data
 

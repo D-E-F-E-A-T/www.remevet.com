@@ -1,5 +1,4 @@
 $(document).ready ->
-
 	timer = null
 
 	screenUpdate = (e)->

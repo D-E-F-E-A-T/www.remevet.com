@@ -1,9 +1,12 @@
 include /../templates/mixins/rainbow
+include /../templates/mixins/advertisers
 
++rainbow()
++advertisers(advertisers)
++rainbow(true)
+.row.collapse.cover.cover-fixed.color-bg-secondary.color-bg-lightest
 
-.cover.row.collapse
-
-	.medium-6.large-4.columns.gradient: .cover-left
+	.show-for-large-up.large-4.columns.gradient: .cover-left
 
 		h2.color-6 Comunidad
 		p
@@ -15,23 +18,3 @@ include /../templates/mixins/rainbow
 			|	casos clínicos y procedimientos de vanguardia, con aportaciones de los
 			|	especialistas más reconocidos de nuestro país y del extranjero.
 
-
-	.medium-6.large-8.columns: .cover-right: .cover-contain
-
-		- var tmplink  = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/fauna-silvestre/fauna-silvestre-008.pdf#page=1&zoom=page-fit&twoPageView=2"
-		- var tmpimage = "background-image:url('http://s3.amazonaws.com/uat-website/images/covers/horse_1.jpg')"
-
-		article.color-0.color-bg-6
-
-			main.content(style=tmpimage)
-
-			nav.bottom.right.color-0
-				header
-					h3
-						a(href=tmplink) Una enfermedad presente en la zona centro-norte del estado de veracruz.
-					h4
-						a(href=tmplink) MVZ. Antonio Fernando Martínez
-
-				footer: ul
-					li: a(href=tmplink) Equinos
-					li: a(href=tmplink): span Leer Artículo

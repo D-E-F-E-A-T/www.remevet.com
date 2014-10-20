@@ -3,9 +3,9 @@ module.exports = (request, callback)->
 
 	self       = @
 	collection = ﬁ.db.collection 'clinics'
-	data       = {}
+	result     = clinics:[], advertisers:[]
 
-	collection.find(specialty:'small').toArray (error, small) ->
+	collection.find().toArray (error, data) ->
 		if error or not data
 			error =
 				if error
@@ -13,15 +13,11 @@ module.exports = (request, callback)->
 				else message: ['No se encontraron clínicas'], status: 403
 			return callback.call self, error
 
-		collection.find(specialty:'horses').toArray (error, horses) ->
-			if error or not data
-				error =
-					if error
-					then message: [String error], status: 500
-					else message: ['No se encontraron clínicas'], status: 403
-				return callback.call self, error
-
-			data.horses = horses
-			data.small  = small
-
 			callback.call self, null, data
+		result.clinics = data
+		Advertisers (error, data)->
+			callback.call(self,error) if error
+			result.advertisers = data
+
+
+			callback.call self, null, result

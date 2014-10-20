@@ -1,37 +1,16 @@
 include /../templates/mixins/rainbow
 include /../templates/mixins/advertisers
 
-.cover.row.collapse
 
-	.small-12.columns: .cover-right: .cover-contain
-
-		- var tmplink = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
-		- var tmpimage = "background-image:url('http://s3.amazonaws.com/uat-website/images/covers/gato.jpg')"
-
-		article.color-0.color-bg-5
-
-			main.content(style=tmpimage)
-
-			nav.bottom.left.color-0
-				header
-					h3
-						a(href=tmplink) Actualización en métodos de medición de la presión arterial sistemica en pequeños
-					h4
-						a(href=tmplink) MV. Iván Álvarez - MV. Cesar Mayorga
-
-				footer: ul
-					li: a(href=tmplink) Pequeñas Especies
-					li: a(href=tmplink): span Leer Artículo
-
-+rainbow(true)
-//- +advertisers(advertisers)
 +rainbow()
++advertisers(advertisers)
++rainbow(true)
 
 #magazines.row.collapse
 	.small-12.large-4.columns(style="height:500px;overflow:scroll;")
 		#magazines-header
-			a.uno(href=ﬁ.bundles['clinics']) Pequeñas Especies y Fauna Silvestre
-		each clinic in clinics.small
+			a.uno(href=ﬁ.bundles['clinics']) Clínicas
+		each clinic in clinics
 			.clinic(style="height:200px;margin-top:0.8em", data-lat="#{clinic.lat}", data-long="#{clinic.long}", data-serv="#{clinic.description}")
 				.small-6.large-4.columns
 					img(src=clinic.logo, width="120px")
@@ -44,25 +23,25 @@ include /../templates/mixins/advertisers
 
 
 
-		#magazines-issues.row
+		//- #magazines-issues.row
 
-		#magazines.row.collapse
-			#magazines-header
-				a.uno(href=ﬁ.bundles['clinics']) Equinos
-			each clinic in clinics.horses
-				.clinic(style="height:200px;margin-top:0.8em", data-lat="#{clinic.lat}", data-long="#{clinic.long}", data-serv="#{clinic.description}")
-					.small-6.large-4.columns
-						img(src=clinic.logo, width="120px")
-					.small-6.large-8.columns
-						a(href=clinic.website, target="_blank")= clinic.name
-						if clinic.phone.length > 1
-							ul telefono
-								each phone in clinic.phone
-									li= phone
-			#magazines-issues.row
+		//- #magazines.row.collapse
+		//- 	#magazines-header
+		//- 		a.uno(href=ﬁ.bundles['clinics']) Equinos
+		//- 	each clinic in clinics.horses
+		//- 		.clinic(style="height:200px;margin-top:0.8em", data-lat="#{clinic.lat}", data-long="#{clinic.long}", data-serv="#{clinic.description}")
+		//- 			.small-6.large-4.columns
+		//- 				img(src=clinic.logo, width="120px")
+		//- 			.small-6.large-8.columns
+		//- 				a(href=clinic.website, target="_blank")= clinic.name
+		//- 				if clinic.phone.length > 1
+		//- 					ul telefono
+		//- 						each phone in clinic.phone
+		//- 							li= phone
+		//- 	#magazines-issues.row
 
 	.small-12.large-8.columns#map(style="height:500px;")
 
 
-script!="window.feature=" + JSON.stringify(feature) + ';'
+script!="window.feature=" + JSON.stringify(clinics[0]) + ';'
 
