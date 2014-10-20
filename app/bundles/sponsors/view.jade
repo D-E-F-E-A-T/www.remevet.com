@@ -16,8 +16,8 @@ include /../templates/mixins/advertisers
 		for article in articles
 			.small-6.medium-4.large-2.columns
 				figure.magazine
-					a(href=ﬁ.settings.app.pdf.url+article.file+ﬁ.settings.app.pdf.opts)
-						img(src=article.image)
+					a(href=article.file)
+						img(src=ﬁ.settings.app.static + article.image)
 					figcaption
 						h4: a(href="#")=article.name
 						aside: a(href="#")=article.issue
