@@ -1,31 +1,11 @@
 include /../templates/mixins/rainbow
 include /../templates/mixins/advertisers
 
-.cover.row.collapse
-
-	.small-12.columns: .cover-right: .cover-contain
-
-		- var tmplink = "/static/lib/pdf.js/web/viewer.html?file=/static/revista/equinos/equinos-024.pdf#page=41&zoom=page-fit&twoPageView=2"
-		- var tmpimage = "background-image:url('http://s3.amazonaws.com/uat-website/images/covers/horse_1.jpg')"
-
-		article.color-0.color-bg-4
-
-			main.content(style=tmpimage)
-
-			nav.bottom.left.color-0
-				header
-					h3
-						a(href=tmplink) Una enfermedad presente en la zona centro- norte del estado de veracruz.
-					h4
-						a(href=tmplink) MVZ. Antonio Fernando Martínez
-
-				footer: ul
-					li: a(href=tmplink) Equinos
-					li: a(href=tmplink): span Leer Artículo
-
-+rainbow(true)
-+advertisers(advertisers)
 +rainbow()
++advertisers(advertisers)
++rainbow(true)
+
+.row.collapse.color-bg-4.color-bg-lightest
 
 #magazines.row.collapse
 	#magazines-header.color-4

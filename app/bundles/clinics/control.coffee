@@ -14,9 +14,8 @@ module.exports = (request, response, next) ->
 			response.flash 'notice-error', error.message
 			return response.render()
 
-		response.render
-			breadcrumbs: [
-				name:"Directorio"
-				href:ﬁ.bundles['clinics']
-			]
-			clinics : data
+		data.breadcrumbs= [
+			name:"Directorio"
+			href:ﬁ.bundles['clinics']
+		]
+		response.render data

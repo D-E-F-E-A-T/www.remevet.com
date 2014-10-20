@@ -1,48 +1,28 @@
-#cover.row.collapse
-
-	.small-12.columns: .cover-right: .cover-contain
-
-		- var tmplink = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
-		- var tmpimage = "background-image:url('http://s3.amazonaws.com/uat-website/images/covers/PE_Presion_arterial.jpg')"
-
-		article.color-0.color-bg-5
-
-			.content(style=tmpimage)
-
-			nav.bottom.left.color-0
-				header
-					h3
-						a(href=tmplink) Actualización en métodos de medición de la presión arterial sistemica en pequeños
-					h4
-						a(href=tmplink) MV. Iván Álvarez - MV. Cesar Mayorga
-
-				footer: ul
-					li: a(href=tmplink) Pequeñas Especies
-					li: a(href=tmplink): span Leer Artículo
-
-	#cover-rainbow
-		.color.color1
-		.color.color2
-		.color.color3
-		.color.color4
-		.color.color5
-		.color.color6
+include /../templates/mixins/rainbow
+include /../templates/mixins/advertisers
 
 
-#magazines.row.collapse
-	.small-12.large-5.columns(style="height:500px;overflow:scroll;")
-		#magazines-header
-			a.uno(href=ﬁ.bundles['clinics']) Pequeñas Especies y Fauna Silvestre
-		each clinic in clinics.small
-			.clinic(style="height:250px;margin-top:0.8em", data-lat="#{clinic.lat}", data-long="#{clinic.long}")
-				.small-6.large-4.columns
-					img(src=clinic.logo, width="120px")
-				.small-6.large-8.columns
-					a(href=clinic.website, target="_blank")= clinic.name
-					if clinic.phone.length > 1
-						ul telefono
-							each phone in clinic.phone
-								li= phone
++rainbow()
++advertisers(advertisers)
++rainbow(true)
+
+.row.collapse.color-bg-5.color-bg-lightest
+
+
+	#magazines.row.collapse
+		.small-12.large-5.columns(style="height:500px;overflow:scroll;")
+			#magazines-header
+				a.uno(href=ﬁ.bundles['clinics']) Pequeñas Especies y Fauna Silvestre
+			each clinic in clinics.small
+				.clinic(style="height:250px;margin-top:0.8em", data-lat="#{clinic.lat}", data-long="#{clinic.long}")
+					.small-6.large-4.columns
+						img(src=clinic.logo, width="120px")
+					.small-6.large-8.columns
+						a(href=clinic.website, target="_blank")= clinic.name
+						if clinic.phone.length > 1
+							ul telefono
+								each phone in clinic.phone
+									li= phone
 
 
 
