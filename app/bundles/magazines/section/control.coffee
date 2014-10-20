@@ -17,6 +17,9 @@ module.exports = (request, response, next) ->
 		return next(status:500, errors:[error]) if error
 
 		data.cover = found
-		data.BREADCRUMBS = [name: section, href: ﬁ.bundles['magazines']]
+		data.BREADCRUMBS = [
+			(name: 'Revistas', href: ﬁ.bundles['magazines'])
+			(name: section, href: null)
+		]
 
 		response.render data

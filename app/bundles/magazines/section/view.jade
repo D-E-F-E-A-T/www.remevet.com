@@ -1,24 +1,9 @@
 include /../templates/mixins/rainbow
 include /../templates/mixins/advertisers
 
-.cover.row.collapse
+.cover.row.collapse.cover-fixed.color-bg-2.color-bg-lightest
 
-	.show-for-large-up.large-4.columns.gradient: .cover-left
-
-		p
-		p
-			strong.color-2 REMEVET&nbsp;
-			| es una publicación independiente creada para la educación y actualización continua
-			| de los Médicos Veterinarios Zootecnistas.
-		p
-			| Para tu comodidad, facilitamos la búsqueda
-			| de los temas y artículos de tu interés dividiendo las revistas en tres ramas:
-			| Pequeñas especies
-			| Equinos
-			| Fauna silvestre
-
-
-	.large-8.columns: .cover-right: .cover-contain
+	.large-12.columns: .cover-right: .cover-contain
 
 		- var tmplink  = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
 		- var tmpimage = "background-image:url('http://s3.amazonaws.com/uat-website/images/covers/gato.jpg')"
@@ -35,7 +20,7 @@ include /../templates/mixins/advertisers
 						a(href=tmplink) MV Iván Álvarez MV César Mayorga
 
 				footer: ul
-					li: a(href=tmplink) Pequeñas Especies
+					li: a(href=tmplink) Artículo destacado
 					li: a(href=tmplink): span Leer Artículo
 
 +rainbow()
@@ -49,21 +34,20 @@ mixin magazine(magazine)
 	a(href=magazine.href, target='_blank')
 		img(src=magazine.image, alt=magazine.title, title=magazine.title, width='100%')
 	footer.color-bg-0.hide-for-small-only
-		h4: a.color-primary(href=magazine.href, target='_blank')= magazine.name
+		h4: a.color-primary(href=magazine.href, target='_blank') &nbsp;
 		aside.color-bg-2.color-darker: a(href=magazine.href, target='_blank')= magazine.issue
 
 mixin magazine-n(name, n, magazine)
 	div(class='columns element ' + name + '-' + n)
 		+magazine(magazine)
 
+.row.collapse
 
-.row.collapse.color-bg-2.color-lightest
-
-	section.small-12.columns.color-bg-2.color-lightest
+	section.small-12.columns.color-bg-2.color-bg-lightest
 
 		header.color-bg-2
 			a.uno(href=ﬁ.bundles['magazines']) Revistas
-		- if(magazines.length%2) console.info('sssss')
+
 		main.row: for magazine in magazines
 			.small-6.medium-4.large-2.columns.element(style='margin-bottom:1em')
 				+magazine(magazine)

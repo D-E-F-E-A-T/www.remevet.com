@@ -1,47 +1,14 @@
--console.info(data)
-
 include /../templates/mixins/rainbow
 include /../templates/mixins/advertisers
 
-.cover.row.collapse
 
-	.show-for-large-up.large-4.columns.gradient: .cover-left
-
-		p
-		p
-			strong.color-2 Eventos, &nbsp;
-			| Encuentra aquí toda la información sobre: cursos, diplomados y congresos con relación al área veterinaria;
-			| todo calendarizado para darte más visibilidad y que puedas programar tus asistencias.
-		p
-			| No dejes de consultar esta sección para estar al día de los próximos eventos más relevantes.
-
-
-	.large-8.columns: .cover-right: .cover-contain
-
-		- var tmplink  = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
-		- var tmpimage = "background-image:url('http://s3.amazonaws.com/uat-website/images/covers/gato.jpg')"
-
-		article.color-0.color-bg-2
-
-			main.content(style=tmpimage)
-
-			nav.bottom.right.color-0
-				header
-					h3
-						a(href=tmplink, target="_blank") Actualización en métodos de medición de la presión arterial sistémica en pequeños
-					h4
-						a(href=tmplink) MV Iván Álvarez MV César Mayorga
-
-				footer: ul
-					li: a(href=tmplink) Pequeñas Especies
-					li: a(href=tmplink): span Leer Artículo
-
-+rainbow(true)
-+advertisers(advertisers)
 +rainbow()
++advertisers(advertisers)
++rainbow(true)
 
-.row.collapse
-	#magazines.small-12.large-4.columns(style="height:500px;overflow:scroll;")
+.row.collapse.color-bg-3.color-bg-lightest
+
+	.small-12.large-4.columns(style="height:600px")
 
 		each event in events
 			.event(style="height:400px;margin-top:0.8em", data-p="#{event.desc}", data-img="#{event.logo}")
@@ -55,7 +22,14 @@ include /../templates/mixins/advertisers
 
 
 	.small-12.large-8.columns#event
-		iframe(src="https://www.google.com/calendar/embed?src=remevet.com_1g5vjvsvpdph9eor916lccfnf4%40group.calendar.google.com&ctz=America/Mexico_City",style="border: 0",width="100%",height="600",frameborder="0",scrolling="no")
+		.row.collapse: section.small-12.columns
+
+			header.color-bg-3
+				a.uno(href=ﬁ.bundles['magazines']) Eventos
+
+			main.row.collapse
+				iframe(src="https://www.google.com/calendar/embed?src=remevet.com_1g5vjvsvpdph9eor916lccfnf4%40group.calendar.google.com&ctz=America/Mexico_City",style="border: 0",width="100%",height="600",frameborder="0",scrolling="no")
+
 
 
 
