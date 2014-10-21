@@ -21,60 +21,63 @@ include /../templates/mixins/advertisers
 
 	.small-12.large-8.columns: .cover-right: .cover-contain(data-timeout="20")
 
-		- var tmplink  = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
-		- var tmpimage = "background-image:url('" + ﬁ.settings.app.static + "/images/covers/gato.jpg')"
+		- var tmplinkPeq  = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
+		- var tmpimagePeq = "background-image:url('" + ﬁ.settings.app.static + "/images/covers/gato.jpg')"
 
 		article.color-0.color-bg-2.slide
 
-			main.content(style=tmpimage)
+			main.content(style=tmpimagePeq)
 
 			nav.bottom.right.color-0
 				header
 					h3
-						a(href=tmplink, target="_blank") Actualización en métodos de medición de la presión arterial sistémica en pequeños
+						a(href=tmplinkPeq, target="_blank") Actualización en métodos de medición de la presión arterial sistémica en pequeños
 					h4
-						a(href=tmplink) MV Iván Álvarez MV César Mayorga
+						a(href=tmplinkPeq) MV Iván Álvarez MV César Mayorga
 
 				footer: ul
-					li: a(href=tmplink) Pequeñas Especies
-					li: a(href=tmplink): span Leer Artículo
+					li: a(href=tmplinkPeq) Pequeñas Especies
+					li: a(href=tmplinkPeq): span Leer Artículo
 
 
 		article: video.content(controls, autoplay=false, loop, poster="#{ﬁ.settings.app.static}/videos/COMFORTIS_ESP_VET_FINAL_H264.jpg")
 			source(src="#{ﬁ.settings.app.static}/videos/COMFORTIS_ESP_VET_FINAL_H264.mp4", type="video/mp4")
 			source(src="#{ﬁ.settings.app.static}/videos/COMFORTIS_ESP_VET_FINAL_H264.ogg", type="video/ogg")
 
+		- var tmplinkFS  = "http://uat.magazine.s3.amazonaws.com/fauna-silvestre/fauna-silvestre-008/fauna-silvestre-008.html#p=8"
+		- var tmpimageFS = "background-image:url('" + ﬁ.settings.app.static + "/images/covers/home-01.jpg')"
 
 		article.color-0.color-bg-3.slide
 
-			main.content(style=tmpimage)
+			main.content(style=tmpimageFS)
 
 			nav.bottom.right.color-0
 				header
 					h3
-						a(href=tmplink, target="_blank") Actualización en métodos de medición de la presión arterial sistémica en pequeños
+						a(href=tmplinkFS, target="_blank") Bases de Bienestar animal en Fauna Silvestre
 					h4
-						a(href=tmplink) MV Iván Álvarez MV César Mayorga
+						a(href=tmplinkFS) MVZ Adriana Cossío Bayúgar
 
 				footer: ul
-					li: a(href=tmplink) Pequeñas Especies
-					li: a(href=tmplink): span Leer Artículo
+					li: a(href=tmplinkFS) Fauna Silvestre
+					li: a(href=tmplinkFS): span Leer Artículo
 
-
+		- var tmplinkEq  = "http://uat.magazine.s3.amazonaws.com/equinos/equinos-024/equinos-24.html#p=6"
+		- var tmpimageEq = "background-image:url('" + ﬁ.settings.app.static + "/images/covers/horse_1.jpg')"
 		article.color-0.color-bg-4.slide
 
-			main.content(style=tmpimage)
+			main.content(style=tmpimageEq)
 
 			nav.bottom.right.color-0
 				header
 					h3
-						a(href=tmplink, target="_blank") Actualización en métodos de medición de la presión arterial sistémica en pequeños
+						a(href=tmplinkEq, target="_blank") Mastocitoma en la Articulación Temporomandibular
 					h4
-						a(href=tmplink) MV Iván Álvarez MV César Mayorga
+						a(href=tmplinkEq) MVZ José Antonio Guerra P / MVZ Alejandro Rodríguez M
 
 				footer: ul
-					li: a(href=tmplink) Pequeñas Especies
-					li: a(href=tmplink): span Leer Artículo
+					li: a(href=tmplinkEq) Equinos
+					li: a(href=tmplinkEq): span Leer Artículo
 
 +rainbow()
 +advertisers(advertisers)

@@ -19,7 +19,9 @@ module.exports = (request, response, next) ->
 		data.cover = found
 		data.BREADCRUMBS = [
 			(name: 'Revistas', href: ﬁ.bundles['magazines'])
-			(name: section, href: null)
+			(name: 'Pequeñas Especies', href:ﬁ.bundles['magazines/section'].replace(':section','equinos') )
+			(name: 'Fauna Silvestre', href:ﬁ.bundles['magazines/section'].replace(':section','fauna-silvestre') )
+			(name: 'Equinos', href:ﬁ.bundles['magazines/section'].replace(':section','pequenas-especies') )
 		]
 
 		response.render data
