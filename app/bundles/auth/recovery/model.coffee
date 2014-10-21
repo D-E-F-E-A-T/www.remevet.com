@@ -6,7 +6,7 @@ module.exports = (request, callback)->
 		return callback.call @, (message: errors.map((e)-> e.msg), status: 403)
 
 	self = @
-	collection = ﬁ.db.collection 'users'
+	collection = ﬁ.db.collection 'user'
 
 	collection.findOne (email: request.body.mail),
 		email      : true

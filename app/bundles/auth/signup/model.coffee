@@ -19,7 +19,7 @@ module.exports = (request, callback)->
 		console.log request.body.pass_1, request.body.pass_2
 		return callback.call @, (message: ["Los password no coinciden"], status:400)
 
-	collection = ﬁ.db.collection 'users'
+	collection = ﬁ.db.collection 'user'
 	self = @
 
 	# make sure no other user like this one exist
