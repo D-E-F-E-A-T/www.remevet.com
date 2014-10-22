@@ -1,31 +1,23 @@
 .row.collapse(data-equalizer)
-	.large-3.small-12.columns.show-for-large-up(data-equalizer-watch)
-		img.myMargin(src='/static/bann1.jpeg', height="auto", width="250")
-		img.myMargin(src='/static/bann2.jpeg', height="auto", width="250")
-		img.myMargin(src='/static/bann3.jpeg', height="auto", width="250")
-	.large-3.small-12.columns.hide-for-large-up(data-equalizer-watch)
-		img.myMargin(src='/static/bann1.jpeg', height="auto", width="33%")
-		img.myMargin(src='/static/bann2.jpeg', height="auto", width="33%")
-		img.myMargin(src='/static/bann3.jpeg', height="auto", width="33%")
 	.large-8.small-12.large-offset-1.columns.large-centered(data-equalizer-watch)
 		form(method="POST")
 			.row: .large-12.small-12.columns
 				h2: a Contáctanos
 			.row: .large-12.small-12.columns
 				label.required: span Nombre
-				input(type='text', name="name", placeholder='', required)
+				input(type='text', name="name", placeholder='Nombre', required)
 			.row: .large-12.small-12.columns
 				label.required Tu correo
-				input(type='email', name="email", placeholder='', required)
+				input(type='email', name="email", placeholder='Correo', required)
 			.row: .large-12.small-12.columns
 				label.required Teléfono
-				input(type='email', name="phone", placeholder='')
+				input(type='text', name="phone", placeholder='Teléfono')
 			.row: .large-12.small-12.columns
 				label.required Ciudad
-				input(type='email', name="city", placeholder='')
+				input(type='text', name="city", placeholder='Ciudad')
 			.row: .large-12.small-12.columns
 				label.required Asunto
-				input(type='text', name="subject", placeholder='', required)
+				input(type='text', name="subject", placeholder='Asunto', required)
 			.row: .large-12.small-12.columns
 				label.required ¿En qué te pondemos ayudar?
 				textarea(rows='6', name="body", required)

@@ -1,10 +1,11 @@
 NodeMailer = require 'nodemailer'
 
-mailer = NodeMailer.createTransport 'SMTP',
+mailer = NodeMailer.createTransport(
 	service: 'Gmail'
 	auth   :
-		user: ''
-		pass: ''
+		user: 'soporte@remevet.com'
+		pass: 'R3m3\\/37.'
+)
 
 module.exports = (request, response, next)->
 
@@ -22,16 +23,15 @@ module.exports = (request, response, next)->
 	message =
 		from    : "#{request.param('name')} <#{request.param('email')}>"
 		replyTo : "#{request.param('name')} <#{request.param('email')}>"
-		to      : "beto@gik.mx,etor@gik.mx"
-		subject : "[SUPPORT] #{request.param('subject')}"
-		text    : request.param('body')
+		to      : "beto@gik.mx"
+		subject : "[CONTACTO REMEVET] #{request.param('subject')}"
+		text    : """Usuario: #{request.param('name')}
+			Correo: #{request.param('email')}
+			Telefono: #{request.param('phone')}
+			Ciudad: #{request.param('city')}
+			se ha puesto en contacto atraveés de remevet.com su mensaje es: \n #{request.param('body')}"""
 
 	mailer.sendMail message, (error, message)->
 		return next(status:500, errors:[error]) if error
 		ﬁ.log.debug "Mailed:", JSON.stringify message
-		response.render
-			BREADCRUMBS: [
-				name:"Comunidad"
-				href:ﬁ.bundles['community']
-			]
-			infos: ['Envío exitoso; nos pondremos en contacto a la brevedad.']
+		response.redirect ﬁ.bundles['_home_']

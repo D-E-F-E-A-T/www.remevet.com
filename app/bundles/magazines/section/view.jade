@@ -1,27 +1,23 @@
 include /../templates/mixins/rainbow
 include /../templates/mixins/advertisers
-
+-console.info(articles)
 .cover.row.collapse.cover-fixed.color-bg-2.color-bg-lightest
 
-	.large-12.columns: .cover-right: .cover-contain
+	.large-12.columns: .cover-right: .cover-contain(data-timeout="20")
 
-		- var tmplink  = "http://uat.magazine.s3.amazonaws.com/peq/pequenas-especies-020/pequenas-especies-20.html#p=64"
-		- var tmpimage = "background-image:url('http://s3.amazonaws.com/uat-website/images/covers/gato.jpg')"
-
-		article.color-0.color-bg-2
-
-			main.content(style=tmpimage)
-
-			nav.bottom.right.color-0
-				header
-					h3
-						a(href=tmplink, target="_blank") Actualización en métodos de medición de la presión arterial sistémica en pequeños
-					h4
-						a(href=tmplink) MV Iván Álvarez MV César Mayorga
-
-				footer: ul
-					li: a(href=tmplink) Artículo destacado
-					li: a(href=tmplink): span Leer Artículo
+		each article in articles
+			- var tmpimage = "background-image:url('" + article.image + "')"
+			article.color-0.color-bg-2
+				main.content(style=tmpimage)
+				nav.bottom.right.color-0
+					header
+						h3
+							a(href=article.href, target="_blank")= article.name
+						h4
+							a(href=article.href, target="_blank") Artículo destacado
+					footer: ul
+						li: a(href=article.href, target="_blank") Artículo destacado
+						li: a(href=article.href, target="_blank"): span Leer artículo
 
 +rainbow()
 +advertisers(advertisers)
