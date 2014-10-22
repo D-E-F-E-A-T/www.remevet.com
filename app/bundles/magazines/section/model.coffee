@@ -8,7 +8,7 @@ module.exports = (data, callback)->
 	result     = advertisers:[], articles:[], magazines:[]
 	slug       = data
 
-	collection.find(slug:slug).toArray (error, data)->
+	collection.find(slug:slug).sort(issue:-1).toArray (error, data)->
 		if error or not data
 			error =
 				if error
