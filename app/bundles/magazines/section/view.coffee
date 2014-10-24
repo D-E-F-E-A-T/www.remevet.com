@@ -19,4 +19,13 @@ $window.loadStack.push ->
 		$cover.animate propCovr, 333
 		$contain.animate propCont, 333
 
-	setInterval	cback, timer
+	coverSet   = -> $window.intervalCovr = setInterval cback, timer
+	coverClear = -> clearInterval $window.intervalCovr
+
+	do coverSet if not $window.intervalCovr
+
+	$window.focus coverSet
+	$window.blur coverClear
+
+
+	
