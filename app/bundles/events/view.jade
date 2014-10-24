@@ -1,6 +1,35 @@
 include /../templates/mixins/rainbow
 include /../templates/mixins/advertisers
 
+.row.collapse.cover.cover-fixed.color-bg-secondary.color-bg-lightest
+
+	.show-for-large-up.large-3.columns.gradient: .cover-left
+
+		h2.color-primary Eventos
+		p
+			strong.color-3 REMEVET&nbsp;
+			| Te mantiene actualizado e informado en cuanto a Congresos, 
+			| Simposios, Talleres y Eventos del ámbito médico veterinario 
+		
+	.small-12.large-8.columns: .cover-right: .cover-contain(data-timeout="20")
+
+		- var tmplinkPeq  = "http://media.wix.com/ugd/44f696_0629464e6f9e4225863b990e2feb47f6.pdf"
+		- var tmpimagePeq = "background-image:url('http://uat-website.s3.amazonaws.com/images/events/comvepej.jpg')"
+
+		article.color-0.color-bg-3.slide
+
+			main.content(style=tmpimagePeq)
+
+			nav.bottom.right.color-0
+				header
+					h3
+						a(href=tmplinkPeq, target="_blank") Convención Nacional COMVEPEJ 2014
+					h4
+						a(href=tmplinkPeq) La actualización mas relajante del año.
+
+				footer: ul
+					li: a(href=tmplinkPeq) Evento Destacado
+					li: a(href=tmplinkPeq): span Ver programa
 
 +rainbow()
 +advertisers(advertisers)
@@ -10,8 +39,8 @@ include /../templates/mixins/advertisers
 
 .row.collapse
 
-	section.small-12.columns.color-bg-3.color-lightest
-		header.color-bg-3.color-bg-lighter
+	section.small-12.columns.color-bg-3
+		header.color-bg-3.color-lightest
 			a.uno(href=ﬁ.bundles['magazines']) Eventos
 
 		main.row
