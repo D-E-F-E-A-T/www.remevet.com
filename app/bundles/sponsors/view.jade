@@ -17,10 +17,10 @@ include /../templates/mixins/advertisers
 			.small-6.medium-4.large-2.columns
 				figure.magazine
 					a(href=article.file)
-						img(src="http://uat-website.s3.amazonaws.com/images/community/Convocatoria_Feb-Jul_2015.png")
+						img(src=ﬁ.settings.app.static + article.image)
 					figcaption
-						h4: a(href="#") Convocatoria Febrero - Julio 2015
-						aside: a(href="#") Convocatoria Febrero - Julio 2015
+						h4: a(href="#")=article.name
+						aside: a(href="#")=article.issue
 
 
 
