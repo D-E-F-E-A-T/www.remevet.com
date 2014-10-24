@@ -1,7 +1,8 @@
 $window.loadStack.push ->
 
-	$contain  = $('.cover:not(.cover-fit) .cover-contain')
-	$cover    = $contain.closest('.cover')
+	$video    = $ 'video'
+	$contain  = $ '.cover:not(.cover-fit) .cover-contain'
+	$cover    = $contain.closest '.cover'
 	$articles = $contain.find '> *'
 
 	i = 0
@@ -19,4 +20,14 @@ $window.loadStack.push ->
 		$cover.animate propCovr, 333
 		$contain.animate propCont, 333
 
-	setInterval	cback, timer
+	coverSet   = -> $window.intervalCovr = setInterval cback, timer
+	coverClear = -> clearInterval $window.intervalCovr
+
+	do coverSet if not $window.intervalCovr
+
+	$window.focus coverSet
+	$window.blur coverClear
+
+	$video.on 'play', coverClear
+	$video.on 'ended', coverSet
+	$video.on 'pause', coverSet
