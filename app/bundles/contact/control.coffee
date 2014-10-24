@@ -23,7 +23,7 @@ module.exports = (request, response, next)->
 	message =
 		from    : "#{request.param('name')} <#{request.param('email')}>"
 		replyTo : "#{request.param('name')} <#{request.param('email')}>"
-		to      : "beto@gik.mx"
+		to      : "contacto@remevet.com"
 		subject : "[CONTACTO REMEVET] #{request.param('subject')}"
 		text    : """Usuario: #{request.param('name')}
 			Correo: #{request.param('email')}
