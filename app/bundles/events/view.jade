@@ -58,8 +58,8 @@ include /../templates/mixins/advertisers
 							span.show-for-small-only=ﬁ.datemonth(event.date.ini.getMonth(), true)
 
 						aside.color-bg-3.color-darker: a(href="#")=event.date.day
-					a(href=event.place.website)
-						img(src=event.logo, width='100%')
+					a(href=event.place.website, target="_blank")
+						img(src=ﬁ.settings.app.static + event.logo)
 
 
 
