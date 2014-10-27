@@ -1,47 +1,10 @@
 include /../templates/mixins/rainbow
 include /../templates/mixins/advertisers
 
-.row.collapse.cover.cover-fixed.color-bg-secondary.color-bg-lightest
-
-	.show-for-large-up.large-3.columns.gradient: .cover-left
-
-		h2.color-primary Eventos
-		p
-			strong.color-3 REMEVET&nbsp;
-			| Te mantiene actualizado e informado en cuanto a Congresos, 
-			| Simposios, Talleres y Eventos del ámbito médico veterinario 
-		
-	.small-12.large-8.columns: .cover-right: .cover-contain(data-timeout="20")
-
-		- var tmplinkPeq  = "http://media.wix.com/ugd/44f696_0629464e6f9e4225863b990e2feb47f6.pdf"
-		- var tmpimagePeq = "background-image:url('http://uat-website.s3.amazonaws.com/images/events/comvepej.jpg')"
-
-		article.color-0.color-bg-3.slide
-
-			main.content(style=tmpimagePeq)
-
-			nav.bottom.right.color-0
-				header
-					h3
-						a(href=tmplinkPeq, target="_blank") Convención Nacional COMVEPEJ 2014
-					h4
-						a(href=tmplinkPeq) La actualización mas relajante del año.
-
-				footer: ul
-					li: a(href=tmplinkPeq) Evento Destacado
-					li: a(href=tmplinkPeq): span Ver programa
-
-+rainbow()
-+advertisers(advertisers)
-+rainbow(true)
-
-
-
 .row.collapse
-
 	section.small-12.columns.color-bg-3
-		header.color-bg-3.color-lightest
-			a.uno(href=ﬁ.bundles['magazines']) Eventos
+		header.color-bg-0.color-lightest
+			a.uno.color-3.color-darker(href="#") Eventos
 
 		main.row
 			- var klass, base = 'element columns small-6 medium-4 large-2'
@@ -57,17 +20,26 @@ include /../templates/mixins/advertisers
 							span.hide-for-small-only=ﬁ.datemonth(event.date.ini.getMonth())
 							span.show-for-small-only=ﬁ.datemonth(event.date.ini.getMonth(), true)
 
-						aside.color-bg-3.color-darker: a(href="#")=event.date.day
+						aside.color-bg-0: a.color-3.color-darker(href="#")=event.date.day
 					a(href=event.place.website, target="_blank")
 						img(src=ﬁ.settings.app.static + event.logo)
 
 
 
++rainbow()
++advertisers(advertisers)
++rainbow(true)
+
+
+
+.row.collapse
 	.small-12.large-12.columns.color-bg-3.color-lightest#event
 		.row.collapse: section.small-12.columns
-
-			main.row.collapse
-				iframe(src="https://www.google.com/calendar/embed?src=remevet.com_1g5vjvsvpdph9eor916lccfnf4%40group.calendar.google.com&ctz=America/Mexico_City",style="border: 0",width="100%",height="600",frameborder="0",scrolling="no")
+			header.color-bg-0.color-lighter
+				a.uno.color-3.color-darker(href="#") Calendario
+			
+				main.row.collapse
+					iframe(src="https://www.google.com/calendar/embed?src=remevet.com_1g5vjvsvpdph9eor916lccfnf4%40group.calendar.google.com&ctz=America/Mexico_City",style="border: 0",width="100%",height="600",frameborder="0",scrolling="no")
 
 
 
