@@ -81,11 +81,24 @@
 					left:auto
 
 				header
+					display  : table
+					position : relative
+					overflow : hidden
+					width    : 60%
+					max-width : 1500px
+					min-width : 626px
+					min-height : 124px
+
 				footer
 					display  : block
 					position : relative
 					overflow : hidden
-					width    : 100%
+					width    : 60%
+					max-width : 1500px
+					min-width : 626px
+					max-heigth : 50px
+				
+
 
 				header
 					mixin-font-heading()
@@ -110,6 +123,7 @@
 						overflow   : hidden
 						position   : relative
 						margin     : 0
+				
 
 					li
 						display     : block
@@ -157,7 +171,7 @@
 
 				&.color-bg-{$i}
 					header
-						background  : rgba(lighten($color, 33%), 0.9)
+						background  : rgba(lighten($color, 33%), 0.6)
 						text-shadow : 1px 1px 0 darken($color, 50%)
 					footer
 						background: $color
@@ -173,3 +187,6 @@
 							box-shadow: -0.1em 0 0.5em 0 rgba(darken($colors-hover[$i], 33%), 0.5)
 							border-left: 1px solid rgba(lighten($colors-hover[$i],50%), 0.5)
 							text-shadow: 1px 1px 0 darken($colors-hover[$i], 33%)
+							
+
+

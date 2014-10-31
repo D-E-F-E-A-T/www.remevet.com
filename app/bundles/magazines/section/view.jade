@@ -9,12 +9,11 @@ include /../templates/mixins/advertisers
 			- var tmpimage = "background-image:url('" + article.image + "')"
 			article.color-0.color-bg-2
 				main.content(style=tmpimage)
-				nav.bottom.right
+				nav.bottom.left
 					header
 						h3
 							a(href=article.href, onclick='javascript:void window.open (\'#{article.href}\',\'1414424357319\',\'width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;')= article.name
-						h4
-							a(href=article.href, onclick='javascript:void window.open (\'#{article.href}\',\'1414424357319\',\'width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;')= article.author
+						
 					footer: ul
 						li: a(href=article.href, onclick='javascript:void window.open (\'#{article.href}\',\'1414424357319\',\'width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;') Artículo destacado
 						li: a(href=article.href, onclick='javascript:void window.open (\'#{article.href}\',\'1414424357319\',\'width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;'): span Leer artículo
