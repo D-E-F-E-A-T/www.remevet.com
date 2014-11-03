@@ -8,3 +8,8 @@ module.exports =
 		base : '/revista/'
 		url  : 'https://s3-us-west-1.amazonaws.com/uat.magazine'
 		opts : '#page=1&zoom=page-fit&twoPageView=2'
+
+
+	size: 
+		width: '400px'
+		hight: '100px'

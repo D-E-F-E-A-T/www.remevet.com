@@ -12,11 +12,11 @@ include /../templates/mixins/advertisers
 				nav.bottom.left
 					header
 						h3
-							a(href=article.href, onclick='javascript:void window.open (\'#{article.href}\',\'1414424357319\',\'width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;')= article.name
+							a(href=article.href, onclick='javascript:void window.open (\'#{article.href}\',\'1414424357319\',\'width=ﬁ.settings.app.size.width,height=fi.settings.app.size.height,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;')= article.name
 						
 					footer: ul
-						li: a(href=article.href, onclick='javascript:void window.open (\'#{article.href}\',\'1414424357319\',\'width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;') Artículo destacado
-						li: a(href=article.href, onclick='javascript:void window.open (\'#{article.href}\',\'1414424357319\',\'width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;'): span Leer artículo
+						li: a(href=article.href, onclick='javascript:void window.open (\'#{article.href}\',\'1414424357319\',\'width=ﬁ.settings.app.size.width,height=fi.settings.app.size.height,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;') Artículo destacado
+						li: a(href=article.href, onclick='javascript:void window.open (\'#{article.href}\',\'1414424357319\',\'width=ﬁ.settings.app.size.width,height=fi.settings.app.size.height,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;'): span Leer artículo
 
 +rainbow()
 +advertisers(advertisers)
@@ -26,11 +26,11 @@ mixin magazine(magazine)
 	- magazine.href  = magazine.href
 	- magazine.title = magazine.name + ': ' + magazine.issue
 
-	a(href=magazine.href, onclick='javascript:void window.open (\'#{magazine.href}\',\'1414424357319\',\'width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;')
+	a(href=magazine.href, onclick='javascript:void window.open (\'#{magazine.href}\',\'1414424357319\',\'width=ﬁ.settings.app.size.width,height=fi.settings.app.size.height,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;')
 		img(src=ﬁ.settings.app.static + magazine.image, alt=magazine.title, title=magazine.title, width='100%')
 	footer.color-bg-0.hide-for-small-only
 		h4: a.color-primary(href=magazine.href, target='_blank') &nbsp;
-		aside.color-bg-2.color-darker: a(href=magazine.href, onclick='javascript:void window.open (\'#{magazine.href}\',\'1414424357319\',\'width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;')= magazine.issue
+		aside.color-bg-2.color-darker: a(href=magazine.href, onclick='javascript:void window.open (\'#{magazine.href}\',\'1414424357319\',\'width=ﬁ.settings.app.size.width,height=fi.settings.app.size.height,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;')= magazine.issue
 
 
 
