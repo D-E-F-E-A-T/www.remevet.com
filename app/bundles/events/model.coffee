@@ -8,7 +8,7 @@ module.exports = (data, callback)->
 
 	collection
 		.find("date.end": $gte: new Date)
-		.sort("date.ini": 1).toArray (error, data)->
+		.sort("date.ini": 1).limit(6).toArray (error, data)->
 			if error or not data
 				error =
 					if error
