@@ -1,5 +1,6 @@
 mixin advertisers(advertisers)
 	.advertisers.row.collapse: .advertisers-slider
 		for advertiser in advertisers
-			.slide: a(href=advertiser.href || '#', target="_blank", onclick="tracklOutboundLink('" + advertiser.href + "')", return)
+			.slide: a(href=advertiser.href || '#', target="_blank", onclick="tracklOutboundLink,pageTracker._trackPageview('" + advertiser.href + "')", return)
 				img(src=ﬁ.settings.app.static + advertiser.src)
+
