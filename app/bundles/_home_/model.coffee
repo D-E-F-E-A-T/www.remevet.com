@@ -28,9 +28,14 @@ module.exports = (data, callback)->
 						callback.call(self,error) if error
 						result.events = data
 
-						articles.find().limit(5).toArray (error, data)->
+						articles.find().sort(num:-1).limit(1).toArray (error, data)->
 							callback.call(self, error) if error
 							result.articles = data
+						
+
 
 							# Ended
 							callback.call self, null, result
+
+
+
