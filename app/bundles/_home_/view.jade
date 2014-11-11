@@ -21,6 +21,29 @@ include /../templates/mixins/advertisers
 
 	.small-12.large-8.columns: .cover-right: .cover-contain(data-timeout="20")
 
+
+		- var tmplinkEq  = "http://uat.magazine.s3.amazonaws.com/equinos/equinos-024/equinos-24.html#p=50"
+		- var tmpimageEq = "background-image:url('http://uat-website.s3.amazonaws.com/images/covers/EQ_No24_Art4.jpg')"
+		article.color-0.color-bg-2.slide
+
+
+			main.content(style=tmpimageEq)
+
+			nav.bottom.left.color-0
+				header
+					h3
+						a(href=tmplinkEq, onclick='javascript:void window.open (\'#{tmplinkEq}\',\'1414424357319\',\'width=ﬁ.settings.app.size.width,height=fi.settings.app.size.height,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;') Uso de la Termología en equinos 
+
+				footer: ul
+					li: a(href=tmplinkEq, onclick='javascript:void window.open (\'#{tmplinkEq}\',\'1414424357319\',\'width=ﬁ.settings.app.size.width,height=fi.settings.app.size.height,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;') Equinos
+					li: a(href=tmplinkEq, onclick='javascript:void window.open (\'#{tmplinkEq}\',\'1414424357319\',\'width=ﬁ.settings.app.size.width,height=fi.settings.app.size.height,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;'): span Leer Artículo
+
+
+		article: video.content(controls, autoplay=false, lopp, poster="#{ﬁ.settings.app.static}/videos/COMFORTIS_ESP_VET_FINAL_H264.jpg")
+			source(src="#{ﬁ.settings.app.static}/videos/COMFORTIS_ESP_VET_FINAL_H264.mp4", type="video/mp4")
+			source(src="#{ﬁ.settings.app.static}/videos/COMFORTIS_ESP_VET_FINAL_H264.ogg", type="video/ogg")
+
+
 		- var tmplinkPeq  = "https://s3-us-west-1.amazonaws.com/uat.magazine/peq/pequenas-especies-021/pequenas-especies-21.html#p=43"
 
 		- var tmpimagePeq = "background-image:url('http://uat-website.s3.amazonaws.com/images/covers/PE_No21_Art3.jpg')"
@@ -39,9 +62,7 @@ include /../templates/mixins/advertisers
 					li: a(href=tmplinkPeq, onclick='javascript:void window.open (\'#{tmplinkPeq}\',\'1414424357319\',\'width=ﬁ.settings.app.size.width,height=fi.settings.app.size.height,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;'): span Leer Artículo
 
 
-		article: video.content(controls, autoplay=false, lopp, poster="#{ﬁ.settings.app.static}/videos/COMFORTIS_ESP_VET_FINAL_H264.jpg")
-			source(src="#{ﬁ.settings.app.static}/videos/COMFORTIS_ESP_VET_FINAL_H264.mp4", type="video/mp4")
-			source(src="#{ﬁ.settings.app.static}/videos/COMFORTIS_ESP_VET_FINAL_H264.ogg", type="video/ogg")
+		
 
 		- var tmplinkFS  = "http://uat.magazine.s3.amazonaws.com/fauna-silvestre/fauna-silvestre-008/fauna-silvestre-008.html#p=110"
 		- var tmpimageFS = "background-image:url('http://uat-website.s3.amazonaws.com/images/covers/FS_No8_Art1.jpg')"
@@ -58,22 +79,6 @@ include /../templates/mixins/advertisers
 				footer: ul
 					li: a(href=tmplinkFS, onclick='javascript:void window.open (\'#{tmplinkFS}\',\'1414424357319\',\'width=ﬁ.settings.app.size.width,height=fi.settings.app.size.height,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;') Fauna Silvestre
 					li: a(href=tmplinkFS, onclick='javascript:void window.open (\'#{tmplinkFS}\',\'1414424357319\',\'width=ﬁ.settings.app.size.width,height=fi.settings.app.size.height,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;'): span Leer Artículo
-
-		- var tmplinkEq  = "http://uat.magazine.s3.amazonaws.com/equinos/equinos-024/equinos-24.html#p=50"
-		- var tmpimageEq = "background-image:url('http://uat-website.s3.amazonaws.com/images/covers/EQ_No24_Art4.jpg')"
-		article.color-0.color-bg-2.slide
-
-
-			main.content(style=tmpimageEq)
-
-			nav.bottom.left.color-0
-				header
-					h3
-						a(href=tmplinkEq, onclick='javascript:void window.open (\'#{tmplinkEq}\',\'1414424357319\',\'width=ﬁ.settings.app.size.width,height=fi.settings.app.size.height,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;') Uso de la Termología en equinos 
-
-				footer: ul
-					li: a(href=tmplinkEq, onclick='javascript:void window.open (\'#{tmplinkEq}\',\'1414424357319\',\'width=ﬁ.settings.app.size.width,height=fi.settings.app.size.height,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;') Equinos
-					li: a(href=tmplinkEq, onclick='javascript:void window.open (\'#{tmplinkEq}\',\'1414424357319\',\'width=ﬁ.settings.app.size.width,height=fi.settings.app.size.height,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;'): span Leer Artículo
 
 
 +rainbow()
