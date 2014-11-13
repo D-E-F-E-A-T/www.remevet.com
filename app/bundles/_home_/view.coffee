@@ -39,24 +39,40 @@ $window.loadStack.push ->
 		$video.on 'pause', coverSet
 
 
-	else	
+	else if navigator.userAgent.indexOf("Firefox") != -1
 			
 		coverSet   = -> 
-			console.log $("video").get(0).ended
-			#clearInterval $window.videoInterval
 			$window.intervalCovr = setInterval cback, timer
 		coverClear = -> 
 			clearInterval $window.intervalCovr
-			# $window.videoInterval = setInterval videoPaused, 300
+
 
 		do coverSet if not $window.intervalCovr
 
-		
+			
 		#$window.focus coverSet
 		$window.blur coverClear
 
 		$("video").on 'play', coverClear
 		$("video").on 'rewind',coverSet
 		$("video").on 'pause', coverSet
+
+	else 
+		coverSet   = -> 
+			$window.intervalCovr = setInterval cback, timer
+		coverClear = -> 
+			clearInterval $window.intervalCovr
+
+
+		do coverSet if not $window.intervalCovr
+
+			
+		$window.focus coverSet
+		$window.blur coverClear
+
+		$("video").on 'play', coverClear
+		$("video").on 'rewind',coverSet
+		$("video").on 'pause', coverSet
+
 
 

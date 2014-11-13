@@ -31,7 +31,7 @@ module.exports = (data, callback)->
 						articles.find().sort(num:-1).limit(1).toArray (error, data)->
 							callback.call(self, error) if error
 							result.articles = data
-						
+
 
 
 							# Ended
