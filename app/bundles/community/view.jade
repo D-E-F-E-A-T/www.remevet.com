@@ -22,6 +22,13 @@ include /../templates/mixins/advertisers
 					//- aside: a(href="#") Convocatoria Feb - Jul 2015
 				
 
+		.small-6.medium-4.large-2.columns
+			- var tmplinkEq  = "http://uat-website.s3.amazonaws.com/images/community/asis-form.pdf"
+			figure.magazine
+				a(href=tmplinkEq, onclick='javascript:void window.open (\'#{tmplinkEq}\',\'1414424357319\',\'width=ﬁ.settings.app.size.width,height=fi.settings.app.size.height,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;') 
+	
+					img(src="http://uat-website.s3.amazonaws.com/images/community/asis-form.jpg")
+				
 
 		.small-block-grid-2.medium-block-grid-4.large-block-grid-6
 			a.radius.button(href='#', data-reveal-id='firstModal', style='width: 287px; height: 372px; background-image: url(http://uat-website.s3.amazonaws.com/images/community/vacante.jpg)')
@@ -35,4 +42,5 @@ include /../templates/mixins/advertisers
 					|Interesados enviar CV al correo emergencias@hospitalveterinariocondesa.com con atención a Carlos Acevedo para programar entrevista.
 
 				a.close-reveal-modal ×
+		
 		

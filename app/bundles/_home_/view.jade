@@ -22,6 +22,24 @@ include /../templates/mixins/advertisers
 	.small-12.large-8.columns: .cover-right: .cover-contain(data-timeout="20")
 
 
+		- var tmplinkFS  = "http://uat-website.s3.amazonaws.com/images/community/asis-form.pdf"
+		- var tmpimageFS = "background-image:url('http://uat-website.s3.amazonaws.com/images/covers/asis_form2.jpg')"
+
+		article.color-0.color-bg-2.slide
+
+			main.content(style=tmpimageFS)
+
+			nav.bottom.left.color-0
+				header
+					h3
+						a(href=tmplinkEq, target="_blank") Elije el curso de tu preferencia
+
+				footer: ul
+					li: a(href=tmplinkFS, target="_blank") Asìs Formación
+					li: a(href=tmplinkFS, target="_blank"): span Leer Artículo
+
+
+
 		- var tmplinkEq  = "http://uat.magazine.s3.amazonaws.com/equinos/equinos-024/equinos-24.html#p=50"
 		- var tmpimageEq = "background-image:url('http://uat-website.s3.amazonaws.com/images/covers/EQ_No24_Art4.jpg')"
 		article.color-0.color-bg-2.slide
