@@ -22,7 +22,5 @@ Secure = ﬁ.require 'app', 'secure'
 ﬁ.routes.get  '/eventos'                 , Secure, 'events'
 ﬁ.routes.get  '/patrocinadores/articulos', Secure, 'sponsors'
 
-ﬁ.routes.get  '/poc', Secure, 'poc'
-
 ﬁ.routes.get   '/ping'  , 'util/ping'
 ﬁ.routes.error '/error' , 'util/error'
