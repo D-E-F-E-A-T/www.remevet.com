@@ -1,130 +1,131 @@
 if errorMessage
 	.alert-box.info.radius(data-alert)= errorMessage
 
-form(method="post"):.row
-	.small-12.large-6.columns.small-centered
+form(method="post").row
+	.large-12.columns
+		.small-12.large-6.columns.small-centered
 
-		fieldset 
+			fieldset 
 
-			legend Datos personales
+				legend Datos personales
 
-			.small-6.columns
-				label Nombre(s)
-				input(type="text", name="name_first", placeholder="", required)
+				.small-6.columns
+					label Nombre(s)
+					input(type="text", name="name_first", placeholder="", required)
 
-			.small-6.columns
-				label Apellido(s)
-				input(type="text", name="name_last", placeholder="", required)
+				.small-6.columns
+					label Apellido(s)
+					input(type="text", name="name_last", placeholder="", required)
 
 
-			.small-4.columns
-				label Género
-				select(name="gender", required)
-					option
-					option(value="F") Femenino
-					option(valie="M") Masculino
+				.small-4.columns
+					label Género
+					select(name="gender", required)
+						option
+						option(value="F") Femenino
+						option(value="M") Masculino
+
+				.small-8.columns
+					label Interés
+					select(name="interest", required)
+						option
+						option(value=1) Pequeñas Especies
+						option(value=2) Equinos
+						option(value=3) Fauna Silvestre
+
+				.small-8.columns
+					label Grado de estudios
+					select(name="studies")
+						option
+						option(value=1) Estudiante
+						option(value=2) Titulado
+						option(value=3) Otro
+
+				.small-4.columns
+					label Posgrado
+					select(name="degree")
+						option
+						option(value=1) Si
+						option(value=2) No
+
+				.small-4.columns
+					label País
+					select(name="country")
+						option
+						option(value="AR") Argentina
+						option(value="BZ") Belice
+						option(value="BO") Bolivia
+						option(value="BR") Brasil
+						option(value="CA") Canadá
+						option(value="CL") Chile
+						option(value="CO") Colombia
+						option(value="CR") CostaRica
+						option(value="CU") Cuba
+						option(value="DM") Dominica
+						option(value="EC") Ecuador
+						option(value="SV") ElSalvador
+						option(value="ES") España
+						option(value="US") EstadosUnidos
+						option(value="GT") Guatemala
+						option(value="HN") Honduras
+						option(value="JM") Jamaica
+						option(value="MX") México
+						option(value="NI") Nicaragua
+						option(value="PA") Panamá
+						option(value="PY") Paraguay
+						option(value="PE") Perú
+						option(value="PR") PuertoRico
+						option(value="DO") RepúblicaDominicana
+						option(value="UY") Uruguay
+						option(value="VE") Venezuela
+						option(value="O") Otro
+
+				.small-4.columns
+					label Estado
+					input(type="text", name="state", placeholder="", required)
+				.small-4.columns
+					label Municipio
+					input(type="text", name="town", placeholder="", required)
+
+				.small-12.columns
+					label Email
+					input(type="email", name="mail_1", placeholder="",required)
+
+
+				.small-12.columns
+					label Confirmar Email
+					input(type="email", name="mail_2", placeholder="", required)
+
+				.small-6.columns
+					label Contraseña
+					input(type="password", name="pass_1", placeholder="",required)
+
+				.small-6.columns
+					label Confirmar contraseña
+					input(type="password", name="pass_2", placeholder="", required)
+			.row.collapse
+				.small-10.columns
+					input(type="checkbox", name="is_mailable", checked)
+					label(for="is_mailable"): small
+						| Deseo recibir información y ofertas de 
+						strong &nbsp;REMEVET&nbsp;
+						| y sus patrocinadores.
+
+				.small-12.columns
+					input.button.color-bg-7.small.right.expand(type="submit", value="Registro") 
+
+	//-
+		.small-6.columns: fieldset
 
 			.small-8.columns
-				label Interés
-				select(name="interest", required)
-					option
-					option(value=1) Pequeñas Especies
-					option(valie=2) Equinos
-					option(value=3) Fauna Silvestre
-
-			.small-8.columns
-				label Grado de estudios
-				select(name="studies")
-					option
-					option(value=1) Estudiante
-					option(valie=2) Titulado
-					option(value=3) Otro
-
-			.small-4.columns
-				label Posgrado
-				select(name="degree")
-					option
-					option(value=1) Si
-					option(valie=2) No
-
-			.small-4.columns
-				label País
-				select(name="country")
-					option
-					option(value="AR") Argentina
-					option(value="BZ") Belice
-					option(value="BO") Bolivia
-					option(value="BR") Brasil
-					option(value="CA") Canadá
-					option(value="CL") Chile
-					option(value="CO") Colombia
-					option(value="CR") CostaRica
-					option(value="CU") Cuba
-					option(value="DM") Dominica
-					option(value="EC") Ecuador
-					option(value="SV") ElSalvador
-					option(value="ES") España
-					option(value="US") EstadosUnidos
-					option(value="GT") Guatemala
-					option(value="HN") Honduras
-					option(value="JM") Jamaica
-					option(value="MX") México
-					option(value="NI") Nicaragua
-					option(value="PA") Panamá
-					option(value="PY") Paraguay
-					option(value="PE") Perú
-					option(value="PR") PuertoRico
-					option(value="DO") RepúblicaDominicana
-					option(value="UY") Uruguay
-					option(value="VE") Venezuela
-					option(value="O") Otro
-
-			.small-4.columns
-				label Estado
-				input(type="text", name="state", placeholder="", required)
-			.small-4.columns
-				label Municipio
-				input(type="text", name="town", placeholder="", required)
-
-			.small-12.columns
-				label Email
-				input(type="email", name="mail_1", placeholder="",required)
-
-
-			.small-12.columns
-				label Confirmar Email
-				input(type="email", name="mail_2", placeholder="", required)
-
-			.small-6.columns
-				label Contraseña
-				input(type="password", name="pass_1", placeholder="",required)
-
-			.small-6.columns
-				label Confirmar contraseña
-				input(type="password", name="pass_2", placeholder="", required)
-		.row.collapse
-			.small-10.columns
-				input(type="checkbox", name="is_mailable", checked)
-				label(for="is_mailable"): small
-					| Deseo recibir información y ofertas de 
-					strong &nbsp;REMEVET&nbsp;
-					| y sus patrocinadores.
+				label Calle
+				input(type="text", name="address_street") 
 
 			.small-2.columns
-				input.button.small.right.expand(type="submit", value="Registro") 
+				label No.
+				input(type="text", name="address_number")
 
-//-
-	.small-6.columns: fieldset
-
-		.small-8.columns
-			label Calle
-			input(type="text", name="address_street") 
-
-		.small-2.columns
-			label No.
-			input(type="text", name="address_number")
-
-		.small-2.columns
-			label Int.
-			input(type="text", name="address_interior")
+			.small-2.columns
+				label Int.
+				input(type="text", name="address_interior")
 

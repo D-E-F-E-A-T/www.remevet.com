@@ -20,27 +20,21 @@ include /../templates/mixins/advertisers
 				figcaption
 					h4: a(href="#") Convocatoria Feb - Jul 2015
 					//- aside: a(href="#") Convocatoria Feb - Jul 2015
-				
 
-		.small-6.medium-4.large-2.columns
-			- var tmplinkEq  = "http://uat-website.s3.amazonaws.com/images/community/asis-form.pdf"
-			figure.magazine
-				a(href=tmplinkEq, onclick='javascript:void window.open (\'#{tmplinkEq}\',\'1414424357319\',\'width=ﬁ.settings.app.size.width,height=fi.settings.app.size.height,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0\');return false;') 
-	
-					img(src="http://uat-website.s3.amazonaws.com/images/community/asis-form.jpg")
-				
 
-		.small-block-grid-2.medium-block-grid-4.large-block-grid-6
-			a.radius.button(href='#', data-reveal-id='firstModal', style='width: 287px; height: 372px; background-image: url(http://uat-website.s3.amazonaws.com/images/community/vacante.jpg)')
-			#firstModal.reveal-modal.large(data-reveal='data-reveal')
-				h2 OFERTA DE TRABAJO
-				p
-					|Hospital Veterinario, localizado en la colonia Condesa en México DF con más de 25 años de servicio, 
-					|solicita médico veterinario con especialidad en medicina y cirugía de perros y gatos con experiencia y/o afinidad por el área administrativa 
-					|para ocupar el puesto de coordinador médico del hospital. 
-				p
-					|Interesados enviar CV al correo emergencias@hospitalveterinariocondesa.com con atención a Carlos Acevedo para programar entrevista.
+.row.collapse.color-bg-6.color-bg-lightest
 
-				a.close-reveal-modal ×
-		
-		
+#magazines.row.collapse
+	#magazines-header.color-6
+		a.uno(href=ﬁ.bundles['magazines']) Artículos
+
+
+	#magazines-issues.row
+		for article in articles
+			.small-6.medium-4.large-2.columns
+				figure.magazine
+					a(href=article.file)
+						img(src=ﬁ.settings.app.static + article.image)
+					figcaption
+						h4: a(href="#")=article.name
+						aside: a(href="#")=article.issue

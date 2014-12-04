@@ -1,0 +1,24 @@
+form(id="loggin", method="post", autocomplete="off"): .row: .large-6.small-12.columns.large-centered
+	
+	.row.collapse
+		small.left 
+			h1 Iniciar Sesión
+			if data 
+				label(style="color:red") Usario y/o contraseña inválidos.
+	.row.collapse
+		label Correo electrónico
+			input(type="email", pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$", name="email", placeholder="usuario@email.com", required)
+
+		label Contraseña
+			input(type="password", value="", name="_password", required)
+
+		small.right
+			a(href=ﬁ.bundles['auth/recovery']) ¿Olvidaste tu contraseña?
+				
+	.row.collapse
+		input.button.expand.small.customButton(type="submit", value="Entrar")
+
+	.row.collapse  
+		small.center 
+			label ¿Eres nuevo? 
+				a(href=ﬁ.bundles['video/auth/sign_up']) Regístrate aquí

@@ -1,0 +1,16 @@
+.row#customRecovery
+	form(id="recovery", method="post", autocomplete="off"): .row: .large-6.small-12.columns.large-centered
+		.row.collapse
+			small.left 
+				h1 Recuperar Contraseña
+				if data 
+					label(style="color:red;") Ocurrió un error al enviar el correo electrónico
+				if mensaje
+					label(style="color:red;") #{mensaje}
+					
+		.row.collapse
+			label Correo electrónico
+				input(type="email", pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$", name="email", placeholder="usuario@email.com", required, autofocus)
+
+		.row.collapse
+			input.button.expand.small.customButton(type="submit", value="Continuar", href=ﬁ.bundles['auth/sing_in'])

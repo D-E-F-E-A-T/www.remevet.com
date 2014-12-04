@@ -14,4 +14,5 @@ module.exports = (request, response, next)->
 			name:"Comunidad"
 			href:ﬁ.bundles['community']
 		]
+		
 		response.render data

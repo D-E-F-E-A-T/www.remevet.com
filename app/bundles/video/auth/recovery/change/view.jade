@@ -1,0 +1,28 @@
+.row#custom
+	form(id="loggin", method="post", autocomplete="off"): .row: .large-6.small-12.columns.large-centered
+
+		.row.collapse
+			small.left 
+				h1 Cambio de contraseña
+				if error && error === true
+					label(style="color:red") Tu contraseña debe contener al menos 8 caracteres.
+				if error_tmp && error_tmp === true
+					label(style="color:red") La contraseña temporal no se generó correctamente, inténtalo de nuevo.
+
+		.row.collapse
+			label Correo electrónico
+				- m = mail ? mail : '';
+				input(type="email", name="email", value=m, readonly="readonly")
+
+			label Password Temporal
+				input(type="password", name="passwordTmp", required, autofocus)
+				input(type="hidden", name="passwordTmpEncryp", value="#{pass}")
+
+			label Contraseña
+				input(type="password", name="_password", required)
+
+			label Confirmar contraseña
+				input(type="password", name="repeatPassword", required)
+
+		.row.collapse
+			input.button.expand.small.customButton(type="submit", value="Entrar")

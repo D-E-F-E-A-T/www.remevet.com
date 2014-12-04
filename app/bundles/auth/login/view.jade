@@ -1,11 +1,12 @@
 if errorMessage
 	.alert-box.info.radius(data-alert)= errorMessage
 
-form(method="post"): .row: .large-6.small-12.columns.large-centered
+form(method="post"): .row: .large-6.small-12.columns.large-centered.from
+
 	
 	.row.collapse
 
-		label Correo electrónico
+		label.correo Correo electrónico
 			input(type="email", name="mail", placeholder="usuario@email.com", required)
 
 		small.right
@@ -18,7 +19,7 @@ form(method="post"): .row: .large-6.small-12.columns.large-centered
 	.row.collapse
 
 		.small-5.columns
-			a.button.expand.secondary.small(href=ﬁ.bundles['auth/signup']) ¿Aun no tienes cuenta?
+			a.button.expand.secondary.small(href=ﬁ.bundles['auth/signup']) ¿Aún no tienes cuenta?
 
 		.small-3.columns: span &nbsp;
 

@@ -17,6 +17,7 @@ module.exports = (request, callback)->
 		email      : true
 		name_first : true
 		name_last  : true
+		interest   : true
 
 		(error, data)->
 			if error or not data

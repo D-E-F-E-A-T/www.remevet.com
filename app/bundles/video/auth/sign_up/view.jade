@@ -1,0 +1,50 @@
+link(href="/static/lib/datepicker/css/foundation-datepicker.css", rel="stylesheet", type="text/css")
+link(href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", rel="stylesheet", type="text/css")
+.row#custom
+	form(id="loggin", method="post", autocomplete="off"): .row: .large-6.small-12.columns.large-centered
+		.row.collapse
+			small.left 
+				h1 Registro de Usuario
+				if data 
+					label(style="color:red") Tu contraseña debe contener al menos 8 caracteres.
+		.row
+			.large-6.small-6.columns
+				label Nombre
+					input(type="text", name="name", required, autofocus)
+			.large-6.small-6.columns
+				label Apellidos
+					input(type="text", name="lastname", required)
+
+		.row
+			.large-6.small-12.columns
+				label Interes
+					select(name="sign_up")
+						option(value="FS") Fauna Silvestre	
+						option(value="PE") Pequeñas Especies
+						option(value="EQ") Equinos
+			.large-6.small-12.columns
+				label Genero
+					select(name="gender")
+						option(value="M") Masculino	
+						option(value="F") Femenino
+			.large-6.small-12.columns
+				label Fecha de nacimiento
+					input(type="text", name="birth_date", placeholder="dd-mm-yyyy", pattern="^(\\d{2}-){2}\\d{4}$", required)
+			
+			.large-12.small-12.columns
+				label Correo electrónico
+					input(type="email", pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$", name="email", placeholder="usuario@email.com", required, oninvalid="setCustomValidity('Correo no válido')", onchange="try{setCustomValidity('')}catch(e){}")
+			.large-12.small-12.columns
+				label Confirmar correo electrónico
+					input(type="email", name="RepeatMail", placeholder="usuario@email.com", required, oninvalid="setCustomValidity('Las contraseñas no coinciden')", onchange="try{setCustomValidity('')}catch(e){}")
+
+		.row
+			.large-6.small-6.columns
+				label Contraseña
+					input(type="password", name="_password", placeholder="********", pattern="^\\w{8,}", required, oninvalid="setCustomValidity('La contraseña debe tener mínimo 8 caracteres')", onchange="try{setCustomValidity('')}catch(e){}")
+			.large-6.small-6.columns
+				label Confirmar Contraseña
+					input(type="password", name="repeatPassword", placeholder="********", required, oninvalid="setCustomValidity('Las contraseñas no coinciden')", onchange="try{setCustomValidity('')}catch(e){}")
+
+		.row.collapse
+			input.button.expand.small.customButton(type="submit", value="Registrar")

@@ -3,6 +3,7 @@ module.exports =
 	# this will be used throughout the app to somewhat ensure security
 	# make sure you change this, and make sure not even you rememeber it easily.
 	secret: 'r3v1510nm3d1c4v373r1n4r14'
+	hashKey: '$2a$10$15v8/GtcPwByPdtMTtYSi.'
 	static: 'http://s3.amazonaws.com/uat-website'
 	pdf:
 		base : '/revista/'
