@@ -3,4 +3,4 @@ node_modules
 .DS_*
 Icon*
 app/static/lib
-
+*.sublime-workspace
